@@ -65,43 +65,83 @@ public class JavaApplication3 {
                 System.out.println("No hay mas ejercicios");
         }
     }
-public static void ejercicio1(Scanner sc){
-    
-}
-public static void ejercicio2(Scanner sc){
-    
-}
-public static void ejercicio3(Scanner sc){
-    
-}
-public static void ejercicio4(Scanner sc){
-    
-}
-public static void ejercicio5(Scanner sc){
-    
-}
-public static void ejercicio6(Scanner sc){
-    
-}
-public static void ejercicio7(Scanner sc){
-    
-}
-public static void ejercicio8(Scanner sc){
-    
-}
-public static void ejercicio9(Scanner sc){
-    
-}
-public static void ejercicio10(Scanner sc){
-    
-}
-public static void ejercicio11(Scanner sc){
-    
-}
-public static void ejercicio12(Scanner sc){
-    
-}
-public static void ejercicio13(Scanner sc){
-    
-}
+
+    public static void ejercicio1(Scanner sc) {
+
+        //pedir dos numeros
+        int numero1, numero2;
+
+        System.out.print("Escribe el primer numero: ");
+        numero1 = sc.nextInt();
+        System.out.print("Escribe un segundo número: ");
+        numero2 = sc.nextInt();
+        System.out.println("\n");
+        if (numero1 >= numero2) {
+            System.out.println("eres to tonto");
+        } else {
+
+            for (int i = numero1; i <= numero2; i++) {
+                System.out.print("numero " + i + ", ");
+            }
+        }
+    }
+
+    public static void ejercicio2(Scanner sc) {
+        for (int i = 5; i <= 100; i += 5) {
+            System.out.println("numero" + i + ", ");
+
+        }
+
+    }
+
+    public static void ejercicio3(Scanner sc) {
+        int num, suma, media;
+        suma=0;
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Escribe un numero");
+            num = sc.nextInt();
+            suma += num;
+        }
+
+    }
+
+    public static void ejercicio4(Scanner sc) {
+
+    }
+
+    public static void ejercicio5(Scanner sc) {
+
+    }
+
+    public static void ejercicio6(Scanner sc) {
+
+    }
+
+    public static void ejercicio7(Scanner sc) {
+
+    }
+
+    public static void ejercicio8(Scanner sc) {
+
+    }
+
+    public static void ejercicio9(Scanner sc) {
+
+    }
+
+    public static void ejercicio10(Scanner sc) {
+
+    }
+
+    public static void ejercicio11(Scanner sc) {
+
+    }
+
+    public static void ejercicio12(Scanner sc) {
+
+    }
+
+    public static void ejercicio13(Scanner sc) {
+
+    }
 }
