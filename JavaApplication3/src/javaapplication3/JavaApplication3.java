@@ -154,18 +154,26 @@ public class JavaApplication3 {
     }
 
     public static void ejercicio7(Scanner sc) {
-        int numero, Maximo, Minimo;
+        int numero, Maximo=0, Minimo=0;
         //solicitar numeros(for)y comparar numeros(if)
         for (int i = 0; i < 10; i++) {
+            System.out.println("Escribe un numero");
             numero = sc. nextInt();
             System.out.println("Numero"+numero);
-            if() {
-                
+            if(i == 0) {
+                Maximo = numero;
+                Minimo = numero;
+            }
+            else if (numero > Maximo){
+                Maximo = numero;
+            }
+            else if (numero < Minimo){
+                Minimo = numero;
             }
             
         }
         
-        
+        System.out.println("El numero mayor es "+Maximo+" El numero menor es "+Minimo);
         //enseñar resultado
     }
 
