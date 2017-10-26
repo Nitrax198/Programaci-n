@@ -131,54 +131,62 @@ public class JavaApplication3 {
         System.out.println("Escribe los segundos");
         seg = sc.nextInt();
         //Transformar todo a segundos
-        Horas2 = Horas*3600;
-        Min2 = Min*60;
+        Horas2 = Horas * 3600;
+        Min2 = Min * 60;
         //sumar y mostrar en pantalla
-        suma = Horas2+Min2+seg;
-        System.out.println("los segundos totales son: "+suma);
+        suma = Horas2 + Min2 + seg;
+        System.out.println("los segundos totales son: " + suma);
     }
 
     public static void ejercicio6(Scanner sc) {
-        int SegundosIniciales,SegundosRestantes, Horas, Minutos, SegundosFinales;
-            //pedir numero
-            System.out.println("Escribe un numero");
-            SegundosIniciales = sc.nextInt();
-            Horas = SegundosIniciales/3600;
-            SegundosRestantes = SegundosIniciales-(Horas*3600);
-            Minutos = SegundosRestantes/60;
-            SegundosFinales = SegundosRestantes-(Minutos*60);
-            System.out.println("Las horas, minutos y segundos son"+Horas+" "+Minutos+" "+SegundosFinales);
-            //calcular horas minutos y segundos
-            
-            //mostrar resultado
+        int SegundosIniciales, SegundosRestantes, Horas, Minutos, SegundosFinales;
+        //pedir numero
+        System.out.println("Escribe un numero");
+        SegundosIniciales = sc.nextInt();
+        Horas = SegundosIniciales / 3600;
+        SegundosRestantes = SegundosIniciales - (Horas * 3600);
+        Minutos = SegundosRestantes / 60;
+        SegundosFinales = SegundosRestantes - (Minutos * 60);
+        System.out.println("Las horas, minutos y segundos son" + Horas + " " + Minutos + " " + SegundosFinales);
+        //calcular horas minutos y segundos
+
+        //mostrar resultado
     }
 
     public static void ejercicio7(Scanner sc) {
-        int numero, Maximo=0, Minimo=0;
+        int numero, Maximo = 0, Minimo = 0;
         //solicitar numeros(for)y comparar numeros(if)
         for (int i = 0; i < 10; i++) {
             System.out.println("Escribe un numero");
-            numero = sc. nextInt();
-            System.out.println("Numero"+numero);
-            if(i == 0) {
+            numero = sc.nextInt();
+            System.out.println("Numero" + numero);
+            if (i == 0) {
                 Maximo = numero;
                 Minimo = numero;
-            }
-            else if (numero > Maximo){
+            } else if (numero > Maximo) {
                 Maximo = numero;
-            }
-            else if (numero < Minimo){
+            } else if (numero < Minimo) {
                 Minimo = numero;
             }
-            
+
         }
-        
-        System.out.println("El numero mayor es "+Maximo+" El numero menor es "+Minimo);
+
+        System.out.println("El numero mayor es " + Maximo + " El numero menor es " + Minimo);
         //enseñar resultado
     }
 
     public static void ejercicio8(Scanner sc) {
+        //leer numero,hacer un contador, comparar numeros y sumarlas multiplicaciones
+        int numero, factorial;
+        factorial = 1;
+        System.out.println("Escribe un numero");
+        numero = sc.nextInt();
 
+        for (int i = 1; i <= numero; i++) {
+            factorial *= i;
+
+        }
+        System.out.println("El factorial es " + factorial);
     }
 
     public static void ejercicio9(Scanner sc) {
@@ -186,7 +194,11 @@ public class JavaApplication3 {
     }
 
     public static void ejercicio10(Scanner sc) {
-
+    //pedir 3 numeros
+    
+    //comparar numeros
+    
+    //esponer resultado
     }
 
     public static void ejercicio11(Scanner sc) {
