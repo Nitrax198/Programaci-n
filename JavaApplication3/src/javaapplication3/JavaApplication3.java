@@ -154,7 +154,19 @@ public class JavaApplication3 {
     }
 
     public static void ejercicio7(Scanner sc) {
-
+        int numero, Maximo, Minimo;
+        //solicitar numeros(for)y comparar numeros(if)
+        for (int i = 0; i < 10; i++) {
+            numero = sc. nextInt();
+            System.out.println("Numero"+numero);
+            if() {
+                
+            }
+            
+        }
+        
+        
+        //enseñar resultado
     }
 
     public static void ejercicio8(Scanner sc) {
