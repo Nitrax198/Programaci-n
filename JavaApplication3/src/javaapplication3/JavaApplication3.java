@@ -96,25 +96,61 @@ public class JavaApplication3 {
 
     public static void ejercicio3(Scanner sc) {
         int num, suma, media;
-        suma=0;
+        suma = 0;
         for (int i = 0; i < 15; i++) {
             System.out.println("Escribe un numero");
             num = sc.nextInt();
             suma += num;
         }
-
+        System.out.println("media, " + suma / 15);
     }
 
     public static void ejercicio4(Scanner sc) {
-
+        //escribir cuantos valores hay que escribir
+        double NumeroDeValores, Suma, Valor;
+        Suma = 0;
+        System.out.println("Escribe cuantos valores quieres introducir");
+        NumeroDeValores = sc.nextInt();
+        //Escribir los valores y leer teclado
+        for (int i = 0; i < NumeroDeValores; i++) {
+            System.out.println("Escribe un numero");
+            Valor = sc.nextInt();
+            Suma += Valor;
+        }
+        //Hacer la media y enseñarla
+        System.out.println("La media es, " + (Suma / NumeroDeValores));
     }
 
     public static void ejercicio5(Scanner sc) {
-
+        int Horas, Min, seg, Horas2, Min2, suma;
+        //Escribir las horas , minutos y segundos que sumar
+        System.out.println("Escribe las horas");
+        Horas = sc.nextInt();
+        System.out.println("Escribe los minutos");
+        Min = sc.nextInt();
+        System.out.println("Escribe los segundos");
+        seg = sc.nextInt();
+        //Transformar todo a segundos
+        Horas2 = Horas*3600;
+        Min2 = Min*60;
+        //sumar y mostrar en pantalla
+        suma = Horas2+Min2+seg;
+        System.out.println("los segundos totales son: "+suma);
     }
 
     public static void ejercicio6(Scanner sc) {
-
+        int SegundosIniciales,SegundosRestantes, Horas, Minutos, SegundosFinales;
+            //pedir numero
+            System.out.println("Escribe un numero");
+            SegundosIniciales = sc.nextInt();
+            Horas = SegundosIniciales/3600;
+            SegundosRestantes = SegundosIniciales-(Horas*3600);
+            Minutos = SegundosRestantes/60;
+            SegundosFinales = SegundosRestantes-(Minutos*60);
+            System.out.println("Las horas, minutos y segundos son"+Horas+" "+Minutos+" "+SegundosFinales);
+            //calcular horas minutos y segundos
+            
+            //mostrar resultado
     }
 
     public static void ejercicio7(Scanner sc) {
