@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26-oct-2017, 9:12:21
+    Author     : daw
+*/
+p{
+    color: #ff0000;
+    margin-top: 0px;
+    
+}
+body {
+    background-color: #000000;
+
+        
+}
+.LetrasMoradas{
+    color: #ff00ff;
+    margin-bottom: 16px;
+}
+.LetrasNaranjas{
+    color: darkorange;
+    margin-bottom: 16px;
+}
+.LetrasAzules{
+    color: aqua;
+    margin-bottom: 16px;
+}
+h1{
+   color: #f5faf0; 
+   margin-bottom: 16px;
+}
