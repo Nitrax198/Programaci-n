@@ -190,15 +190,53 @@ public class JavaApplication3 {
     }
 
     public static void ejercicio9(Scanner sc) {
+        int Numero1, Numero2, Numero3, Mayor, Menor, Medio;
+        //pedir 3 numeros
+        System.out.println("Escribe 3 numeros");
+        Numero1 = sc.nextInt();
+        Numero2 = sc.nextInt();
+        Numero3 = sc.nextInt();
+        //comparar numeros
+        if (Numero1 > Numero2 && Numero1 > Numero3) {
+            Mayor = Numero1;
+            if (Numero2 > Numero3) {
+                Medio = Numero2;
+                Menor = Numero3;
+            } else {
+                Medio = Numero3;
+                Menor = Numero2;
+            }
 
+        } else if (Numero2 > Numero1 && Numero2 > Numero3) {
+            Mayor = Numero2;
+            if (Numero1 > Numero3) {
+                Medio = Numero1;
+                Menor = Numero3;
+            } else {
+                Medio = Numero3;
+                Menor = Numero1;
+            }
+        } else {
+            Mayor = Numero3;
+            if (Numero2 > Numero1) {
+                Medio = Numero2;
+                Menor = Numero1;
+            } else {
+                Medio = Numero1;
+                Menor = Numero2;
+            }
+        }
+        System.out.println("Aquí tienes los números ordenados de mayor a menor " + Mayor + ">" + Medio + ">" + Menor + ".");
+        //esponer resultado
     }
 
     public static void ejercicio10(Scanner sc) {
-    //pedir 3 numeros
-    
-    //comparar numeros
-    
-    //esponer resultado
+        int Nota;
+        //pedir nota
+        System.out.println("Escribe tu nota");
+        Nota = sc.nextInt();
+        //escribir respuesta
+        // enseñar nota
     }
 
     public static void ejercicio11(Scanner sc) {
