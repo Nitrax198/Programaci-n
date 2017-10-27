@@ -231,16 +231,76 @@ public class JavaApplication3 {
     }
 
     public static void ejercicio10(Scanner sc) {
-        int Nota;
+        int nota;
+        String mensaje1 = null;
         //pedir nota
         System.out.println("Escribe tu nota");
-        Nota = sc.nextInt();
+        nota = sc.nextInt();
+        switch (nota) {
+            case 1:
+                mensaje1 = "uno";
+                break;
+            case 2:
+                mensaje1 = "dos";
+                break;
+            case 3:
+                mensaje1 = "tres";
+                break;
+            case 4:
+                mensaje1 = "cuatro";
+                break;
+            case 5:
+                mensaje1 = "cinco";
+                break;
+            case 6:
+                mensaje1 = "seis";
+                break;
+            case 7:
+                mensaje1 = "siete";
+                break;
+            case 8:
+                mensaje1 = "ocho";
+                break;
+            case 9:
+                mensaje1 = "nueve";
+                break;
+            case 10:
+                mensaje1 = "diez";
+            default:
+                mensaje1 = "No te sobres flipao";
+        }
         //escribir respuesta
+        System.out.println(mensaje1);
         // enseñar nota
     }
 
     public static void ejercicio11(Scanner sc) {
-
+        // declara las variables
+        String mensaje2 = null;
+        int notadeclase;
+        System.out.println("Escribe tu nota");
+        notadeclase = sc.nextInt();
+        //compara los numeros
+        if(notadeclase<5){
+            mensaje2 = "insuficiente";
+        }
+        else if(notadeclase == 5) {
+            mensaje2 = "suficiente";
+        }
+        else if (notadeclase==6){
+            mensaje2="Bien";
+        }
+        else if (notadeclase<9 && notadeclase>6){
+            mensaje2 = "Notable";
+        }
+        else if (notadeclase>8 && notadeclase<11){
+            mensaje2 = "Sobresaliente";
+        }
+        else {
+            mensaje2 = "eres to tonto";
+        }
+        //escribe el resultado
+        System.out.println(mensaje2);
     }
 
     public static void ejercicio12(Scanner sc) {
