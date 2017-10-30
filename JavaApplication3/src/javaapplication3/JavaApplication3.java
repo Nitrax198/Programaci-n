@@ -266,6 +266,8 @@ public class JavaApplication3 {
                 break;
             case 10:
                 mensaje1 = "diez";
+            case 0:
+                mensaje1 = "cero";
             default:
                 mensaje1 = "No te sobres flipao";
         }
@@ -281,22 +283,17 @@ public class JavaApplication3 {
         System.out.println("Escribe tu nota");
         notadeclase = sc.nextInt();
         //compara los numeros
-        if(notadeclase<5){
+        if (notadeclase < 5) {
             mensaje2 = "insuficiente";
-        }
-        else if(notadeclase == 5) {
+        } else if (notadeclase == 5) {
             mensaje2 = "suficiente";
-        }
-        else if (notadeclase==6){
-            mensaje2="Bien";
-        }
-        else if (notadeclase<9 && notadeclase>6){
+        } else if (notadeclase == 6) {
+            mensaje2 = "Bien";
+        } else if (notadeclase < 9 && notadeclase > 6) {
             mensaje2 = "Notable";
-        }
-        else if (notadeclase>8 && notadeclase<11){
+        } else if (notadeclase > 8 && notadeclase < 11) {
             mensaje2 = "Sobresaliente";
-        }
-        else {
+        } else {
             mensaje2 = "eres to tonto";
         }
         //escribe el resultado
@@ -304,10 +301,57 @@ public class JavaApplication3 {
     }
 
     public static void ejercicio12(Scanner sc) {
+        int numeroalumnos, notas, media, suma;
+        suma = 0;
+        media = 0;
+        // declarar variables
+        System.out.println("Escribe el numero de alumnos");
+        numeroalumnos = sc.nextInt();
+        for (int i = 0; i < numeroalumnos; i++) {
+            System.out.println("Escribe las notas");
+            notas = sc.nextInt();
+            if (notas >= 5 && notas < 10) {
+                System.out.println("aprobado " + notas);
+            } else if (notas < 5 && notas > 0) {
+                System.out.println("Suspenso " + notas);
+            } else {
+                System.out.println("Esa nota no existe " + notas);
+            }
+            suma += notas;
+            media = suma / numeroalumnos;
+        }
+        System.out.println("La media es " + media);
+        // pedir numero de alumnos y notas
 
+        //comparar notas
+        //calcular media
+        //escribir aprovados, suspensos y meida
     }
 
     public static void ejercicio13(Scanner sc) {
-
+        int primo,numero;
+        boolean resto;
+        resto = true;
+        System.out.println("Escribe un numero");
+        primo = sc.nextInt();
+        numero = primo-1;
+        for (int a = 1; a < primo; a++) {
+            for (int i = numero; i > 1; i--) {
+                if (primo % i == 0) {
+                    System.out.println("No es primo");
+                    resto = false;
+                }
+                
+                //introducir variables
+                //calcular un numero primo
+                //Calcular un numero primo las veces que te pidan
+                //Escribir los numeros primos
+            }
+            if (resto) {
+                System.out.println("Primo " + primo);
+                primo--;
+            }
+        }
+        
     }
 }
