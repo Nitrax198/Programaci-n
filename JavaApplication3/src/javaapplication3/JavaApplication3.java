@@ -329,16 +329,15 @@ public class JavaApplication3 {
     }
 
     public static void ejercicio13(Scanner sc) {
-        int primo,numero;
+        int primo;
         boolean resto;
-        resto = true;
+        int a;
         System.out.println("Escribe un numero");
         primo = sc.nextInt();
-        numero = primo-1;
-        for (int a = 1; a < primo; a++) {
-            for (int i = numero; i > 1; i--) {
-                if (primo % i == 0) {
-                    System.out.println("No es primo");
+        for ( a = 2; a <= primo; a++) {
+            resto = true;
+            for (int i = 2; i <a ; i++) {
+                if (a % i == 0) {
                     resto = false;
                 }
                 
@@ -348,8 +347,7 @@ public class JavaApplication3 {
                 //Escribir los numeros primos
             }
             if (resto) {
-                System.out.println("Primo " + primo);
-                primo--;
+                System.out.println("Primo " + a);
             }
         }
         
