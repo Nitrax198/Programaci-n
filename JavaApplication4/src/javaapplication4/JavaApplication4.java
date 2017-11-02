@@ -18,12 +18,19 @@ public class JavaApplication4 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //pido numero y declaro la variable
-        int numero;
+        //pido numero para el total del array y declaro la variable
+        int numero,valores;
         System.out.println("Escribe un numero");
         Scanner sc = new Scanner(System.in);
         numero = sc.nextInt();
         int[] numeros = new int [numero];
         //poner un valor en cada numero del Array
-    }   
+        for (int i = 0; i < numero; i++) {
+            System.out.println("Escribe un numero");
+            valores = sc.nextInt();
+            numeros [i] = valores;
+        }
+        //Mirar numeros pares e impares del array
+        //hacer media de pares e impares
+    }  
 }
