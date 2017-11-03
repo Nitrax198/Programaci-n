@@ -18,28 +18,28 @@ public class JavaApplication4 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //pido numero para el total del array y declaro la variable
-        int numero, pares, impares,sumapares, sumaimpares;
+        //pido numeroN para el total del array y declaro la variable
+        int numeroN, pares, impares,sumapares, sumaimpares;
         sumapares = 0;
         sumaimpares = 0;
         impares = 0;
         pares = 0;
         System.out.println("Escribe un numero para saber cuantos valores hay");
         Scanner sc = new Scanner(System.in);
-        numero = sc.nextInt();
-        int[] numeros = new int[numero];
-        //poner un valor en cada numero del Array
-        for (int i = 0; i < numero; i++) {
+        numeroN = sc.nextInt();
+        int[] numeros = new int[numeroN];
+        //poner un valor en cada numeroN del Array
+        for (int i = 0; i < numeroN; i++) {
             System.out.println("Escribe un valor");
             numeros[i] = sc.nextInt();
         }
         //Recorrer numeros en busca de pares e impares del array
-        for (int b = 0; b < numeros.length; b++) {
-            if (numeros[b] % 2 == 0) {
-                System.out.println(numeros[b] + "son pares");
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] % 2 == 0) {
+                System.out.println(numeros[i] + "son pares");
                 pares++;
             } else {
-                System.out.println(numeros[b] + "son impares");
+                System.out.println(numeros[i] + "son impares");
                 impares++;
             }
         }
@@ -47,19 +47,19 @@ public class JavaApplication4 {
         int[] numerosimpares = new int[impares];
         int[] numerospares = new int[pares];
         //introducir numeros paraes e impares del primer array en sus respectivos arrays
-        for (int a = 0; a < numeros.length; a++) {
+        for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] % 2 == 0){
-                numerospares [a] = numeros[i];
+                numerospares [pares] = numeros[i];
             }
             else {
-                numerosimpares[a] = numeros[i];
+                numerosimpares[impares] = numeros[i];
             }
         }
-        for (int j = 0; j < pares; j++) {
-            sumapares += numerospares[j];
+        for (int i = 0; i < pares; i++) {
+            sumapares += numerospares[pares];
         }
-        for (int c = 0; c < impares; c++) {
-            sumaimpares += numerosimpares[a];
+        for (int i = 0; i < impares; i++) {
+            sumaimpares += numerosimpares[impares];
         }
         //hacer media de pares e impares por separado
         System.out.println(sumapares/pares);
