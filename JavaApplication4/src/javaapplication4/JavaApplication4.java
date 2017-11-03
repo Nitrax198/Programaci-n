@@ -36,10 +36,10 @@ public class JavaApplication4 {
         //Recorrer numeros en busca de pares e impares del array
         for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] % 2 == 0) {
-                System.out.println(numeros[i] + "son pares");
+                System.out.println(numeros[i] + " es pares");
                 pares++;
             } else {
-                System.out.println(numeros[i] + "son impares");
+                System.out.println(numeros[i] + " es impares");
                 impares++;
             }
         }
@@ -47,22 +47,28 @@ public class JavaApplication4 {
         int[] numerosimpares = new int[impares];
         int[] numerospares = new int[pares];
         //introducir numeros paraes e impares del primer array en sus respectivos arrays
+        int controlpares;
+        int controlimpares;
+        controlpares =0;
+        controlimpares = 0;
         for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] % 2 == 0){
-                numerospares [pares] = numeros[i];
+                numerospares [controlpares] = numeros[i];
+                controlpares++;
             }
             else {
-                numerosimpares[impares] = numeros[i];
+                numerosimpares[controlimpares] = numeros[i];
+                controlimpares++;
             }
         }
-        for (int i = 0; i < pares; i++) {
-            sumapares += numerospares[pares];
+        for (int i = 0; i < numerospares.length; i++) {
+            sumapares += numerospares[i];
         }
-        for (int i = 0; i < impares; i++) {
-            sumaimpares += numerosimpares[impares];
+        for (int i = 0; i < numerosimpares.length; i++) {
+            sumaimpares += numerosimpares[i];
         }
         //hacer media de pares e impares por separado
-        System.out.println(sumapares/pares);
-        System.out.println(sumaimpares/impares);
+        System.out.println("la media de los pares es "+sumapares/pares);
+        System.out.println("la media de los impares es "+sumaimpares/impares);
     }
 }
