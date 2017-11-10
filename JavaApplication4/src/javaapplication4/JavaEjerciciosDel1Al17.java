@@ -158,7 +158,7 @@ public class JavaEjerciciosDel1Al17 {
 
     public static void ejercicio4(Scanner sc) {
         int numeroFinal;
-        numeroFinal = 10;
+        numeroFinal = 9;
         int[] numeros = new int[10];
         for (int i = 0; i < numeros.length; i++) {
             System.out.println("Escribe un numero");
