@@ -119,9 +119,9 @@ public class JavaEjerciciosDel1Al17 {
         for (int i = 0; i < numerosReales.length; i++) {
             if (numerosReales[i] == 0) {
                 contadorCeros++;
-            } else if (numerosReales[i] % 2 == 0) {
+            } else if (numerosReales[i] > 0) {
                 contadorPositivos++;
-            } else if (numerosReales[i] % 2 != 0) {
+            } else if (numerosReales[i] < 0) {
                 contadorNegativos++;
             }
         }
@@ -132,24 +132,42 @@ public class JavaEjerciciosDel1Al17 {
         for (int i = 0; i < numerosPositivos.length; i++) {
             if (numerosReales[i] == 0) {
                 System.out.println("Eso es un cero");
-            } else if (numerosReales[i] % 2 == 0) {
+            } else if (numerosReales[i] > 0) {
                 numerosPositivos[i] = numerosReales[i];
-                sumapositivos+= numerosPositivos[i];
+                sumapositivos += numerosPositivos[i];
 
             } else {
                 numerosNegativos[i] = numerosReales[i];
-                sumanegativos+= numerosNegativos[i];
+                sumanegativos += numerosNegativos[i];
             }
         }
         //Hacer la media y enseñar
-        System.out.println("la mdeia de los positivos es "+sumapositivos/contadorPositivos);
-        System.out.println("la media de los negativos es "+sumanegativos/contadorNegativos);
-        System.out.println("los ceros son "+contadorCeros);
+        if (contadorPositivos == 0) {
+            System.out.println("No hay positivos");
+        } else {
+            System.out.println("la media de los positivos es " + sumapositivos / contadorPositivos);
+        }
+        if (contadorNegativos == 0) {
+            System.out.println("No hay negativos");
+        } else {
+            System.out.println("la media de los negativos es " + sumanegativos / contadorNegativos);
+        }
+        System.out.println("los ceros son " + contadorCeros);
 
     }
 
     public static void ejercicio4(Scanner sc) {
-
+        int numeroFinal;
+        numeroFinal = 10;
+        int[] numeros = new int[10];
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println("Escribe un numero");
+            numeros[i] = sc.nextInt();
+        }
+        for (int i = 0; i < 5; i++) {
+            System.out.println(numeros[i]+" "+numeros[numeroFinal]);
+            numeroFinal--;
+        }
     }
 
     public static void ejercicio5(Scanner sc) {
