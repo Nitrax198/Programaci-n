@@ -12,6 +12,6 @@ and open the template in the editor.
     border: 0px
 }
 .Bordesceldas{
-    border-style: double;
+    border-style:solid ;
     border-color: black;
 }
