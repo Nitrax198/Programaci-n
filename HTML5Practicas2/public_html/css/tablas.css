@@ -8,10 +8,14 @@ and open the template in the editor.
     Author     : daw
 */
 
-.Titulodetablas{ 
-    border: 0px
-}
+
+.BordeTablas{
+    border-width:1px;
+    border-style:solid;
+    border-color: black;
+} 
 .Bordesceldas{
-    border-style:solid ;
+    border-width:1px;
+    border-style:solid;
     border-color: black;
 }
