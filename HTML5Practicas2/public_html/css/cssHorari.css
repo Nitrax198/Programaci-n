@@ -1,0 +1,24 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11-nov-2017, 21:05:15
+    Author     : angel
+*/
+table,tr,td {
+    border: 1px solid white;
+}
+.Colorgris {
+    background-color: grey;
+    color: white;
+}
+.ColorNaranja{
+    background-color: orange;
+    color: black;
+}
+.ColorGrisClaro{
+    background-color: whitesmoke;
+    color: black;
+}

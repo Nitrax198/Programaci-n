@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-nov-2017, 18:35:37
+    Author     : angel
+*/
+
+.Tabla{
+    border-style: dotted;
+    border-width: 1px;
+    border-color: red
+}
+.BordeDeAbajo{
+    border-bottom: solid 
+}
+.BordePuntitos{
+    border-style: dotted;
+    border-width: 1px;
+    border-color: red#ff0000
+}
+.TextoCentrado{
+    text-align: center;
+}
+.BordeDeAbajoYCentrado{
+    text-align: center;
+    border-bottom: solid 
+}
+.Tabla2{
+    border-style: solid;
+    border-width: 1px;
+}
+.TextoCentrado2{
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}

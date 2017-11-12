@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-nov-2017, 19:53:49
+    Author     : angel
+*/
+body{
+    background-color: background; 
+}
+table{
+    padding-left: 35%; 
+    background-color: tan;
+    padding-right: 35%;
+}
+.Enero{
+    border-bottom: 1px solid chocolate;
+    border-collapse: collapse;
+    text-align: center;
+    width: 400px;
+    height: 25px;
+}
+.CaptionEnero{
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.ThFebrero{
+    border-left: 1px solid bisque; 
+    border-right: 1px solid bisque;
+    text-align: right;
+}
+.TablaF{
+    border-left: 1px solid bisque; 
+    border-collapse: collapse;
+    border-right: 1px solid bisque;
+    width: 400px;
+    height: 25px;
+}
+.CaptionFebrero{
+    font-weight: bold;
+    text-align: right;
+}
+.TdFebrero{
+    border-left: 1px solid bisque; 
+    border-right: 1px solid bisque;
+    text-align: right;
+    font-size: 25px;
+}
+.TablaM{
+    border-collapse: collapse;
+    border: 1px solid magenta;
+}
+.TdMarzo{
+    border-collapse: collapse;
+    border: 1px solid magenta;
+    vertical-align: text-top;
+    font-size: 10px;
+    text-align: left;
+    height: 30px;
+    width: 40px;
+}
+.CaptioMarzo{
+    letter-spacing: 1px;
+    text-align: left;
+}
