@@ -165,17 +165,80 @@ public class JavaEjerciciosDel1Al17 {
             numeros[i] = sc.nextInt();
         }
         for (int i = 0; i < 5; i++) {
-            System.out.println(numeros[i]+" "+numeros[numeroFinal]);
+            System.out.println(numeros[i]);
+            System.out.println(numeros[numeroFinal]);
             numeroFinal--;
         }
     }
 
     public static void ejercicio5(Scanner sc) {
-
+        //definir variables a utilizar
+        int contador1, contador2;
+        contador2 = 0;
+        contador1 = 0;
+        // hacer las dos tablas en dos arrays
+        int[] tabla1 = new int[10];
+        int[] tabla2 = new int[10];
+        //leer el teclado para escribir los valores en los Arrays
+        for (int i = 0; i < tabla1.length; i++) {
+            System.out.println("Escribe un numero para la primera Tabla");
+            tabla1[i] = sc.nextInt();
+            System.out.println("Escribe un numero para la segunda Tabla");
+            tabla2[i] = sc.nextInt();
+        }
+        // definir un  tercer Array
+        int[] tabla3 = new int[20];
+        //recorrer los dos arrays en introducir los numeros en un tercero
+        for (int i = 0; i < tabla3.length; i++) {
+            if (i == 0 && contador1 < 10) {
+                tabla3[i] = tabla1[contador1];
+                contador1++;
+            } else if (i % 2 == 0) {
+                tabla3[i] = tabla1[contador1];
+                contador1++;
+            } else if (i % 2 != 0) {
+                tabla3[i] = tabla2[contador2];
+                contador2++;
+            }
+        }
+        //mostrar los dos Arrays en el orden: 0A,0B,1A,1B...
+        for (int i = 0; i < tabla3.length; i++) {
+            System.out.println("Los numeros son" + tabla3[i]);
+        }
     }
 
     public static void ejercicio6(Scanner sc) {
-
+        //definir variables
+        int contador1, contador2,multiploDe3,multiploDe3S;
+        multiploDe3=3;
+        multiploDe3S=6;
+        contador1 = 0;
+        contador2 = 0;
+        // hacer las dos tablas en dos arrays
+        int[] tabla1 = new int[12];
+        int[] tabla2 = new int[12];
+        //leer el teclado para escribir los valores en los Arrays
+        for (int i = 0; i < tabla1.length; i++) {
+            System.out.println("Escribe un numero para la primera Tabla");
+            tabla1[i] = sc.nextInt();
+            System.out.println("Escribe un numero para la segunda Tabla");
+            tabla2[i] = sc.nextInt();
+        }
+        //definir un nuevo Array
+        int[]tabla3 = new int[24];
+        //introducir los valores de los dos primeros arrays en el tercero de 3 en 3
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < multiploDe3; j++) {
+                tabla3[multiploDe3] =tabla1[contador1];
+                contador1++;
+            }
+            multiploDe3=+6;
+            for (int k = 3; k < multiploDe3S; k++) {
+                tabla3[multiploDe3S]=tabla2[contador2];
+                contador2++;
+            }
+            multiploDe3S=+6;
+        }
     }
 
     public static void ejercicio7(Scanner sc) {
