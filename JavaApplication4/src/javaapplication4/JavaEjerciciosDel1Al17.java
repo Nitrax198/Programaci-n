@@ -209,7 +209,8 @@ public class JavaEjerciciosDel1Al17 {
 
     public static void ejercicio6(Scanner sc) {
         //definir variables
-        int contador1, contador2;
+        int contador1, contador2, contador3;
+        contador3 = 0;
         contador1 = 0;
         contador2 = 0;
         // hacer las dos tablas en dos arrays
@@ -223,21 +224,54 @@ public class JavaEjerciciosDel1Al17 {
             tabla2[i] = sc.nextInt();
         }
         //definir un nuevo Array
-        int[]tabla3 = new int[24];
+        int[] tabla3 = new int[24];
         //introducir los valores de los dos primeros arrays en el tercero de 3 en 3
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 3; j++) {
-                tabla3[j]=tabla1[j];
+                tabla3[contador3] = tabla1[contador1];
+                contador3++;
+                contador1++;
             }
             for (int j = 0; j < 3; j++) {
-                
+                tabla3[contador3] = tabla2[contador2];
+                contador2++;
+                contador3++;
             }
         }
-       
+        for (int i = 0; i < tabla3.length; i++) {
+            System.out.println(tabla3[i]);
+        }
+
     }
 
     public static void ejercicio7(Scanner sc) {
-
+        //declarar variables
+        boolean creciente = true;
+        boolean decreciente = true;
+        //declarar array
+        int[] lista = new int[10];
+        //llenar array
+        for (int i = 0; i < lista.length; i++) {
+            System.out.println("Escribe un numero");
+            lista[i] = sc.nextInt();
+        }
+        for (int i = 1; i < 9; i++) {
+            if (lista[i] > lista[i+1] && lista[i] < lista[i - 1]) {
+                creciente = false;
+            } else if (lista[i] > lista[i - 1] && lista[i] < lista[i+1]) {
+                decreciente = false;
+            } else {
+                creciente = false;
+                decreciente = false;
+            }
+        }
+        if (creciente == false && decreciente == false) {
+            System.out.println("Estan desordenados");
+        } else if (decreciente == false) {
+            System.out.println("Estan ordenados de forma creciente");
+        } else if (creciente == false) {
+            System.out.println("Estan ordenados de forma decreciente");
+        }
     }
 
     public static void ejercicio8(Scanner sc) {
