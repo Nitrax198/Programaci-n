@@ -209,9 +209,7 @@ public class JavaEjerciciosDel1Al17 {
 
     public static void ejercicio6(Scanner sc) {
         //definir variables
-        int contador1, contador2,multiploDe3,multiploDe3S;
-        multiploDe3=3;
-        multiploDe3S=6;
+        int contador1, contador2;
         contador1 = 0;
         contador2 = 0;
         // hacer las dos tablas en dos arrays
@@ -228,17 +226,14 @@ public class JavaEjerciciosDel1Al17 {
         int[]tabla3 = new int[24];
         //introducir los valores de los dos primeros arrays en el tercero de 3 en 3
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < multiploDe3; j++) {
-                tabla3[multiploDe3] =tabla1[contador1];
-                contador1++;
+            for (int j = 0; j < 3; j++) {
+                tabla3[j]=tabla1[j];
             }
-            multiploDe3=+6;
-            for (int k = 3; k < multiploDe3S; k++) {
-                tabla3[multiploDe3S]=tabla2[contador2];
-                contador2++;
+            for (int j = 0; j < 3; j++) {
+                
             }
-            multiploDe3S=+6;
         }
+       
     }
 
     public static void ejercicio7(Scanner sc) {
