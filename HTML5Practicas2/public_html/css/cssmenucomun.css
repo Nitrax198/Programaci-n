@@ -22,13 +22,13 @@ li {
 
 li a {
     display: block;
-    color: yellow;
+    color: red;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 li a.active{
-    background-color: green;
+    background-color: background;
 }
 li a:hover {
     background-color: darkred;
