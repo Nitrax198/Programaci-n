@@ -1,0 +1,8 @@
+{
+    "name": "Block_inline_float_etc",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "daw",
+    "contributors": [],
+    "dependencies": {}
+}
