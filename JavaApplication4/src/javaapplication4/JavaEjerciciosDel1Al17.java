@@ -256,9 +256,9 @@ public class JavaEjerciciosDel1Al17 {
             lista[i] = sc.nextInt();
         }
         for (int i = 1; i < 9; i++) {
-            if (lista[i] > lista[i+1] && lista[i] < lista[i - 1]) {
+            if (lista[i] > lista[i + 1] && lista[i] < lista[i - 1]) {
                 creciente = false;
-            } else if (lista[i] > lista[i - 1] && lista[i] < lista[i+1]) {
+            } else if (lista[i] > lista[i - 1] && lista[i] < lista[i + 1]) {
                 decreciente = false;
             } else {
                 creciente = false;
@@ -275,11 +275,51 @@ public class JavaEjerciciosDel1Al17 {
     }
 
     public static void ejercicio8(Scanner sc) {
-
+        //definir variables
+        int numero, posicion ;
+        //definir Array de 10 numeros
+        int[] numerosEnteros = new int[10];
+        //introducir 8 numeros en el Array
+        for (int i = 0; i < 8; i++) {
+            System.out.println("Escribe un numero");
+            numerosEnteros[i] = sc.nextInt();
+            System.out.println(numerosEnteros[i]);
+        }
+        //pedir numero y posición
+        System.out.println("Escribe un numero para introducir");
+        numero = sc.nextInt();
+        System.out.println("Y una posición del 1 al 10");
+        posicion = sc.nextInt();
+        //introducir numero en la posicion dada
+        for (int i = 0; i < 9-posicion; i++) {
+            numerosEnteros[9-i]=numerosEnteros[8-i];
+        }
+        numerosEnteros[posicion]=numero;
+        //hacer que retrocedan todos los demás
+        for (int i = 0; i < 10; i++) {
+            System.out.println(numerosEnteros[i]);
+        }
     }
 
     public static void ejercicio9(Scanner sc) {
-
+        //declarar variables
+        int cambio;
+        //crear Array de 10 numeros
+        int[]tabla =new int[10];
+        //introducir valores en el Array
+        for (int i = 0; i < tabla.length; i++) {
+            System.out.println("Escribe un numero");
+            tabla[i] = sc.nextInt();
+        }
+        //recorrer Array e ir cambiando los numeros una posición mas abajo y poner el primero el ultimo
+            for (int i = 0; i < 9; i++) {
+            cambio = tabla[i];
+            tabla[i]=tabla[i+1];
+            tabla[i+1]=cambio;
+        }
+            for (int i = 0; i < 10; i++) {
+            System.out.println(tabla[i]);
+        }
     }
 
     public static void ejercicio10(Scanner sc) {
