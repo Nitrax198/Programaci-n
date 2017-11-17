@@ -276,7 +276,7 @@ public class JavaEjerciciosDel1Al17 {
 
     public static void ejercicio8(Scanner sc) {
         //definir variables
-        int numero, posicion ;
+        int numero, posicion;
         //definir Array de 10 numeros
         int[] numerosEnteros = new int[10];
         //introducir 8 numeros en el Array
@@ -291,10 +291,10 @@ public class JavaEjerciciosDel1Al17 {
         System.out.println("Y una posición del 1 al 10");
         posicion = sc.nextInt();
         //introducir numero en la posicion dada
-        for (int i = 0; i < 9-posicion; i++) {
-            numerosEnteros[9-i]=numerosEnteros[8-i];
+        for (int i = 0; i < 9 - posicion; i++) {
+            numerosEnteros[9 - i] = numerosEnteros[8 - i];
         }
-        numerosEnteros[posicion]=numero;
+        numerosEnteros[posicion] = numero;
         //hacer que retrocedan todos los demás
         for (int i = 0; i < 10; i++) {
             System.out.println(numerosEnteros[i]);
@@ -305,33 +305,81 @@ public class JavaEjerciciosDel1Al17 {
         //declarar variables
         int cambio;
         //crear Array de 10 numeros
-        int[]tabla =new int[10];
+        int[] tabla = new int[10];
         //introducir valores en el Array
         for (int i = 0; i < tabla.length; i++) {
             System.out.println("Escribe un numero");
             tabla[i] = sc.nextInt();
         }
         //recorrer Array e ir cambiando los numeros una posición mas abajo y poner el primero el ultimo
-            for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) {
             cambio = tabla[i];
-            tabla[i]=tabla[i+1];
-            tabla[i+1]=cambio;
+            tabla[i] = tabla[i + 1];
+            tabla[i + 1] = cambio;
         }
-            for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println(tabla[i]);
         }
     }
 
     public static void ejercicio10(Scanner sc) {
-
+        //declarar variables
+        int cambio, numeroDeDesplazos;
+        //crear Array de 10 numeros
+        int[] tabla = new int[10];
+        //introducir valores en el Array
+        for (int i = 0; i < tabla.length; i++) {
+            System.out.println("Escribe un numero");
+            tabla[i] = sc.nextInt();
+        }
+        //saber cuantas veces se desplazan los numeros
+        System.out.println("Escribe cuantas veces quieres que se desplacen los numeros");
+        numeroDeDesplazos = sc.nextInt();
+        //recorrer Array e ir cambiando los numeros una posición mas abajo y poner el primero el ultimo
+        for (int j = 0; j < numeroDeDesplazos; j++) {
+            for (int i = 0; i < 9; i++) {
+                cambio = tabla[i];
+                tabla[i] = tabla[i + 1];
+                tabla[i + 1] = cambio;
+            }
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(tabla[i]);
+        }
     }
 
     public static void ejercicio11(Scanner sc) {
-
+        //declarar variables
+        int numeroN, contador;
+        contador = 0;
+        //hacer Array de 10 numeros  e introducir 5
+        int[] tabla = new int[10];
+        System.out.println("Escribe cinco numeros de forma creciente");
+        for (int i = 0; i < 5; i++) {
+            tabla[i] = sc.nextInt();
+        }
+        //pedir numero n
+        System.out.println("Escribe un numero del 1 al 10");
+        numeroN = sc.nextInt();
+        //recorrer Array e introducir numero donde correrponda
+        for (int j = 0; tabla[j] < numeroN && j < 5; j++) {
+            contador++;
+        }
+        for (int i = 0; i < 6-contador; i++) {
+            tabla[6-i]=tabla[5-i];
+        }
+        tabla [contador]=numeroN;
+        for (int i = 0; i < tabla.length; i++) {
+            System.out.println(tabla[i]);
+        }
     }
 
     public static void ejercicio12(Scanner sc) {
-
+        //hacer Array de 10 numeros
+        
+        //introducir los 10 numeros en el Array
+        //leer pesición y eliminarla
+        //mover los demas numeros acorde
     }
 
     public static void ejercicio13(Scanner sc) {
