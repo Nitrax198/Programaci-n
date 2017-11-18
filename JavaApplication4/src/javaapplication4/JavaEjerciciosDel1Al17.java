@@ -5,7 +5,9 @@
  */
 package javaapplication4;
 
+import java.util.Random;
 import java.util.Scanner;
+import static javaapplication4.barajade10cartas.barajarArray;
 
 /**
  *
@@ -365,33 +367,135 @@ public class JavaEjerciciosDel1Al17 {
         for (int j = 0; tabla[j] < numeroN && j < 5; j++) {
             contador++;
         }
-        for (int i = 0; i < 6-contador; i++) {
-            tabla[6-i]=tabla[5-i];
+        for (int i = 0; i < 6 - contador; i++) {
+            tabla[6 - i] = tabla[5 - i];
         }
-        tabla [contador]=numeroN;
+        tabla[contador] = numeroN;
         for (int i = 0; i < tabla.length; i++) {
             System.out.println(tabla[i]);
         }
     }
 
     public static void ejercicio12(Scanner sc) {
+        //declarar variables
+        int posicion;
         //hacer Array de 10 numeros
-        
+        int[] tabla = new int[10];
         //introducir los 10 numeros en el Array
-        //leer pesición y eliminarla
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Escribe un numero");
+            tabla[i] = sc.nextInt();
+        }
+        //leer posición y eliminarla
+        System.out.println("Escribe una posicion entre 0 y 9");
+        posicion= sc.nextInt();
+        tabla[posicion]=0;
         //mover los demas numeros acorde
+        for (int i = 0; i < 9-posicion; i++) {
+            tabla[posicion+i]=tabla[(posicion+1)+i];
+        }
+        for (int i = 0; i < 9; i++) {
+            System.out.println(tabla[i]);
+        }
     }
 
     public static void ejercicio13(Scanner sc) {
-
+        // declarar variables
+        int contadorPares, contadorImpares, indicePares, indiceImpares, numeroImpares, numeroPares;
+        numeroImpares = 0;
+        numeroPares = 0;
+        indicePares = 0;
+        indiceImpares = 0;
+        contadorPares = 0;
+        contadorImpares = 0;
+        //hacer array de 10 numeros enteros
+        int[] tabla = new int[10];
+        for (int i = 0; i < tabla.length; i++) {
+            System.out.println("Escribe un numero entero");
+            tabla[i] = sc.nextInt();
+        }
+        //recorrer array utilizando contadores para saber cunatos numero pares e imapres hay
+        for (int i = 0; i < tabla.length; i++) {
+            if (tabla[i] % 2 == 0) {
+                contadorPares++;
+            } else if (tabla[i] % 2 != 0) {
+                contadorImpares++;
+            }
+        }
+        //hacer un segundo y un tercer array
+        int[] tablaPares = new int[contadorPares];
+        int[] tablaImpares = new int[contadorImpares];
+        //Ejercicio opción uno
+        //introducir numeros en el segundo array
+        for (int i = 0; i < tabla.length; i++) {
+            if (tabla[i] % 2 == 0) {
+                tablaPares[indicePares] = tabla[i];
+                indicePares++;
+            } else if (tabla[i] % 2 != 0) {
+                tablaImpares[indiceImpares] = tabla[i];
+                indiceImpares++;
+            }
+        }
+        for (int i = 0; i < tablaPares.length; i++) {
+            System.out.println(tablaPares[i]);
+        }
+        for (int i = 0; i < tablaImpares.length; i++) {
+            System.out.println(tablaImpares[i]);
+        }
+        //Ejercicio opción dos
+        //introducir indices en el segundo y tercer array
+        for (int i = 0; i < tabla.length; i++) {
+            if (tabla[i] % 2 == 0) {
+                tablaPares[numeroPares] = i;
+                numeroPares++;
+            } else if (tabla[i] % 2 != 0) {
+                tablaImpares[numeroImpares] = i;
+                numeroImpares++;
+            }
+        }
+        for (int i = 0; i < tablaPares.length; i++) {
+            System.out.println(tabla[tablaPares[i]]);
+        }
+        for (int i = 0; i < tablaImpares.length; i++) {
+            System.out.println(tabla[tablaImpares[i]]);
+        }
     }
 
     public static void ejercicio14(Scanner sc) {
-
+        //declarar variables
+        //hacer dos array con 10 numeros que esten ordenados crecientemente
+        //hacer un tercer array de 20 espacios
+        //introducir de forma ordenadoa los numeros de los dos arrays anteriores en el tercero
     }
 
     public static void ejercicio15(Scanner sc) {
-
+        //declarar variables
+        int numeroQueBuscar;
+        boolean numeroFueraDeTabla=false;
+        //hacer array de 10 numeros
+        int [] tabla = new int[10];
+        //introducir 10 numeros en el array 
+        for (int i = 0; i < tabla.length; i++) {
+            System.out.println("Escribe un numero");
+            tabla[i]=sc.nextInt();
+        }
+        //pedir un numeroN y buscarlo en el array
+        System.out.println("Ahora introduce un numero de los anteriores para buscarlo");
+        numeroQueBuscar=sc.nextInt();
+        for (int i = 0; i < tabla.length; i++) {
+            if (numeroQueBuscar == tabla[i]) {
+                System.out.println("Bien, has encontrado el numero");
+                System.out.println(i);
+                numeroFueraDeTabla=true;
+            }
+            else{
+                System.out.println("Buscando el numero, por favor permanezca con nosotros...");
+            }
+        }
+        //escribir la posicion en la que esta(i) y la tabla, si ni esta poner un mensage
+        if(numeroFueraDeTabla==false){
+            System.out.println("El numero introducido no es correcto por favor intentelo de nuevo");
+        }
     }
 
     public static void ejercicio16(Scanner sc) {
@@ -399,6 +503,64 @@ public class JavaEjerciciosDel1Al17 {
     }
 
     public static void ejercicio17(Scanner sc) {
+          int carta, carta2;
+        carta = 0;
+        carta2 = 0;
+        int puntos, puntos2;
+        puntos = 0;
+        puntos2 = 0;
+        //inicializa dos array de 10 cartas
+        int[] mazo = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] mazo2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
+        //inicializa una array de 10 cartas
+        //barajea los mazos
+        barajarArray(mazo);
+        barajarArray(mazo2);
+
+        for (int i = 0; i < mazo.length; i++) {
+            System.out.println(mazo[i]);
+        }
+
+        //ir sacando una a una las cartas y comparandolas a ver quien gana
+        for (int i = 0; i < mazo.length; i++) {
+            carta = mazo[i];
+            System.out.println("la carta es " + carta);
+            carta2 = mazo2[i];
+            System.out.println("la carta es " + carta2);
+            if (carta > carta2) {
+            puntos++;
+        }
+        else if(carta2>carta){
+            puntos2++;
+        }
+        else {
+            System.out.println("Habeis empatado");
+        }
+        }
+        //sacar el ganador.
+        if(puntos>puntos2){
+            System.out.println("Ha ganado el jugador uno");
+        }
+        else if (puntos2>puntos){
+            System.out.println("has ganado jugador 2");
+        }
+        else {
+            System.out.println("habeis empatado");
+        }
+    }
+    public static void barajarArray(int[] array) {
+        Random generadorNumerosAleatorios = new Random();
+        int posicion;
+        int posicion2;
+        int swap;
+
+        for (int i = 0; i < 20; i++) {
+            posicion = generadorNumerosAleatorios.nextInt(array.length);
+            posicion2 = generadorNumerosAleatorios.nextInt(array.length);
+            swap = array[posicion];
+            array[posicion] = array[posicion2];
+            array[posicion2] = swap;
+        }
     }
 }
