@@ -531,7 +531,38 @@ public class JavaEjerciciosDel1Al17 {
     }
 
     public static void ejercicio16(Scanner sc) {
-
+        //definir variables
+        int media1, media2, media3, n, mediaAlumno;
+        media1 = 0;
+        media2 = 0;
+        media3 = 0;
+        //hacer arrays
+        int[] trimestre1 = new int[5];
+        int[] trimestre2 = new int[5];
+        int[] trimestre3 = new int[5];
+        //introducir valores en el array e ir calculando la suma para las medias
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Escribe las notas de la primera EV");
+            trimestre1[i]=sc.nextInt();
+            media1+=trimestre1[i];
+        }
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Escribe las notas de la segunda EV");
+            trimestre2[i]=sc.nextInt();
+            media2+=trimestre2[i];
+        }
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Escribe las notas de la tercera EV");
+            trimestre3[i]=sc.nextInt();
+            media3+=trimestre3[i];
+        }
+        System.out.println("la media de la primera EV es: "+media1/5);
+        System.out.println("la media de la segunda EV es: "+media2/5);
+        System.out.println("la media de la tercera EV es: "+media3/5);
+        System.out.println("Ahora escribe un nimero para elegir un alumno");
+        n =sc.nextInt();
+        mediaAlumno=trimestre1[n]+trimestre2[n]+trimestre3[n];
+        System.out.println(mediaAlumno/5+" es la mdeia del alumno elegido");
     }
 
     public static void ejercicio17(Scanner sc) {
