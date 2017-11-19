@@ -388,11 +388,11 @@ public class JavaEjerciciosDel1Al17 {
         }
         //leer posición y eliminarla
         System.out.println("Escribe una posicion entre 0 y 9");
-        posicion= sc.nextInt();
-        tabla[posicion]=0;
+        posicion = sc.nextInt();
+        tabla[posicion] = 0;
         //mover los demas numeros acorde
-        for (int i = 0; i < 9-posicion; i++) {
-            tabla[posicion+i]=tabla[(posicion+1)+i];
+        for (int i = 0; i < 9 - posicion; i++) {
+            tabla[posicion + i] = tabla[(posicion + 1) + i];
         }
         for (int i = 0; i < 9; i++) {
             System.out.println(tabla[i]);
@@ -463,37 +463,69 @@ public class JavaEjerciciosDel1Al17 {
 
     public static void ejercicio14(Scanner sc) {
         //declarar variables
+        int contador1, contador2;
+        contador1 = 0;
+        contador2 = 0;
         //hacer dos array con 10 numeros que esten ordenados crecientemente
+        int[] tabla = new int[10];
+        int[] tabla2 = new int[10];
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Escribe un numero,de forma creciente, para la primera tabla");
+            tabla[i] = sc.nextInt();
+            System.out.println("Escribe un numero,de forma creciente, para la segunda tabla");
+            tabla2[i] = sc.nextInt();
+        }
         //hacer un tercer array de 20 espacios
+        int[] tabla3 = new int[20];
         //introducir de forma ordenadoa los numeros de los dos arrays anteriores en el tercero
+        for (int i = 0; i < 19; i++) {
+            if ((contador1<=9)&&(tabla[contador1] < tabla2[contador2])) {
+                tabla3[i] = tabla[contador1];
+                contador1++;
+            } else if ((contador2<=9)&&(tabla2[contador2] < tabla[contador1])) {
+                tabla3[i] = tabla2[contador2];
+                contador2++;
+            } else {
+                System.out.println("los numeros son iguales");
+            }
+            
+        }
+        if (tabla[9] < tabla2[9]) {
+                tabla3[19] = tabla2[9];
+           } else  {
+                tabla3[19] = tabla2[9];
+            }
+         
+        for (int i = 0; i < 20; i++) {
+            System.out.println(tabla3[i]);
+        }
     }
 
     public static void ejercicio15(Scanner sc) {
         //declarar variables
         int numeroQueBuscar;
-        boolean numeroFueraDeTabla=false;
+        boolean numeroFueraDeTabla = false;
         //hacer array de 10 numeros
-        int [] tabla = new int[10];
+        int[] tabla = new int[10];
         //introducir 10 numeros en el array 
         for (int i = 0; i < tabla.length; i++) {
             System.out.println("Escribe un numero");
-            tabla[i]=sc.nextInt();
+            tabla[i] = sc.nextInt();
         }
         //pedir un numeroN y buscarlo en el array
         System.out.println("Ahora introduce un numero de los anteriores para buscarlo");
-        numeroQueBuscar=sc.nextInt();
+        numeroQueBuscar = sc.nextInt();
         for (int i = 0; i < tabla.length; i++) {
             if (numeroQueBuscar == tabla[i]) {
                 System.out.println("Bien, has encontrado el numero");
                 System.out.println(i);
-                numeroFueraDeTabla=true;
-            }
-            else{
+                numeroFueraDeTabla = true;
+            } else {
                 System.out.println("Buscando el numero, por favor permanezca con nosotros...");
             }
         }
         //escribir la posicion en la que esta(i) y la tabla, si ni esta poner un mensage
-        if(numeroFueraDeTabla==false){
+        if (numeroFueraDeTabla == false) {
             System.out.println("El numero introducido no es correcto por favor intentelo de nuevo");
         }
     }
@@ -503,7 +535,7 @@ public class JavaEjerciciosDel1Al17 {
     }
 
     public static void ejercicio17(Scanner sc) {
-          int carta, carta2;
+        int carta, carta2;
         carta = 0;
         carta2 = 0;
         int puntos, puntos2;
@@ -529,26 +561,23 @@ public class JavaEjerciciosDel1Al17 {
             carta2 = mazo2[i];
             System.out.println("la carta es " + carta2);
             if (carta > carta2) {
-            puntos++;
-        }
-        else if(carta2>carta){
-            puntos2++;
-        }
-        else {
-            System.out.println("Habeis empatado");
-        }
+                puntos++;
+            } else if (carta2 > carta) {
+                puntos2++;
+            } else {
+                System.out.println("Habeis empatado");
+            }
         }
         //sacar el ganador.
-        if(puntos>puntos2){
+        if (puntos > puntos2) {
             System.out.println("Ha ganado el jugador uno");
-        }
-        else if (puntos2>puntos){
+        } else if (puntos2 > puntos) {
             System.out.println("has ganado jugador 2");
-        }
-        else {
+        } else {
             System.out.println("habeis empatado");
         }
     }
+
     public static void barajarArray(int[] array) {
         Random generadorNumerosAleatorios = new Random();
         int posicion;
