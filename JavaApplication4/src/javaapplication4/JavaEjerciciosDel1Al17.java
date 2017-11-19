@@ -479,23 +479,23 @@ public class JavaEjerciciosDel1Al17 {
         int[] tabla3 = new int[20];
         //introducir de forma ordenadoa los numeros de los dos arrays anteriores en el tercero
         for (int i = 0; i < 19; i++) {
-            if ((contador1<=9)&&(tabla[contador1] < tabla2[contador2])) {
+            if ((contador1 <= 9) && (tabla[contador1] < tabla2[contador2])) {
                 tabla3[i] = tabla[contador1];
                 contador1++;
-            } else if ((contador2<=9)&&(tabla2[contador2] < tabla[contador1])) {
+            } else if ((contador2 <= 9) && (tabla2[contador2] < tabla[contador1])) {
                 tabla3[i] = tabla2[contador2];
                 contador2++;
             } else {
                 System.out.println("los numeros son iguales");
             }
-            
+
         }
         if (tabla[9] < tabla2[9]) {
-                tabla3[19] = tabla2[9];
-           } else  {
-                tabla3[19] = tabla2[9];
-            }
-         
+            tabla3[19] = tabla2[9];
+        } else {
+            tabla3[19] = tabla[9];
+        }
+
         for (int i = 0; i < 20; i++) {
             System.out.println(tabla3[i]);
         }
