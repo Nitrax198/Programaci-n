@@ -18,8 +18,25 @@ body{
 .Sinopsis{
     border : solid 2px grey;
     background-color: grey;
+    margin: 25px;
 }
 .TextoSinopsis{
     border: solid 2px grey;
     background-color: darkcyan;
+}
+.MomentosImportantes{
+     border : solid 5px darkslategray;
+    background-color: darkslategray;
+    margin: 25px;
+    
+}
+.InteriorMomentos{
+    border: solid 5px darkslategray;
+    background-color: grey;
+}
+.Imagen1{
+
+}
+.Imagen1{
+    
 }
