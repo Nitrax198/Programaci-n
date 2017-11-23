@@ -76,7 +76,7 @@ public class JavaSieteYMedia {
         }
         System.out.println(sumaOrdenador);
         do {
-            if (sumaOrdenador < suma) {
+            if (sumaOrdenador < suma&&sumaOrdenador<7.5) {
                 if (baraja[contadorCartas] == 8 || baraja[contadorCartas] == 9 || baraja[contadorCartas] == 10) {
                     sumaOrdenador += 0.5;
                     contadorCartas++;
