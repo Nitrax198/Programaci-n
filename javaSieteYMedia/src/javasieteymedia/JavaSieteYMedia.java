@@ -23,6 +23,8 @@ public class JavaSieteYMedia {
         //definir variables
         boolean pedir = true, seguirOrdenador = true;
         double suma, sumaOrdenador;
+        sumaOrdenador = 0;
+        suma = 0;
         int contador1, respuesta, contadorCartas;
         contadorCartas = 2;
         contador1 = 0;
@@ -38,7 +40,12 @@ public class JavaSieteYMedia {
         barajarArray(baraja);
         //dar carta al usuario
         System.out.println(baraja[0]);
-        suma = baraja[0];
+        if (baraja[0] == 8 || baraja[0] == 9 || baraja[0] == 10) {
+            suma += 0.5;
+        } else {
+            suma = baraja[0];
+        }
+        System.out.println(suma);
         //preguntar si quiere mas
         do {
             System.out.println("¿Quieres mas? pon 0 para no y uno para si");
@@ -62,14 +69,19 @@ public class JavaSieteYMedia {
         } while (pedir == true);
         //si no quiere mas repetir todo con el ordenador
         System.out.println(baraja[1]);
-        sumaOrdenador = baraja[1];
+        if (baraja[1] == 8 || baraja[1] == 9 || baraja[1] == 10) {
+            sumaOrdenador += 0.5;
+        } else {
+            sumaOrdenador = baraja[1];
+        }
+        System.out.println(sumaOrdenador);
         do {
-            if (baraja[1] <= 6&&suma<7.5) {
+            if (sumaOrdenador < suma) {
                 if (baraja[contadorCartas] == 8 || baraja[contadorCartas] == 9 || baraja[contadorCartas] == 10) {
                     sumaOrdenador += 0.5;
                     contadorCartas++;
                     System.out.println(sumaOrdenador);
-                } else if (baraja[1] < 6) {
+                } else {
                     sumaOrdenador += baraja[contadorCartas];
                     contadorCartas++;
                     System.out.println(sumaOrdenador);
@@ -88,8 +100,10 @@ public class JavaSieteYMedia {
             } else {
                 System.out.println("Ha ganado la maquina,Manco");
             }
-        } else if (suma>7.5&&sumaOrdenador<7.5) {
+        } else if (suma > 7.5 && sumaOrdenador < 7.5) {
             System.out.println("Ha ganado la maquina,Manco");
+        } else {
+            System.out.println("Ha ganado la maquina");
         }
         System.out.println(suma);
         System.out.println(sumaOrdenador);
