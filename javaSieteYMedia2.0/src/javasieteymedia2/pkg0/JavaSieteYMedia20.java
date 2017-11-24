@@ -22,8 +22,8 @@ public class JavaSieteYMedia20 {
         Scanner sc = new Scanner(System.in);
         //definir variables
         boolean pedir = true, seguirOrdenador = true;
-        double suma, sumaOrdenador;
-        sumaOrdenador = 0;
+        double suma, sumaIA;
+        sumaIA = 0;
         suma = 0;
         int contador1, respuesta, contadorCartas;
         contadorCartas = 0;
@@ -43,57 +43,53 @@ public class JavaSieteYMedia20 {
         //preguntar si quiere mas
         do {
             if (baraja[contadorCartas] == 8 || baraja[contadorCartas] == 9 || baraja[contadorCartas] == 10) {
-                System.out.println("tu nueva carta es" + baraja[contadorCartas]);
+                System.out.println("tu carta es " + baraja[contadorCartas]);
                 suma += 0.5;
-                System.out.println("ahora tienes un total de" + suma);
+                System.out.println("tienes un total de " + suma);
             } else {
-                System.out.println("tu nueva carta es" + baraja[contadorCartas]);
+                System.out.println("tu nueva carta es " + baraja[contadorCartas]);
                 suma = baraja[contadorCartas];
-                System.out.println("ahora tienes un total de" + suma);
+                System.out.println("ahora tienes un total de " + suma);
             }
             contadorCartas++;
+            System.out.println("¿quieres otra carta?si quieres otra pon1 si no pon 0");
+            respuesta = sc.nextInt();
             //si quierer mas ir sumando cartas dadadas
         } while (respuesta == 1 && suma >= 7.5);
         //si no quiere mas repetir todo con el ordenador
-        System.out.println("ta carta de la IA es" + baraja[1]);
-        if (baraja[1] == 8 || baraja[1] == 9 || baraja[1] == 10) {
-            sumaOrdenador += 0.5;
-        } else {
-            sumaOrdenador = baraja[1];
-        }
-        System.out.println("El total actual de la IA es" + sumaOrdenador);
+
         do {
-            if (sumaOrdenador < suma && sumaOrdenador < 7.5) {
+            if (sumaIA < suma && sumaIA < 7.5) {
                 if (baraja[contadorCartas] == 8 || baraja[contadorCartas] == 9 || baraja[contadorCartas] == 10) {
-                    sumaOrdenador += 0.5;
+                    sumaIA += 0.5;
                     contadorCartas++;
-                    System.out.println("el nuevo total es" + sumaOrdenador);
+                    System.out.println("el nuevo total es" + sumaIA);
                 } else {
-                    sumaOrdenador += baraja[contadorCartas];
+                    sumaIA += baraja[contadorCartas];
                     contadorCartas++;
-                    System.out.println("el nuevo total es" + sumaOrdenador);
+                    System.out.println("el nuevo total es" + sumaIA);
                 }
             } else {
                 seguirOrdenador = false;
             }
-        } while (seguirOrdenador);
+        } while (seguirOrdenador && suma < 7.5);
         //comparar a ver quien ha ganado
 
-        if (suma < 7.5 && sumaOrdenador > 7.5) {
+        if (suma < 7.5 && sumaIA > 7.5) {
             System.out.println("Ha ganado el usuario felicidades");
-        } else if (suma < 7.5 && sumaOrdenador < 7.5) {
-            if (suma < sumaOrdenador) {
+        } else if (suma < 7.5 && sumaIA < 7.5) {
+            if (suma < sumaIA) {
                 System.out.println("Ha ganado el usuario felicidades");
             } else {
                 System.out.println("Ha ganado la maquina,Manco");
             }
-        } else if (suma > 7.5 && sumaOrdenador < 7.5) {
+        } else if (suma > 7.5 && sumaIA < 7.5) {
             System.out.println("Ha ganado la maquina,Manco");
         } else {
             System.out.println("Ha ganado la maquina");
         }
         System.out.println(suma);
-        System.out.println(sumaOrdenador);
+        System.out.println(sumaIA);
     }
 
     public static void barajarArray(int[] array) {
