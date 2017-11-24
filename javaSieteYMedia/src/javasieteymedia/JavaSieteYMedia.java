@@ -31,7 +31,7 @@ public class JavaSieteYMedia {
         //hacer un array de 40 espacios que vaya de 10 en 10
         int[] baraja = new int[40];
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 10; j++) {
+            for (int j = 1; j < 11; j++) {
                 baraja[contador1] = j;
                 contador1++;
             }
@@ -39,7 +39,7 @@ public class JavaSieteYMedia {
         //barajar las cartas
         barajarArray(baraja);
         //dar carta al usuario
-        System.out.println(baraja[0]);
+        System.out.println("tu carta es"+baraja[0]);
         if (baraja[0] == 8 || baraja[0] == 9 || baraja[0] == 10) {
             suma += 0.5;
         } else {
@@ -48,6 +48,10 @@ public class JavaSieteYMedia {
         System.out.println(suma);
         //preguntar si quiere mas
         do {
+            if(suma>7.5){
+            pedir=false;
+        }
+        else{
             System.out.println("¿Quieres mas? pon 0 para no y uno para si");
             respuesta = sc.nextInt();
             //si quierer mas ir sumando cartas dadadas
@@ -55,36 +59,37 @@ public class JavaSieteYMedia {
                 if (baraja[contadorCartas] == 8 || baraja[contadorCartas] == 9 || baraja[contadorCartas] == 10) {
                     suma += 0.5;
                     contadorCartas++;
-                    System.out.println(suma);
+                    System.out.println("ahora tienes un total de"+suma);
                 } else {
-                    System.out.println(baraja[contadorCartas]);
+                    System.out.println("tu nueva carta es"+baraja[contadorCartas]);
                     suma += baraja[contadorCartas];
                     contadorCartas++;
-                    System.out.println(suma);
+                    System.out.println("tu nuevo total de cartas es"+suma);
                 }
             } else if (respuesta == 0) {
                 pedir = false;
             }
+            }
 
         } while (pedir == true);
         //si no quiere mas repetir todo con el ordenador
-        System.out.println(baraja[1]);
+        System.out.println("ta carta de la IA es"+baraja[1]);
         if (baraja[1] == 8 || baraja[1] == 9 || baraja[1] == 10) {
             sumaOrdenador += 0.5;
         } else {
             sumaOrdenador = baraja[1];
         }
-        System.out.println(sumaOrdenador);
+        System.out.println("El total actual de la IA es"+sumaOrdenador);
         do {
             if (sumaOrdenador < suma&&sumaOrdenador<7.5) {
                 if (baraja[contadorCartas] == 8 || baraja[contadorCartas] == 9 || baraja[contadorCartas] == 10) {
                     sumaOrdenador += 0.5;
                     contadorCartas++;
-                    System.out.println(sumaOrdenador);
+                    System.out.println("el nuevo total es"+sumaOrdenador);
                 } else {
                     sumaOrdenador += baraja[contadorCartas];
                     contadorCartas++;
-                    System.out.println(sumaOrdenador);
+                    System.out.println("el nuevo total es"+sumaOrdenador);
                 }
             } else {
                 seguirOrdenador = false;
