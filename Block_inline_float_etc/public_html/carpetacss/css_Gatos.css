@@ -25,18 +25,30 @@ body{
     background-color: darkcyan;
 }
 .MomentosImportantes{
-     border : solid 5px darkslategray;
+    border : solid 5px darkslategray;
     background-color: darkslategray;
     margin: 25px;
-    
 }
 .InteriorMomentos{
     border: solid 5px darkslategray;
     background-color: grey;
 }
 .Imagen1{
-
+    float: left;
+    width: 150px;
+    height: 150px;
+    border: solid 5px white;
+    padding: 5px;
 }
-.Imagen1{
-    
+.Imagen2{
+    float: right;
+    width: 150px;
+    height: 150px;
+    border: solid 5px white;
+    padding: 5px;
+}
+.TextoCentrado{
+    text-align: center; 
+    margin-left: 300px;
+    margin-right: 300px;
 }
