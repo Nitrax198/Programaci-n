@@ -152,7 +152,7 @@ public class JavaExamenCasa {
             tabla1[contador0KIllS] = i + 1;
             tabla2[contador0KIllS] = i + 2;
             tabla3[contador0KIllS] = i + 3;
-            i=i+2;
+            i = i + 2;
             contador0KIllS++;
         }
         //hacer un tercer array de 20 espacios
@@ -163,58 +163,52 @@ public class JavaExamenCasa {
                 if (tabla2[contador2] > tabla3[contador3]) {
                     tabla4[i] = tabla3[contador3];
                     contador3++;
-                } 
-                else {
+                } else {
                     tabla4[i] = tabla2[contador2];
                     contador2++;
                 }
-            } 
-            else if (tabla2[contador2] > tabla1[contador1] && tabla2[contador2] > tabla3[contador3]) {
+            } else if (tabla2[contador2] > tabla1[contador1] && tabla2[contador2] > tabla3[contador3]) {
                 if (tabla1[contador1] > tabla3[contador3]) {
                     tabla4[i] = tabla3[contador3];
                     contador3++;
-                } 
-                else {
+                } else {
                     tabla4[i] = tabla1[contador1];
                     contador1++;
                 }
-            }
-            else if (tabla3[contador3] > tabla1[contador1] && tabla3[contador3] > tabla2[contador2]) {
+            } else if (tabla3[contador3] > tabla1[contador1] && tabla3[contador3] > tabla2[contador2]) {
                 if (tabla1[contador1] > tabla2[contador2]) {
                     tabla4[i] = tabla2[contador2];
                     contador2++;
-                } 
-                else {
+                } else {
                     tabla4[i] = tabla1[contador1];
                     contador1++;
                 }
-            }
-            else{
+            } else {
                 System.out.println("Los numeros son iguales");
             }
 
         }
-        if (tabla2[9] > tabla1[9]&&tabla2[9]>tabla3[9]) {
+        if (tabla2[9] > tabla1[9] && tabla2[9] > tabla3[9]) {
             tabla4[29] = tabla2[9];
-        } else if (tabla1[9]>tabla2[9]&&tabla1[9]>tabla3[9]) {
+        } else if (tabla1[9] > tabla2[9] && tabla1[9] > tabla3[9]) {
             tabla4[29] = tabla1[9];
-        }else if (tabla3[9]>tabla2[9]&&tabla3[9]>tabla1[9]) {
+        } else if (tabla3[9] > tabla2[9] && tabla3[9] > tabla1[9]) {
             tabla4[29] = tabla3[9];
         }
-        if (tabla2[9] > tabla1[9]&&tabla2[9]>tabla3[9]) {
-            if (tabla1[9]>tabla3[9]) {
+        if (tabla2[9] > tabla1[9] && tabla2[9] > tabla3[9]) {
+            if (tabla1[9] > tabla3[9]) {
                 tabla4[28] = tabla1[9];
             } else {
                 tabla4[28] = tabla3[9];
             }
-        } else if (tabla1[9]>tabla2[9]&&tabla1[9]>tabla3[9]) {
-            if (tabla2[9]>tabla3[9]) {
+        } else if (tabla1[9] > tabla2[9] && tabla1[9] > tabla3[9]) {
+            if (tabla2[9] > tabla3[9]) {
                 tabla4[28] = tabla2[9];
             } else {
                 tabla4[28] = tabla3[9];
             }
-        }else if (tabla3[9]>tabla2[9]&&tabla3[9]>tabla1[9]) {
-            if (tabla1[9]>tabla2[9]) {
+        } else if (tabla3[9] > tabla2[9] && tabla3[9] > tabla1[9]) {
+            if (tabla1[9] > tabla2[9]) {
                 tabla4[28] = tabla1[9];
             } else {
                 tabla4[28] = tabla2[9];
@@ -227,11 +221,68 @@ public class JavaExamenCasa {
     }
 
     public static void ejercicio5(Scanner sc) {
-
+        //definir variables
+        int contadorCartas, contadorPosiciones;
+        contadorPosiciones = 0;
+        contadorCartas = 0;
+        //definir arrays
+        int array[] = new int[10];
+        int baraja[] = new int[40];
+        // rellenar array
+        for (int i = 0; i < 4; i++) {
+            for (int j = 1; j < 11; j++) {
+                baraja[contadorCartas] = j;
+                contadorCartas++;
+            }
+        }
+        //barajar
+        barajarArray(baraja);
+        //recorrer array buscando los primeros numeros
+        for (int i = 39; i > 0; i--) {
+            if (baraja[contadorPosiciones] >= 1 && baraja[contadorPosiciones] <= 10) {
+                array[baraja[contadorPosiciones] - 1] = contadorPosiciones;
+                contadorPosiciones++;
+            }
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(array[i]);
+        }
     }
 
     public static void ejercicio6(Scanner sc) {
-
+        //declarar variables
+        int operacion;
+        operacion = 0;
+        //declarar arrays
+        int array[] = new int[10];
+        int array2[] = new int[9];
+        //llenar array
+        for (int i = 0; i < 10; i++) {
+            array[i] = i;
+        }
+        for (int i = 0; i < 9; i++) {
+            System.out.println("Escribe un numero entre el 1 y el 4");
+            array2[i] = sc.nextInt();
+        }
+        //recorrer array es ir comparando
+        for (int i = 0; i < 9; i++) {
+            if (array2[i] == 1) {
+                operacion += array[i] + array[i + 1];
+            } else if (array2[i] == 2) {
+                operacion += array[i] - array[i + 1];
+            } else if (array2[i] == 3) {
+                operacion += array[i] * array[i + 1];
+            } else if (array2[i] == 4) {
+                operacion += array[i] / array[i + 1];
+            } else {
+                System.out.println("Error, la operación no se puede realizar");
+            }
+        }
+        //mostrar resultado
+        for (int i = 0; i < 10; i++) {
+            System.out.println(array[i]);
+        }
+        System.out.println(operacion);
     }
 
     public static void barajarArray(int[] array) {
