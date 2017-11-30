@@ -80,7 +80,31 @@ public class JavaExamenCasa {
     }
 
     public static void ejercicio2(Scanner sc) {
-
+        //declarar variables
+        int suma, contador;
+        contador=1;
+        suma=0;
+        //declarar Array de 15 posiciones
+        int array[] = new int[15];
+        //llenarlo con 10 numeros
+        for (int i = 0; i < 10; i++) {
+            array[i]= i+1;
+        }
+        //recorrerlos de dos en dos
+        for (int i = 0; i < array.length; i++) {
+            suma=array[i]+array[i+1];
+            for (int j = 14; j > contador; j--) {
+                array[j]=array[j-1];
+            }
+            contador=contador+3;
+            array[i+2]=suma;
+            i=i+2;
+        }
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("El array con las sumas es: "+ array[i]);
+        }
+        //desplazar todos los numeros dos posicones
+        //sumar los numeros de dos en dos y poner en la siguente posición las uma
     }
 
     public static void ejercicio3(Scanner sc) {
