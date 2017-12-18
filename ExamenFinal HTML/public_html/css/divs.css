@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14-dic-2017, 10:06:23
+    Author     : daw
+*/
+
+.DivNegro{
+    float:left; 
+    border:black solid 2px;
+    clear: both;
+}
+.Divlink{
+    float: left; 
+    border:black solid 0px;
+    margin-top: 40px;
+    width: 25%;
+}
+.DivAzul{
+    border:blue solid 2px;
+    overflow-y: scroll;
+}
+.DivAzulInterior{
+    border:blue solid 2px;
+    text-align: center;
+    padding: 15px;
+    float: top;
+    /*clear: both;*/
+}
+.DivParaImagen{
+    float: left; 
+}
+.DivRojo1{
+    float: right;
+    border: red solid 2px;
+    clear: right;
+}
+.DivRojo2{
+    float: right;
+    border: red solid 2px;
+}
+.DivRojo3{
+    float: right;
+    margin-top: 200px;
+    border: red solid 2px;
+    clear: both;
+}
+.DivRojo4{
+    float: right;
+    margin-top: 225px;
+    border: red solid 2px;
+    clear: both;
+}
