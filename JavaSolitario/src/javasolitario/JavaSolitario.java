@@ -61,9 +61,10 @@ public class JavaSolitario {
         }
     }
     public static void comprobarAnteriores(int[]arrayBaraja,int[]arrayMazo,int[]arrayPosiciones,int posicion){
-        while (arrayBaraja[posicion-1]==arrayBaraja[posicion]+1) {            
-            arrayMazo[arrayPosiciones[posicion]]=array
-        }
+//        while (arrayBaraja[posicion-1]==arrayBaraja[posicion]+1) {            
+//            arrayMazo[arrayPosiciones[posicion]]=arrayBaraja[posicion-1];
+//            posicion--;
+//        } esta mal(comprovar primero el palo)
     }
 
 }
