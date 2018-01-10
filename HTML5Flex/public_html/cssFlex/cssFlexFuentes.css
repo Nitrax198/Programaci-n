@@ -8,7 +8,19 @@ and open the template in the editor.
     Author     : daw
 */
 
-span{
+.SpanEnCursiva{
     font-style: italic;
     text-decoration: underline;
+}
+.SpanEnNegrita{
+    font-weight: bold;
+}
+.TextoIzquierda{
+    justify-content: flex-start;
+    font-family: 'Joti One', cursive;
+}
+.TextoDerecha{
+    justify-content: flex-end;
+    font-family: 'Sedgwick Ave Display', cursive;
+    text-decoration: white;
 }
