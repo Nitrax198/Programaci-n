@@ -104,17 +104,25 @@ public class TresEnRallaMio {
         return tresEnRaya;
     }
 
-    public static boolean comprobarDiagonal(char[][] tablero, char tipo, int filas, int columnas) {
+    public static boolean comprobarDiagonalIzquierda(char[][] tablero, char tipo, int filas, int columnas) {
         boolean tresEnRaya = true;
-        int contadorColumnas;
-        contadorColumnas = 2;
         for (int i = 0; i < 3 && tresEnRaya; i++) {
             if (tablero[i][i] != tipo) {
                 tresEnRaya = false;
             }
-            if (tablero[i][contadorColumnas] != tipo) {
-                tresEnRaya = false;
-                contadorColumnas--;
+
+        }
+
+        return tresEnRaya;
+    }
+
+    public static boolean comprobarDiagonalDerecha(char[][] tablero, char tipo, int filas, int columnas) {
+        boolean tresEnRaya = true;
+        for (int i = 0; i < 3 && tresEnRaya; i++) {
+            if (i + (2 - i) == 2) {
+                if (tablero[2 - i][i] != tipo) {
+                    tresEnRaya = false;
+                }
             }
         }
 
@@ -125,9 +133,12 @@ public class TresEnRallaMio {
         boolean tresEnRaya = true;
         tresEnRaya = comprobarColumna(tablero, tipo, columnas);
         if (tresEnRaya == false) {
-            tresEnRaya = comprobarDiagonal(tablero, tipo, filas, columnas);
+            tresEnRaya = comprobarDiagonalIzquierda(tablero, tipo, filas, columnas);
             if (tresEnRaya == false) {
                 tresEnRaya = comprobarFila(tablero, tipo, filas);
+                if (tresEnRaya == false) {
+                    tresEnRaya = comprobarDiagonalDerecha(tablero, tipo, filas, columnas);
+                }
             }
         }
         return tresEnRaya;
