@@ -25,8 +25,8 @@ public class JavaSolitario {
         //cuando se quita una carta mover el 0 al final
         //crear array de 4 en el que ir guardando las cartas
         //declaramos las variables
-        int contadorNumeroDeCartasPorTurno;
-        contadorNumeroDeCartasPorTurno=40;
+        int contadorNumeroDeCartasPorTurno, contadorFinal;
+        contadorNumeroDeCartasPorTurno = 40;
         //Declaramos los arrays necesarios
         //0 oros, 1 copas, 2 espadas 3 bastos
         Scanner sc = new Scanner(System.in);
@@ -36,19 +36,46 @@ public class JavaSolitario {
         //Barajamos los arrays
         barajarArray(baraja, palos);
         //sacamos cartas de 2 en 2
-        do {            
-            for (int i = 1; i < (contadorNumeroDeCartasPorTurno/2); i += 2) {
-            System.out.println(baraja[i]);
-            if (baraja[i] == mazos[palos[i]] + 1) {
-                mazos[palos[i]] = baraja[i];
-                baraja[i] = 0;
-                palos[i] = 0;
-                contadorNumeroDeCartasPorTurno--;
-                //utilizamos función para ver si los anteriores también se pueden guardar
-                comprobarAnteriores(baraja, mazos, palos, i,contadorNumeroDeCartasPorTurno);
+//        for (int i = 0; i < 10; i++) {
+//            baraja[i]=10-i;
+//        }
+//        for (int i = 10; i < 20; i++) {
+//            baraja[i]=20-i;
+//        }
+//        for (int i = 20; i < 30; i++) {
+//            baraja[i]=30-i;
+//        }
+//        for (int i = 30; i < 40; i++) {
+//            baraja[i]=40-i;
+//        }
+        do {
+            contadorFinal = 0;
+            for (int i = 1; i < 40 && (baraja[i]!=0 || baraja[i-1]!=0); i += 2) {
+                if (baraja[i] == mazos[palos[i]] + 1) {
+                    mazos[palos[i]] = baraja[i];
+                    baraja[i] = 0;
+                    palos[i] = 0;
+                    contadorNumeroDeCartasPorTurno--;
+                    contadorFinal++;
+                    //utilizamos función para ver si los anteriores también se pueden guardar
+                    comprobarAnteriores(baraja, mazos, palos, i, contadorNumeroDeCartasPorTurno, contadorFinal);
+                }
             }
+            for (int i = 0; i < baraja.length; i++) {
+                System.out.println(baraja[i]);
+            }
+            System.out.println("Estas con las cartas que has conseguido sacar");
+            for (int i = 0; i < mazos.length; i++) {
+                System.out.println(mazos[i]);
+            }
+            quitarCeros(baraja, palos);
+        } while (contadorNumeroDeCartasPorTurno != 0 && contadorFinal != 0);
+        if (contadorFinal==0) {
+            System.out.println("No se ha podido sacar mas cartas");
         }
-        } while (contadorNumeroDeCartasPorTurno > 1);
+        else if (contadorNumeroDeCartasPorTurno==0) {
+            System.out.println("Felicidades, has completado el solitario");
+        }
     }
 
     public static void barajarArray(int[] array, int[] array2) {
@@ -69,21 +96,26 @@ public class JavaSolitario {
         }
     }
 
-    public static void comprobarAnteriores(int[] arrayBaraja, int[] arrayMazo, int[] arrayPalo, int posicion, int contadorNumeroDeCartasPorTurno) {
-        while (arrayMazo[arrayPalo[posicion - 1]] == arrayBaraja[posicion - 1] - 1) {
+    public static void comprobarAnteriores(int[] arrayBaraja, int[] arrayMazo, int[] arrayPalo, int posicion, int contadorNumeroDeCartasPorTurno, int contadorFinal) {
+        while (posicion !=0 && arrayMazo[arrayPalo[posicion - 1]] == arrayBaraja[posicion - 1] - 1) {
             arrayMazo[arrayPalo[posicion - 1]] = arrayBaraja[posicion - 1];
             posicion--;
             arrayPalo[posicion] = 0;
             arrayBaraja[posicion] = 0;
             contadorNumeroDeCartasPorTurno--;
+            contadorFinal++;
         }
     }
+
     // hacer una función que quite los ceros
-    public static void quitarCeros(int[] arrayBaraja, int[] arrayPalo){
+    public static void quitarCeros(int[] arrayBaraja, int[] arrayPalo) {
         //hacer un for que recorra todo el array y que cuando encuentre un cero hacer otro for dentro que mueva todos los numeros una posición
-        for (int i = 0; i < arrayBaraja.length; i++) {
-            if (true) {
-                
+        for (int i = 0; i < arrayBaraja.length - 1; i++) {
+            if (arrayBaraja[i] == 0) {
+                for (int j = 0; j < (arrayBaraja.length - (i + 1)); j++) {
+                    arrayBaraja[i] = arrayBaraja[i + (j + 1)];
+                    arrayPalo[i] = arrayPalo[i + (j + 1)];
+                }
             }
         }
     }
