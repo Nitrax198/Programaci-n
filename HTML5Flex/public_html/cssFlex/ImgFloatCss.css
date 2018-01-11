@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11-ene-2018, 9:02:05
+    Author     : daw
+*/
+
+.Textoblanco{
+    color: white;
+    background-color: gray;
+    font-size: 35px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.Flexo{
+    display: flex;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+body{
+    background-color: lightgray;
+}
+h1{
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 50px;
+}
+.TextoRojo{
+    color: red;
+}
+.TextoEnNegrita{
+    background-color: white;
+    font-weight:bold;
+}
+.Imagen{
+    width: 100px;
+    height: 100px;
+}
+.MargenParaElTexto{
+    margin-bottom: 10px;
+}
+.TextoEnColumna{
+    flex-flow: column;
+    margin: 15px;
+}

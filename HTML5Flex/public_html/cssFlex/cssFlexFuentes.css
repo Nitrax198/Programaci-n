@@ -16,11 +16,29 @@ and open the template in the editor.
     font-weight: bold;
 }
 .TextoIzquierda{
-    justify-content: flex-start;
+
+    align-self:  flex-start;
     font-family: 'Joti One', cursive;
 }
 .TextoDerecha{
-    justify-content: flex-end;
+    align-self: flex-end;
     font-family: 'Sedgwick Ave Display', cursive;
-    text-decoration: white;
+    color: white;
+}
+.flexo{
+    display: flex;
+    flex-flow: column;
+}
+body{
+    background-color: magenta;
+}
+.Titulo{
+    font-family: 'Indie Flower', cursive;
+    font-size: 100px;
+    text-align: center;
+}
+.TectoCentrado{
+    justify-content: center;
+    margin-left: 400px;
+    margin-right: 400px; 
 }
