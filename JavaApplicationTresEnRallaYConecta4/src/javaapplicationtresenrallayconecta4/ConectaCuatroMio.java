@@ -57,6 +57,16 @@ public class ConectaCuatroMio {
             fallo = true;
             tablero[x][y] = 'X';
             ContadorParaVerSiEstaLeno++;
+            fin = comprobarHorizontal(tablero, x, y, tipo);
+            if (!fin) {
+                fin = comprobarVertical(tablero, x, y, tipo);
+                if (!fin) {
+                    fin = comprobarDiagonalDerecha(tablero, x, y, tipo);
+                    if (!fin) {
+                        fin = comprobarDiagonalIzquierda(tablero, x, y, tipo);
+                    }
+                }
+            }
             //turno del jugador 2
             tipo = 'O';
             do {
@@ -72,6 +82,16 @@ public class ConectaCuatroMio {
             fallo = true;
             tablero[x][y] = 'O';
             ContadorParaVerSiEstaLeno++;
+            fin = comprobarHorizontal(tablero, x, y, tipo);
+            if (!fin) {
+                fin = comprobarVertical(tablero, x, y, tipo);
+                if (!fin) {
+                    fin = comprobarDiagonalDerecha(tablero, x, y, tipo);
+                    if (!fin) {
+                        fin = comprobarDiagonalIzquierda(tablero, x, y, tipo);
+                    }
+                }
+            }
         } while (ContadorParaVerSiEstaLeno < 42 && !fin);
     }
 
@@ -93,8 +113,159 @@ public class ConectaCuatroMio {
             }
         }
 
-        //de esta forma la xva ha ser la coordenada donde se guarde la ficha y además nos aseguramos de que no se sobre escriba con stop
+        //de esta forma la x va ha ser la coordenada donde se guarde la ficha y además nos aseguramos de que no se sobre escriba con stop
         return x;
     }
 //    Hacer 4 funciones, una para comprobar las columnas, otra para comprobar las filas y dos mas para cada diagonal
+
+    public static boolean comprobarHorizontal(char tablero[][], int x, int y, char tipo) {
+        //APUNTE IMPORTANTE comprobar a ver si la coordenada x cambia fuera de la función
+        boolean fin, finalDelLado;
+        fin = true;
+        finalDelLado = false;
+        int contador4Enraya, coordenadaX;
+        contador4Enraya = 0;
+        coordenadaX = x;
+        do {
+            if (tablero[x][y] == tipo) {
+                contador4Enraya++;
+                x--;
+            } else if (tablero[x][y] != tipo) {
+                finalDelLado = true;
+            }
+        } while (!finalDelLado);
+
+        x = coordenadaX;
+        finalDelLado = false;
+
+        do {
+            if (tablero[x][y] == tipo) {
+                contador4Enraya++;
+                x++;
+            } else if (tablero[x][y] != tipo) {
+                finalDelLado = true;
+            }
+        } while (!finalDelLado);
+
+        if (contador4Enraya < 4) {
+            fin = false;
+        }
+
+        return fin;
+    }
+
+    public static boolean comprobarVertical(char tablero[][], int x, int y, char tipo) {
+        //APUNTE IMPORTANTE comprobar a ver si la coordenada x cambia fuera de la función
+        boolean fin, finalDelLado;
+        fin = true;
+        finalDelLado = false;
+        int contador4Enraya, coordenadaY;
+        contador4Enraya = 0;
+        coordenadaY = y;
+        do {
+            if (tablero[x][y] == tipo) {
+                contador4Enraya++;
+                y--;
+            } else if (tablero[x][y] != tipo) {
+                finalDelLado = true;
+            }
+        } while (!finalDelLado);
+
+        y = coordenadaY;
+        finalDelLado = false;
+
+        do {
+            if (tablero[x][y] == tipo) {
+                contador4Enraya++;
+                y++;
+            } else if (tablero[x][y] != tipo) {
+                finalDelLado = true;
+            }
+        } while (!finalDelLado);
+
+        if (contador4Enraya < 4) {
+            fin = false;
+        }
+
+        return fin;
+    }
+
+    public static boolean comprobarDiagonalIzquierda(char tablero[][], int x, int y, char tipo) {
+        boolean fin, finalDelLado;
+        fin = true;
+        finalDelLado = false;
+        int contador4Enraya, coordenadaY, coordenadaX;
+        contador4Enraya = 0;
+        coordenadaY = y;
+        coordenadaX = x;
+        do {
+            if (tablero[x][y] == tipo) {
+                contador4Enraya++;
+                x--;
+                y++;
+            } else if (tablero[x][y] != tipo) {
+                finalDelLado = true;
+            }
+        } while (!finalDelLado);
+
+        x = coordenadaX;
+        y = coordenadaY;
+        finalDelLado = false;
+
+        do {
+            if (tablero[x][y] == tipo) {
+                contador4Enraya++;
+                x++;
+                y--;
+            } else if (tablero[x][y] != tipo) {
+                finalDelLado = true;
+            }
+        } while (!finalDelLado);
+
+        if (contador4Enraya < 4) {
+            fin = false;
+        }
+
+        return fin;
+    }
+
+    public static boolean comprobarDiagonalDerecha(char tablero[][], int x, int y, char tipo) {
+        boolean fin, finalDelLado;
+        fin = true;
+        finalDelLado = false;
+        int contador4Enraya, coordenadaY, coordenadaX;
+        contador4Enraya = 0;
+        coordenadaY = y;
+        coordenadaX = x;
+        do {
+            if (tablero[x][y] == tipo) {
+                contador4Enraya++;
+                y--;
+                x--;
+            } else if (tablero[x][y] != tipo) {
+                finalDelLado = true;
+            }
+        } while (!finalDelLado);
+
+        x = coordenadaX;
+        y = coordenadaY;
+        finalDelLado = false;
+
+        do {
+            if (tablero[x][y] == tipo) {
+                contador4Enraya++;
+                y++;
+                x++;
+            } else if (tablero[x][y] != tipo) {
+                finalDelLado = true;
+            }
+        } while (!finalDelLado);
+
+        if (contador4Enraya < 4) {
+            fin = false;
+        }
+
+        return fin;
+    }
+
 }

@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-ene-2018, 20:38:11
+    Author     : Miguel
+*/
+
+body{
+    background-color: lightgray;
+    font-family: 'Amiko', sans-serif;
+}
+.div1{
+    background-color: black;
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 10px;
+    width: 270px;
+    /*margin-left: 20%;*/ 
+}
+.cajon1{
+    padding-top: 20px;
+    width: 1100px;
+}
+.lista{
+    padding-top: 20px;
+    clear: both;
+    list-style-type: square;
+    text-decoration: underline;
+}
+.div3{
+ align-self: center;
+    width: 700px;
+    margin-left: -50px;
+    margin-top: -114px;
+}
+.div4{
+    background-color: black;
+    color: white; 
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+.div5{
+    padding-top: 20px;
+}
+img{
+    width: 100%;
+}
+.divfin{
+    align-self: flex-end;
+}
+.flexo1{
+    display: flex;
+    align-self: flex-start;
+    flex-flow: column;
+}
+.flexo2{
+    display: flex;
+    flex-flow: column;
+}
+.centro{
+    align-self: center;
+}
+.izquierda{
+    align-self: flex-start;
+}
