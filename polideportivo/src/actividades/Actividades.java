@@ -10,12 +10,13 @@ package actividades;
  * @author daw
  */
 public class Actividades {
-    private String Tipo;
-    private int Plazas;
-    private int PlazasLibres;
-    private float Precio;
+    private String tipo;
+    private int plazas;
+    private int plazasLibres;
+    private float precio;
     private Horario horario;
-    private Alumnos[] alumnos;
+//    private Alumnos alumnos;
+    
         //tengo que dar de alta,
         //tengo que dar de baja
         //Metricular 
@@ -23,46 +24,55 @@ public class Actividades {
         //generar recibo de actividad
         //generar recibo de Alumnos
 
-    public Actividades(String Tipo, int Plazas, int PlazasLibres, float Precio, Horario horario, Alumnos[] alumnos) {
-        this.Tipo = Tipo;
-        this.Plazas = Plazas;
-        this.PlazasLibres = PlazasLibres;
-        this.Precio = Precio;
+    public Actividades(String tipo, int plazas, float precio, Horario horario /*Alumnos alumnos*/) {
+        this.tipo = tipo;
+        this.plazas = plazas;
+        this.plazasLibres = this.plazas;
+        this.precio = precio;
         this.horario = horario;
-        this.alumnos = alumnos;
+//        this.alumnos = alumnos;
+    }
+
+    public Horario getHorario() {
+        return horario;
+    }
+
+    public void setHorario(Horario horario) {
+        this.horario = horario;
     }
     
 
+    
     public String getTipo() {
-        return Tipo;
+        return tipo;
     }
 
     public void setTipo(String Tipo) {
-        this.Tipo = Tipo;
+        this.tipo = Tipo;
     }
 
     public int getPlazas() {
-        return Plazas;
+        return plazas;
     }
 
     public void setPlazas(int Plazas) {
-        this.Plazas = Plazas;
+        this.plazas = Plazas;
     }
 
     public int getPlazasLibres() {
-        return PlazasLibres;
+        return plazasLibres;
     }
 
     public void setPlazasLibres(int PlazasLibres) {
-        this.PlazasLibres = PlazasLibres;
+        this.plazasLibres = PlazasLibres;
     }
 
     public float getPrecio() {
-        return Precio;
+        return precio;
     }
 
     public void setPrecio(float Precio) {
-        this.Precio = Precio;
+        this.precio = Precio;
     }
     
 }

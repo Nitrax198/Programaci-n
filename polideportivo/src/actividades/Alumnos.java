@@ -13,12 +13,11 @@ public class Alumnos {
     private String Nombre;
     private String Apellido;
     private float PagaAlMes;
-    
 
-    public Alumnos(String Nombre, String Apellido, float PagaAlMes) {
+    public Alumnos(String Nombre, String Apellido) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
-        this.PagaAlMes = PagaAlMes;
+        this.PagaAlMes = 0;
     }
 
     

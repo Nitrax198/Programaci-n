@@ -10,38 +10,39 @@ package actividades;
  * @author daw
  */
 public class Horario {
-    private String Dias;
-    private int HoraFinal;
-    private int HoraInicial;
+    private String dias;
+    private int horaFinal;
+    private int horaInicial;
 
-    public Horario(String Dias, int HoraFinal, int HoraInicial) {
-        this.Dias = Dias;
-        this.HoraFinal = HoraFinal;
-        this.HoraInicial = HoraInicial;
+    public Horario(String dias, int horaFinal, int horaInicial) {
+        this.dias = dias;
+        this.horaFinal = horaFinal;
+        this.horaInicial = horaInicial;
     }
 
     public String getDias() {
-        return Dias;
+        return dias;
     }
 
-    public void setDias(String Dias) {
-        this.Dias = Dias;
+    public void setDias(String dias) {
+        this.dias = dias;
     }
 
     public int getHoraFinal() {
-        return HoraFinal;
+        return horaFinal;
     }
 
-    public void setHoraFinal(int HoraFinal) {
-        this.HoraFinal = HoraFinal;
+    public void setHoraFinal(int horaFinal) {
+        this.horaFinal = horaFinal;
     }
 
     public int getHoraInicial() {
-        return HoraInicial;
+        return horaInicial;
     }
 
-    public void setHoraInicial(int HoraInicial) {
-        this.HoraInicial = HoraInicial;
+    public void setHoraInicial(int horaInicial) {
+        this.horaInicial = horaInicial;
     }
+
     
 }
