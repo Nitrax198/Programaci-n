@@ -1,0 +1,34 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24-ene-2018, 12:13:03
+    Author     : daw
+*/
+
+.Nombres{
+    margin-top: 2%; 
+}
+
+.Fieldset1{
+    width: 47%;
+    margin-left: 1%;
+    float: left;
+    border-radius: 5px;
+}
+.Fieldset2{
+    width: 45%;
+    margin-right: 2%;
+    float: right;
+    border-radius: 5px;
+    margin-bottom: 1%;
+}
+.Imput{
+    margin-left: 1%;
+    margin-top: 1%;
+}
+.ImputGenerico{
+    border-radius: 5px;
+}
