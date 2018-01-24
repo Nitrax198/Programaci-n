@@ -108,24 +108,27 @@ public class Polideportivo {
         return nombreYApellido;
     }
 
-    public static void darDeBajaAlumno(Alumnos[] alumnos,Scanner sc) {
+    public static void darDeBajaAlumno(Alumnos[] alumnos,Scanner sc,int numAlumnos) {
         //encontrar alumnos
-        int posicionDelAlumno;
-        posicionDelAlumno = encontrarAlumno(alumnos, sc);
+        int posicionDelAlumno,encontrado;
+        posicionDelAlumno = encontrarAlumno(alumnos, sc, numAlumnos);
         //Dar de baja de las actividades,aumentar plaza
-        
+        alumnos[posicionDelAlumno]= alumnos[numAlumnos-1];
+        alumnos[numAlumnos-1]= null;
+        numAlumnos--;
         //reordenar array para no dejar huecos
     }
 
-    public static int encontrarAlumno(Alumnos[] alumnos,Scanner sc) {
+    public static int encontrarAlumno(Alumnos[] alumnos,Scanner sc,int numAlumnos) {
         int posicionDelAlumno;
-        posicionDelAlumno= 0;
+        posicionDelAlumno= -1;
         Alumnos a;
+        
         //Recorrer array de alumnos buscando nombre y apellidos
         System.out.println("Por favor, escriba el nombre y el primer apellido del alumnos matriculadoq ue se quiera daar de baja");
         a = new Alumnos(sc.nextLine(),sc.nextLine());
-        for (int i = 0; i < alumnos.length; i++) {
-            if (alumnos[i].getNombre().equals(a.getNombre())&&alumnos[i].getApellido().equals(a.getApellido())) {
+        for (int i = 0; i < numAlumnos && posicionDelAlumno==-1 ; i++) {
+            if (alumnos[i].equals(a)) {
                 posicionDelAlumno=i;
             }
         }
@@ -143,5 +146,5 @@ public class Polideportivo {
         //quitar plaza
         //aumentar el dinero del alumno
     }
-
+                       
 }

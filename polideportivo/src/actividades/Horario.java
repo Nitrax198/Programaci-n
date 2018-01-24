@@ -43,6 +43,4 @@ public class Horario {
     public void setHoraInicial(int horaInicial) {
         this.horaInicial = horaInicial;
     }
-
-    
 }

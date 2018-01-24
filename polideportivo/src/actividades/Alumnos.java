@@ -5,45 +5,71 @@
  */
 package actividades;
 
+import java.util.Objects;
+
 /**
  *
  * @author daw
  */
 public class Alumnos {
-    private String Nombre;
-    private String Apellido;
-    private float PagaAlMes;
+    private String nombre;
+    private String apellido;
+    private float pagaAlMes;
 
     public Alumnos(String Nombre, String Apellido) {
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.PagaAlMes = 0;
+        this.nombre = Nombre;
+        this.apellido = Apellido;
+        this.pagaAlMes = 0;
     }
 
     
     
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+        this.nombre = Nombre;
     }
 
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
     public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+        this.apellido = Apellido;
     }
 
     public float getPagaAlMes() {
-        return PagaAlMes;
+        return pagaAlMes;
     }
 
     public void setPagaAlMes(float PagaAlMes) {
-        this.PagaAlMes = PagaAlMes;
+        this.pagaAlMes = PagaAlMes;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alumnos other = (Alumnos) obj;
+        if (Float.floatToIntBits(this.pagaAlMes) != Float.floatToIntBits(other.pagaAlMes)) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.apellido, other.apellido)) {
+            return false;
+        }
+        return true;
     }
     
     
