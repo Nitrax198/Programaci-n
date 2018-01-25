@@ -1,0 +1,24 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25-ene-2018, 9:36:45
+    Author     : daw
+*/
+
+.Titulo{
+    text-align: center;
+}
+.Fieldset{
+    margin: 2%; 
+    margin-left: 3%; 
+}
+.Div1{
+    margin-top: 2%;
+}
+.Fondo{
+    margin-bottom: 2%;
+     
+}

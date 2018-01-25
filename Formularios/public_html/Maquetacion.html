@@ -9,8 +9,59 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/Maquetacion.CSS.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <!--hacer con flex-->
+        <h1 class="Titulo">iDESWEB</h1>
+        <h5 class="Titulo">Formulario de registro</h5>
+        <form>
+            <fieldset class="Fieldset">
+                <legend>¿Quien eres?</legend>
+                <div>Nombre</div>
+                <input type="text" name="Nombre" >
+                <div>Apellidos</div>
+                <input type="text" name="Apellidos">
+                <div class="Div1">Correo Electronico</div>
+                <input type="text" name="Correo Electronico">
+                <div class="Div1">Fecha de nacimiento</div>
+                <input type="date" name="Fecha de nacimiento" class="Fondo">
+            </fieldset>
+            <fieldset class="Fieldset">
+                <legend>¿De donde eres?</legend>
+                <div class="Div1">Ciudad</div>
+                <input type="text" name="Ciudad" >
+                <div class="Div1">Codigo Postal</div>
+                <input type="text" name="Codigo Postal">
+                <div class="Div1">País</div>
+                <select  class="Fondo">
+                    <option value="España">España</option>
+                    <option value="Francia">Francia</option>
+                    <option value="Italia">Italia</option>
+                    <option value="Japón">Japón</option>
+                    <option value="Portugal">Portugal</option>
+                </select>
+            </fieldset>
+            <fieldset class="Fieldset">
+                <legend>¿Como quieres inicar sesión?</legend>
+                <div class="Div1">Nombre de usuario</div>
+                <input type="text" name="Nombre de usuario" >
+                <div class="Div1">Contraseña</div>
+                <input type="text" name="Contraseña">
+                <div class="Div1">Vuelve a escribir la Contraseña</div>
+                <input type="text" name="Vuelve a escribir la Contraseña" class="Fondo">
+            </fieldset>
+            <fieldset class="Fieldset">
+                <legend>Condiciones de registro</legend>
+                <div  class="Div1">Deseo recibir ofertas de iDESWEB</div>
+                <div>
+                <input type="radio" name="gender" value="Una vez al dia"> Una vez al dia<br>
+                <input type="radio" name="gender" value="Una vez a la semana"> Una vez a la semana<br>
+                <input type="radio" name="gender" value="Una vez al mes"> Una vez al mes<br>
+                </div>
+                <input type="radio" name="gender" value="Acepto los terminos y condiciones de uso que NO he leido previamente"> Acepto los terminos y condiciones de uso que NO he leido previamente<br>
+            </fieldset>
+            <input type="submit" value="Crear cuenta">
+        </form>
     </body>
 </html>
