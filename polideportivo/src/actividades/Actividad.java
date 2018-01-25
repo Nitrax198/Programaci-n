@@ -9,12 +9,13 @@ package actividades;
  *
  * @author daw
  */
-public class Actividades {
+public class Actividad {
     private String tipo;
     private int plazas;
     private int plazasLibres;
     private float precio;
     private Horario horario;
+    private Alumno[] alumnos;
 //    private Alumnos alumnos;
     
         //tengo que dar de alta,
@@ -24,7 +25,13 @@ public class Actividades {
         //generar recibo de actividad
         //generar recibo de Alumnos
 
-    public Actividades(String tipo, int plazas, float precio, Horario horario /*Alumnos alumnos*/) {
+    @Override
+    public String toString() {
+        return "Actividades{" + "tipo=" + tipo + ", plazas=" + plazas + ", plazasLibres=" + plazasLibres + ", precio=" + precio + ", horario=" + horario + '}';
+    }
+
+   
+    public Actividad(String tipo, int plazas, float precio, Horario horario /*Alumnos alumnos*/) {
         this.tipo = tipo;
         this.plazas = plazas;
         this.plazasLibres = this.plazas;
@@ -74,5 +81,14 @@ public class Actividades {
     public void setPrecio(float Precio) {
         this.precio = Precio;
     }
+
+    public Alumno[] getAlumnos() {
+        return alumnos;
+    }
+
+    public void setAlumnos(Alumno[] alumnos) {
+        this.alumnos = alumnos;
+    }
+    
     
 }

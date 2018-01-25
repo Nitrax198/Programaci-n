@@ -11,12 +11,12 @@ import java.util.Objects;
  *
  * @author daw
  */
-public class Alumnos {
+public class Alumno {
     private String nombre;
     private String apellido;
     private float pagaAlMes;
 
-    public Alumnos(String Nombre, String Apellido) {
+    public Alumno(String Nombre, String Apellido) {
         this.nombre = Nombre;
         this.apellido = Apellido;
         this.pagaAlMes = 0;
@@ -59,7 +59,7 @@ public class Alumnos {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Alumnos other = (Alumnos) obj;
+        final Alumno other = (Alumno) obj;
         if (Float.floatToIntBits(this.pagaAlMes) != Float.floatToIntBits(other.pagaAlMes)) {
             return false;
         }
