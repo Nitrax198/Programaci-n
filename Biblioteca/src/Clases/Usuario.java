@@ -12,7 +12,13 @@ package Clases;
 public class Usuario {
 
     private String nombre;
-    private Libro[] libros;
+    private Libro[] librosPrestados;
+    //hacer que el array de libros sea de 3
+    
+    public Usuario(String nombre) {
+        this.nombre = nombre;
+        this.librosPrestados = new Libro[3];
+    }
 
     public String getNombre() {
         return nombre;
@@ -23,19 +29,28 @@ public class Usuario {
     }
 
     public void prestarLibro() {
-        
     }
+
     public void devolverLibro() {
 
     }
-    public void devolverTodosLosLibros() {
 
+    public void devolverTodosLosLibros() {
+        for (int i = 0; i < librosPrestados.length ; i++) {
+            librosPrestados[i]= null;
+        }
     }
+
     public int numeroDeLibrosPrestados() {
         int numeroDeLibrosPrestados;
-        numeroDeLibrosPrestados=0;
-        
-        
+        numeroDeLibrosPrestados = 0;
+
         return numeroDeLibrosPrestados;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "nombre=" + nombre + ", librosPrestados=" + librosPrestados + '}';
+    }
+    
 }

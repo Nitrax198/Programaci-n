@@ -10,17 +10,19 @@ package Clases;
  * @author daw
  */
 public class Libro {
+
     private String isbn;
     private String autor;
     private String titulo;
     private int numeroDePaginas;
     private boolean prestado;
-    
+
     public Libro(String isbn, String autor, String titulo, int numeroDePaginas) {
         this.isbn = isbn;
         this.autor = autor;
         this.numeroDePaginas = numeroDePaginas;
         this.titulo = titulo;
+        this.prestado = false;
     }
 
     public String getIsbn() {
@@ -30,7 +32,6 @@ public class Libro {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
-
 
     public String getAutor() {
         return autor;
@@ -63,8 +64,11 @@ public class Libro {
     public void setPrestado(boolean prestado) {
         this.prestado = prestado;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Libro{" + "isbn=" + isbn +"/nl" + ", autor=" + autor +"/nl" + ", titulo=" + titulo +"/nl" + ", numeroDePaginas=" + numeroDePaginas + '}';
+    }
+
     
 }
-
