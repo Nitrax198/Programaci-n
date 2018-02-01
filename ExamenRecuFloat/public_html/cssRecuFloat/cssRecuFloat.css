@@ -1,0 +1,71 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01-feb-2018, 8:53:15
+    Author     : daw
+*/
+
+.FloatIzqRed{
+    float: left;
+    border: solid 4px red;
+    height: 100px;
+}
+.FloatIzqgreen{
+    float: left;
+    border: solid 4px green;
+    height: 210px;
+}
+.SpamDeSeparacion{
+    display: inline-block;
+    height: 65px;
+}
+.FloatIzqgreen2{
+    float: left;
+    border: solid 4px green;
+    height: 210px;
+    clear: right;
+}
+.FloatIzqgreenLigth{
+    float: left;
+    border: solid 4px greenyellow;
+    height: 45px;
+}
+.FloatDerRed{
+    float: right;
+    border: solid 4px red;
+    height: 45px;
+}
+.Block{
+    clear: right;
+    border: solid 4px blue;
+    height: 210px;
+    display: block;
+} 
+.FloatImg{
+    float: right;
+    width: 400px;
+    height: 50px;
+    border: solid 4px red;
+    overflow: visible;
+}
+.Img{
+    float: right;
+    height: 500px;
+    width: 150px;
+}
+.FloatGrey{
+    float: right;
+    border: solid 4px gray;
+    height: 100px;
+}
+.FloatLast{
+    float: right;
+    border: solid 4px red;
+    height: 50px;
+    clear: both;
+}
+
+
