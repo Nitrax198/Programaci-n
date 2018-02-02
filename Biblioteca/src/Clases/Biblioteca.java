@@ -18,6 +18,11 @@ public class Biblioteca {
     private int numLibros = 0;
     private int numDeUsuarios = 0;
 
+    public Biblioteca() {
+        this.usuarios = new Usuario[50];
+        this.libros = new Libro[50];
+    }
+
     public Usuario[] getUsuarios() {
         return usuarios;
     }
@@ -92,44 +97,95 @@ public class Biblioteca {
         return posicionUsuario;
     }
 
-//    public int encontrarLibro(Scanner sc) {
-//        int posicionLibro;
-//        posicionLibro = -1;
-//        Libro libroBuscado;
-//        System.out.println("Por favor escriba el titulo del Libro");
-//        String titulo = sc.nextLine();
-//        libroBuscado = new Libro();
-//        for (int i = 0; i < usuarios.length && posicionUsuario == -1; i++) {
-//            if (usuarios[i].equals(usuarioBuscado)) {
-//                posicionUsuario = i;
+    private int encontrarLibro(Scanner sc) {
+        boolean fin;
+        fin = false;
+        int posicionDelLibro;
+        posicionDelLibro = 0;
+        for (int i = 0; i < libros.length && !fin; i++) {
+            if (libros[i] != null) {
+                System.out.println(libros[i].toString() + i + 1);
+                System.out.println("/n");
+            } else {
+                fin = true;
+            }
+            System.out.println("Por favor escribe el numero del libro");
+            posicionDelLibro = sc.nextInt();
+            sc.nextLine();
+        }
+        return posicionDelLibro;
+        // metodo uno
+//        boolean fin;
+//        fin = false;
+//        int posicionDelLibro;
+//        posicionDelLibro = -1;
+//        String tituloDelLibro;
+//        System.out.println("por favor escribe el titulo del libro que buscas");
+//        tituloDelLibro = sc.nextLine();
+//        for (int i = 0; i < libros.length && !fin; i++) {
+//            if (libros[i] != null) {
+//                if (libros[i].getTitulo().equals(tituloDelLibro)) {
+//                    posicionDelLibro=i;
+//                    fin = true;
+//                }
+//            }
+//            else{
+//                fin = true;
 //            }
 //        }
-//        return posicionUsuario;
-//    }
+//        return posicionDelLibro;
+    }
+
     public void listadoDeLibros(Scanner sc) {
         boolean fin = false;
-        for (int i = 0; i < libros.length  && !fin; i++) {
+        for (int i = 0; i < libros.length && !fin; i++) {
             if (libros[i] != null) {
-                libros[i].toString();
-            }
-            else {
+                System.out.println(libros[i].toString());
+            } else {
                 System.out.println("No quedan libros");
-                fin=true;
+                fin = true;
             }
         }
     }
 
     public void listadoDeUsuarios(Scanner sc) {
         boolean fin = false;
-        for (int i = 0; i < usuarios.length  && !fin; i++) {
+        for (int i = 0; i < usuarios.length && !fin; i++) {
             if (usuarios[i] != null) {
-                usuarios[i].toString();
-            } 
-            else {
+                System.out.println(usuarios[i].toString());
+            } else {
                 System.out.println("No quedan usuarios");
-                fin=true;
+                fin = true;
             }
         }
+    }
+
+    public void prestarLibro(Scanner sc) {
+        int posicionUsuario = encontrarUsuario(sc);
+        int posicionLibro = encontrarLibro(sc);
+        //comprobar si se puede prestar
+        Usuario usuario;
+        usuario = usuarios[posicionUsuario];
+        Libro libro;
+        libro = libros[posicionLibro];
+        if (usuario.getNumeroLibrosPrestados() != 3 && libro.isPrestado() != true) {
+            usuario.prestarLibro(libro);
+            libros[posicionLibro].setPrestado(true);
+        } else {
+            System.out.println("El usuario no puede sacar mas libros o este ya ha sido prestado");
+        }
+
+    }
+
+    public void devolverLibro(Scanner sc) {
+        int posicionUsuario = encontrarUsuario(sc);
+        int posicionLibro = encontrarLibro(sc);
+        Usuario usuario;
+        usuario = usuarios[posicionUsuario];
+        Libro libro;
+        libro = libros[posicionLibro];
+        usuario.devolverLibro(libro);
+        libros[posicionLibro].setPrestado(false);
     }
 
 }
