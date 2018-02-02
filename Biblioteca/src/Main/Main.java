@@ -5,6 +5,7 @@
  */
 package Main;
 
+import Clases.*;
 import java.util.Scanner;
 
 /**
@@ -17,6 +18,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        boolean Clausurador;
+        Clausurador = false;
+        Biblioteca b = new Biblioteca();
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
         System.out.println("Elije el numero de ejercicio del 1 al 7, los enunciados son:\n"
@@ -26,27 +30,41 @@ public class Main {
                 + "4. Prestar Un libro \n"
                 + "5. Devolver un libro \n"
                 + "6. Listado de libros \n"
-                + "7. Listado de alumnos \n");
-        int opcion = sc.nextInt();
-        switch (opcion) {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            default:
-                System.out.println("opcion no valida");
+                + "7. Listado de alumnos \n"
+                + "8.clausurar Biblioteca \n");
+        while (!Clausurador) {
+            int opcion = sc.nextInt();
+            switch (opcion) {
+                case 1:
+                    b.darDeAltaUsusarios();
+                    break;
+                case 2:
+                    b.darDeBajaUsusarios(sc);
+                    break;
+                case 3:
+                    b.darDeAltaLibros();
+                    break;
+                case 4:
+                    b.prestarLibro(sc);
+                    break;
+                case 5:
+                    b.devolverLibro(sc);
+                    break;
+                case 6:
+                    b.listadoDeLibros(sc);
+                    break;
+                case 7:
+                    b.listadoDeUsuarios(sc);
+                    break;
+                case 8:
+                    Clausurador = true;
+                    System.out.println("La biblioteca va a cerrar, por favor deposite sus objetos electronicos en la bandeja de entrada");
+                    break;
+                default:
+                    System.out.println("opcion no valida");
+            }
         }
 
     }
-    
+
 }
