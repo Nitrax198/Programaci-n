@@ -16,6 +16,14 @@ public class Usuario {
     private int numeroLibrosPrestados;
     //hacer que el array de libros sea de 3
 
+    public Libro[] getLibrosPrestados() {
+        return librosPrestados;
+    }
+
+    public void setLibrosPrestados(Libro[] librosPrestados) {
+        this.librosPrestados = librosPrestados;
+    }
+
     public int getNumeroLibrosPrestados() {
         return numeroLibrosPrestados;
     }
@@ -42,14 +50,12 @@ public class Usuario {
         boolean fin;
         fin = false;
         for (int i = 0; i < librosPrestados.length && !fin; i++) {
-            if (librosPrestados[i] != null) {
+            if (librosPrestados[i] == null) {
                 librosPrestados[i] = libro;
                 numeroLibrosPrestados++;
                 fin = true;
                 
-            } else {
-                fin = true;
-            }
+            } 
         }
     }
 
@@ -57,7 +63,7 @@ public class Usuario {
         for (int i = 0; i < librosPrestados.length; i++) {
             if (librosPrestados[i].equals(libro)) {
                 librosPrestados[i]= null;
-                numeroLibrosPrestados++;
+                numeroLibrosPrestados--;
             }
         }
     }
@@ -66,10 +72,11 @@ public class Usuario {
         for (int i = 0; i < librosPrestados.length; i++) {
             librosPrestados[i] = null;
         }
+        this.numeroLibrosPrestados = 0;
     }
 
     public void numeroDeLibrosPrestados() {
-        System.out.println(numeroLibrosPrestados);
+        System.out.println(numeroLibrosPrestados + " estos son los libros que tienes prestadoas");
 
     }
 
@@ -78,8 +85,5 @@ public class Usuario {
         return "Usuario{" + "nombre=" + nombre +  ", librosPrestados=" + librosPrestados + '}';
     }
 
-    void ImprimirLibro(Libro libro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }

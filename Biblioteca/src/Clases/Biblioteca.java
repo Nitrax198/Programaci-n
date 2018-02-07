@@ -39,7 +39,7 @@ public class Biblioteca {
         this.libros = Libros;
     }
 
-    public Libro darDeAltaLibros() {
+    public void darDeAltaLibros() {
         Scanner sc = new Scanner(System.in);
         System.out.println("por favor introduce el isbn del libro que quieras retirar de la biblioteca");
         String isbn = sc.nextLine();
@@ -53,11 +53,9 @@ public class Biblioteca {
         Libro libroRecibido = new Libro(isbn, autor, titulo, numeroDePaginas);
         libros[numLibros] = libroRecibido;
         numLibros++;
-
-        return libroRecibido;
     }
 
-    public Usuario darDeAltaUsusarios() {
+    public void darDeAltaUsusarios() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Por favor introduzca el nombre del usuario que quieres dar de alta");
         String nombre = sc.nextLine();
@@ -65,7 +63,6 @@ public class Biblioteca {
         usuario.setNombre(nombre);
         usuarios[numDeUsuarios] = usuario;
         numDeUsuarios++;
-        return usuario;
     }
 
     public void darDeBajaUsusarios(Scanner sc) {
@@ -73,13 +70,15 @@ public class Biblioteca {
         posicionUsuario = encontrarUsuario(sc);
 
         Usuario u = usuarios[posicionUsuario];
-
+        Libro[] librosDelUS = u.getLibrosPrestados();
         u.devolverTodosLosLibros();
-
+        for (int i = 0; i < 10; i++) {
+            librosDelUS[i].setPrestado(false);
+        }
         usuarios[posicionUsuario] = usuarios[numDeUsuarios - 1];
         usuarios[numDeUsuarios - 1] = null;
         numDeUsuarios--;
-
+        
     }
 
     private int encontrarUsuario(Scanner sc) {
@@ -87,10 +86,10 @@ public class Biblioteca {
         posicionUsuario = -1;
         Usuario usuarioBuscado;
         System.out.println("Por favor escriba el nombre de usuario");
-        String nombre = sc.nextLine();
+        String nombre = sc.next();
         usuarioBuscado = new Usuario(nombre);
         for (int i = 0; i < usuarios.length && posicionUsuario == -1; i++) {
-            if (usuarios[i].equals(usuarioBuscado)) {
+            if (usuarioBuscado.equals(usuarios[i])) {
                 posicionUsuario = i;
             }
         }
@@ -110,7 +109,7 @@ public class Biblioteca {
                 fin = true;
             }
             System.out.println("Por favor escribe el numero del libro");
-            posicionDelLibro = sc.nextInt();
+            posicionDelLibro = sc.nextInt()-1;
             sc.nextLine();
         }
         return posicionDelLibro;
