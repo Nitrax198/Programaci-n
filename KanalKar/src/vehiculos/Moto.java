@@ -11,8 +11,13 @@ package vehiculos;
  */
 public class Moto extends VehiculoAMotor{
     
-    public Moto(String matricula, int kmDeUso, String color, String marca, float precioCompra, float precioVenta) {
-        super(matricula, kmDeUso, color, marca, precioCompra, precioVenta);
+    public Moto(String matricula, int kmDeUso, String color, String marca, float precioCompra) {
+        super(matricula, kmDeUso, color, marca, precioCompra);
+    }
+
+    @Override
+    public String toString() {
+        return "Moto{" + '}'+ super.toString();
     }
     
    

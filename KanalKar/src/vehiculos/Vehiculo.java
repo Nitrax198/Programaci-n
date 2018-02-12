@@ -5,17 +5,19 @@
  */
 package vehiculos;
 
+import java.util.Objects;
+
 /**
  *
  * @author daw
  */
 public class Vehiculo {
-     protected String color;
-     protected String marca;
-     protected float precioCompra;
-     protected float precioVenta;
+     private String color;
+     private String marca;
+     private float precioCompra;
+     private float precioVenta;
 
-    public Vehiculo(String color, String marca, float precioCompra, float precioVenta) {
+    public Vehiculo(String color, String marca, float precioCompra) {
         this.color = color;
         this.marca = marca;
         this.precioCompra = precioCompra;
@@ -52,6 +54,36 @@ public class Vehiculo {
 
     public void setPrecioVenta(float precioVenta) {
         this.precioVenta = precioVenta;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" + "color=" + color + ", marca=" + marca + ", precioCompra=" + precioCompra + ", precioVenta=" + precioVenta + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.marca);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Vehiculo other = (Vehiculo) obj;
+        if (!Objects.equals(this.marca, other.marca)) {
+            return false;
+        }
+        return true;
     }
      
      

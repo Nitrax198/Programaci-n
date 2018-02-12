@@ -13,8 +13,13 @@ public class Coche extends VehiculoAMotor{
     
     //coches: Ciel Cadilac, delorean, Batmovil, Regalia, Ecto-1, Ford Falcon, Plymouth Fury 
 
-    public Coche(String matricula, int kmDeUso, String color, String marca, float precioCompra, float precioVenta) {
-        super(matricula, kmDeUso, color, marca, precioCompra, precioVenta);
+    public Coche(String matricula, int kmDeUso, String color, String marca, float precioCompra) {
+        super(matricula, kmDeUso, color, marca, precioCompra);
     }
 
+    @Override
+    public String toString() {
+        return "Coche{" + '}'+ super.toString();
+    }
+    
 }

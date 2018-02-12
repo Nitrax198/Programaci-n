@@ -11,8 +11,13 @@ package vehiculos;
  */
 public class Quad extends VehiculoAMotor {
     
-    public Quad(String matricula, int kmDeUso, String color, String marca, float precioCompra, float precioVenta) {
-        super(matricula, kmDeUso, color, marca, precioCompra, precioVenta);
+    public Quad(String matricula, int kmDeUso, String color, String marca, float precioCompra) {
+        super(matricula, kmDeUso, color, marca, precioCompra);
+    }
+
+    @Override
+    public String toString() {
+        return "Quad{" + '}'+ super.toString();
     }
     
     
