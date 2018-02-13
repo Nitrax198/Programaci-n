@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous"></script>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    </head>
+    <body>
+        <form name="ese" method="POST" action="https://www.w3schools.com/action_page.php">
+            <div class="row">
+                <div class="input-field col s6">      
+                    <fieldset>
+                        <legend>Alta en el servicio</legend>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_box</i>
+                                <input list="names" placeholder="Nombre" name="text" id="first_name" type="text" class="validate">
+                                <label for="Nombre">Nombre</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s10">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input list="names" placeholder="Apellidos" name="text" id="first_name" type="text" class="validate">
+                                <label for="Apellidos">Apellidos</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <i class="material-icons prefix">adb</i>
+                                <input list="names" name="text" id="first_name" type="text" class="validate">
+                                <label for="DNI">DNI</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">beach_access</i>
+                                <input list="names" name="text" id="first_name" type="text" class="validate">
+                                <label for="Contraseña">Contraseña</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="input-field col s6">      
+                    <fieldset>
+                        <legend>Datos de contacto</legend>
+                        <div class="row">
+                            <div class="input-field col s5">
+                                <i class="material-icons prefix">call</i>
+                                <input list="names" name="text" id="first_name" type="text" class="validate">
+                                <label for="Telefono">Telefono</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s10">
+                                <i class="material-icons prefix">email</i>
+                                <input list="names" placeholder="VivaMuzska@gmail.com" name="text" id="first_name" type="text" class="validate">
+                                <label for="Email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <i class="material-icons prefix">favorite</i>
+                                <input list="names" name="text" id="first_name" type="text" class="validate">
+                                <label for="Direccion">Direccion</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <i class="material-icons prefix">flash_on</i>
+                                <input list="names" placeholder="80805" name="text" id="first_name" type="text" class="validate">
+                                <label for="CodigoPostal">Codigo Postal</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col  s2">
+                    <button class="btn waves-effect waves-light" type="submit" >Darme de alta
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
