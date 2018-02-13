@@ -9,9 +9,244 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous"></script>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     </head>
     <body>
         <!--Hacer con Materialize-->
-        <div></div>
+        <div class="row">
+            <h4 class="input-field offset-s2 col s8">(solos las secciones con un icono son obligatorias)</h4>
+        </div>
+        <form>
+            <div class="row border bottom">
+                <div class="input-field offset-s5 col s4" >Texto de prueba</div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s1 col s6">
+                    <div class="row">
+                        <div class="input-field offset-s1 col s1" >
+                            <i class="material-icons prefix">account_box</i>
+                            <label for="Email">Email:</label>
+                        </div>
+                        <div class="input-field offset-s1 col s5" >
+                            <input list="email" placeholder="no se poner la barra negra" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s5 col s4" >Texto de prueba2</div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s1 col s3" >
+                    <div class="row">
+                        <div class="input-field offset-s1 col s3" >
+                            <i class="material-icons prefix">account_box</i>
+                            <label for="Sexo">Sr/Sra:</label>
+                        </div>
+                        <div class="input-field offset-s1 col s7" >
+                            <input list="names" placeholder="señoritaParaUsted" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+                <datalist id="names">
+                    <option value="Macho">
+                    <option value="Hembra">
+                    <option value="Otro">
+                </datalist>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s2 col s4" >
+                    <div class="row">
+                        <div class="input-field  col s4" >
+                            <i class="material-icons prefix">account_box</i>
+                            <label for="Nombres">Nombres:</label>
+                        </div>
+                        <div class="input-field col s8" >
+                            <input list="names" placeholder="Kira" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-field offset-s1 col s4" >
+                    <div class="row">
+                        <div class="input-field col s4" >
+                            <i class="material-icons prefix">account_box</i>
+                            <label for="Apellidos">Apellidos:</label>
+                        </div>
+                        <div class="input-field col s8" >
+                            <input list="names" placeholder="LigthYagami" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s2 col s4" >
+                    <div class="row">
+                        <div class="input-field  col s3" >
+                            <i class="material-icons prefix">account_box</i>
+                            <label for="Sexo">Sexo:</label>
+                        </div>
+                        <div class="input-field col s9" >
+                            <input list="names" placeholder="poco" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                    <datalist id="names">
+                        <option value="Macho">
+                        <option value="Hembra">
+                        <option value="Otro">
+                    </datalist>
+                </div>
+
+                <div class="input-field offset-s1 col s4" >
+                    <div class="row">
+                        <div class="input-field col s4" >
+                            <i class="material-icons prefix">account_box</i>
+                            <label for="Nacimiento">Nacimiento:</label>
+                        </div>
+                        <div class="input-field col s8" >
+                            <input list="names"  name="text" id="first_name" type="date" class="validate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s1 col s5">
+                    <div class="row">
+                        <div class="input-field offset-s1 col s3">
+                            <label for="Identificación">Identificación:</label>
+                        </div>
+                        <div class="input-field  col s8">
+                            <input list="names" placeholder="¿Quien eres?" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    (DNI o PAsaporte)
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s1 col s1">
+                    <label for="Dirección">Dirección:</label>
+                </div>
+                <div class="input-field  col s9">
+                    <input list="names" placeholder="Elmo Sabe Donde Vives" name="text" id="first_name" type="text" class="validate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s2 col s4" >
+                    <div class="row">
+                        <div class="input-field  col s2" >
+                            <label for="Distrito">Distrito:</label>
+                        </div>
+                        <div class="input-field col s9" >
+                            <input list="names" placeholder="Falso" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-field offset-s1 col s4" >
+                    <div class="row">
+                        <div class="input-field col s4" >
+                            <label for="CodigoPostal">Codigo Postal:</label>
+                        </div>
+                        <div class="input-field col s8" >
+                            <input list="names" placeholder="123" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s2 col s4" >
+                    <div class="row">
+                        <div class="input-field  col s2" >
+                            <label for="Ciudad">Ciudad:</label>
+                        </div>
+                        <div class="input-field col s9" >
+                            <input list="names" placeholder="Toronto" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field offset-s1 col s5" >
+                    <div class="row">
+                        <div class="input-field col s5" >
+                            <i class="material-icons prefix">account_box</i>
+                            <label for="PaísDR">País de Residencia:</label>
+                        </div>
+                        <div class="input-field col s6" >
+                            <input list="names" placeholder="Pufffff" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                    <datalist id="names">
+                        <option value="YaNO">
+                        <option value="SeQue">
+                        <option value="Poner">
+                    </datalist>
+                </div>
+            </div>
+             <div class="row">
+                <div class="input-field offset-s1 col s4" >
+                    <div class="row">
+                        <div class="input-field  col s4" >
+                            <label for="TelefonoF">Telefono Fijo:</label>
+                        </div>
+                        <div class="input-field col s8" >
+                            <input list="names" placeholder="987654321" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-field offset-s2 col s4" >
+                    <div class="row">
+                        <div class="input-field col s3" >
+                            <label for="Celular">Celular:</label>
+                        </div>
+                        <div class="input-field col s9" >
+                            <input list="names" placeholder="123456789" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="row">
+                <div class="input-field offset-s2 col s1">
+                    <label for="Fax">Fax:</label>
+                </div>
+                <div class="input-field  col s1">
+                    <input list="names" placeholder="ZZZZZZZZZZ" name="text" id="first_name" type="text" class="validate">
+                </div>
+            </div>
+             <div class="row">
+                <div class="input-field offset-s1 col s2">
+                    <label for="CentroDT">Centro De Trabajo:</label>
+                </div>
+                <div class="input-field  col s8">
+                    <input list="names" placeholder="Parla" name="text" id="first_name" type="text" class="validate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s1 col s6" >
+                    <div class="row">
+                        <div class="input-field offset-s1 col s3" >
+                            <i class="material-icons prefix">account_box</i>
+                            <label for="Ocupación">Ocupación:</label>
+                        </div>
+                        <div class="input-field offset-s1 col s7" >
+                            <input list="names" placeholder="Elihe" name="text" id="first_name" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+                <datalist id="names">
+                    <option value="Morir">
+                    <option value="Morir">
+                    <option value="Morir">
+                </datalist>
+            </div>
+        </form>
     </body>
 </html>
