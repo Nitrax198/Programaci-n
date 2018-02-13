@@ -9,8 +9,105 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/Tutorial.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <!--hacer con flex-->
+        <div class="SectionA">Section A: client information</div>
+        <form action="https://www.w3schools.com/action_page.php" method="post">
+            <div class="flex">
+                <div class="Ajustar">Title</div> <div><input class="Ajustado" type="text" name="Alias"></div>
+            </div>
+            <div class="flex">
+                <div class="Ajustar">First name:</div> <div><input class="Ajustado3" type="text" name="first"></div>
+            </div>
+            <div class="flex">
+                <div class="Ajustar">Middle name:</div> <div><input class="Ajustado2" type="text" name="mid"></div>
+            </div>
+            <div class="flex">
+                <div class="Ajustar">Last Name:</div> <div><input class="Ajustado" type="text" name="last"></div>
+            </div>
+            <div class="flex">
+                <div class="Ajustar">E-mail addres:</div> <div><input type="email" name="correo"></div>
+            </div>
+            <div class="flex">
+                <div class="Ajustar">Phone number:</div> <div><input type="text" name="telefono"></div>
+            </div>
+            <div class="SectionA">Section B: Travel Information</div>
+            <div class="flex">
+                <div>
+                    <div class="flex">
+                        <div class="Ajustar">Airline name:</div> <div> <select name="airline">
+                                <option value="select" selected>select an airline</option>
+                                <option value="valer" >SH</option>
+                                <option value="asdf">MH</option>
+                                <option value="qwerty">EH</option>
+                            </select></div>
+                        
+                    </div>
+                    <div class="flex">
+                        <div class="Ajustar">Destination:</div> <div><input type="text" name="destino"></div>
+                    </div>
+                    <div class="flex">
+                        <div class="Ajustar">Leave date:</div> <div><input type="date" name="ida" max="1996-12-31"></div>
+                    </div>
+                    <div class="flex">
+                        <div class="Ajustar">Return date:</div> <div><input type="date" name="vuelta" max="1996-12-31"></div>
+                    </div>
+                    <div class="flex">
+                        <div class="Ajustar">Estimated cost:</div> <div><input type="text" name="estimado"></div>
+                    </div>
+                    <div class="flex3">
+                        <div class="Ajustar">Includes customer visit?</div> <div><input type="checkbox" name="customer" checked/></div>
+                    </div>
+                </div>
+                <div class="DivEspacio">
+                    <div class="flex">
+                        <div>
+                            <div class="flex">
+                                <div class="Ajustar">Aditional estimated expenses</div> 
+                            </div>
+                            <div class="flex2">
+                                <div class="Ajustar">Car rental:</div> <div><input type="text" name="coche"></div>
+                            </div>
+                            <div class="flex2">
+                                <div class="Ajustar">Hotel:</div> <div><input type="text" name="motel"></div>
+                            </div>
+                            <div class="flex2">
+                                <div class="Ajustar">Meals:</div> <div><input type="text" name="comida"></div>
+                            </div>
+                            <div class="flex2">
+                                <div class="Ajustar">Total estimate</div> <div><input type="text" value="$0.00" name="total"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="DivEspacio2">
+                        <div class="flex">
+                            <div class="Ajustar">Payment method used:</div> 
+                        </div>
+                        <div class="flex2">
+                            <div class="Ajustar">Cash</div> <div><input type="radio" name="test" value="cash"/></div>
+                        </div>
+                        <div class="flex2">
+                            <div class="Ajustar">Credit card</div> <div><input type="radio" name="test" value="credit"/></div>
+                        </div>
+                        <div class="flex2">
+                            <div class="Ajustar">Check</div> <div><input type="radio" name="test" value="check"/></div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="flex">
+                Purpose of travel 
+                <div>
+                    <input class="Parrafo" placeholder=""  type="text"  name="test">
+                </div> 
+            </div>
+            <div>
+                <div>
+                    <input class="caja" type="submit" name="submit">
+                </div> 
+            </div>
+        </form>   
     </body>
 </html>

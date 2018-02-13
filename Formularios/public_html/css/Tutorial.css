@@ -1,0 +1,69 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-feb-2018, 19:35:50
+    Author     : Miguel
+*/
+
+table{
+    background-color: blue;
+    width: 80%;
+    text-align: center;
+    color: white;
+    border-spacing: 8px;
+}
+.SectionA{
+    font-size: 30px;
+    color: blue;
+    border-bottom: dotted black; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.DivEspacio{
+    margin-left: 200px;
+}
+.DivEspacio2{
+    margin-top: 20px;
+}
+.flex{
+    display:flex;
+    flex-flow: row;
+}
+.flex2{
+    margin-top: 10px;
+    display:flex;
+    flex-flow: row;
+    margin-left: 20px;
+}
+.flex3{
+    margin-top: 40px;
+    display:flex;
+    flex-flow: row;
+}
+.Ajustar{
+    display: inline-block;
+    width: 175px;
+}
+.Ajustado{
+    width: 200px;
+}
+.Ajustado2{
+    width: 50px;
+}
+.Ajustado3{
+    width: 100px;
+}
+.caja{
+    width: 100px;
+    height: 25px;
+    background-color: lightblue;
+}
+.Parrafo{
+    border-radius: 10px;
+    text-align: right;
+    padding: 50px;
+    width: 500px
+}
