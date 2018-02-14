@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous"></script>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    </head>
+    <body>
+        <!--hacer formulario para el coche-->
+        <!--colo marca precio compra precio venta(25 % mayor) matricula y km de uso-->
+        <!--hacer formulario para la moto-->
+        <!--colo marca precio compra precio venta(25 % mayor) matricula y km de uso-->
+        <!--hacer formulario para la bici-->
+        <!--color marca precio de compra precio de venta tamañp de rueda numero de marcas tipo de cambio-->
+        <!--hacer formulario para el quad-->
+        <!--colo marca precio compra precio venta(25 % mayor) matricula y km de uso-->
+        <form action="https://www.w3schools.com/action_page.php" method="post">
+            
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Logo</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="coche.html">Coche</a></li>
+                        <li><a href="moto.html">Moto</a></li>
+                        <li><a href="Quad.html">Quad</a></li>
+                        <li><a href="Bici.html">Bici</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!--offset-s1-->
+            <!--directions_bike-->
+            <!--motorcycle-->
+            <!--poner un imput hiden-->
+            <input hidden="" name="tipo" type="text" value="Coche"> 
+            <div class="row">
+                <div class="input-field offset-s3 col s6">
+                    <fieldset>
+                        <legend>Coches</legend>
+                        <div class="row">
+                            <div class="input-field  col s8">
+                                <i class="material-icons prefix">local_taxi</i>
+                                <input list="marcas" placeholder="Regalia" name="text" id="first_name" type="text" class="validate">
+                                <label for="Regalia">Escribe la marca del coche por favor</label>
+                            </div>
+                            <datalist id="marcas">
+                                <option value="Regalia">
+                                <option value="Delorean">
+                                <option value="Batmovil">
+                                <option value="EquipoA">
+                                <option value="Mystery Machine">
+                                <option value="Fantastico">
+                                <option value="Ecto-1">
+                                <option value="Match-5">
+                                <option value="Tumbler">
+                                <option value="Mini Cooper">
+                                <option value="otro">
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <div class="input-field  col s8">
+                                <i class="material-icons prefix">palette</i>
+                                <input list="names" placeholder="Rosa" name="text" id="first_name" type="text" class="validate">
+                                <label for="Color">Marca el color del coche por favor</label>
+                            </div>
+                            <datalist id="names">
+                                <option value="Rosa">
+                                <option value="Rojo">
+                                <option value="Naranja">
+                                <option value="Amarillo">
+                                <option value="Verde">
+                                <option value="Azul">
+                                <option value="Añil">
+                                <option value="Violeta">
+                                <option value="Turquesa">
+                                <option value="Magenta">
+                                <option value="otro">
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <div class="input-field  col s5">
+                                <i class="material-icons prefix">place</i>
+                                <input list="km" placeholder="1000" name="text" id="first_name" type="text" class="validate">
+                                <label for="KM">¿Cuantos km tiene?</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field  col s5">
+                                <i class="material-icons prefix">straighten</i>
+                                <input list="matricula" placeholder="HTML 404" name="text" id="first_name" type="text" class="validate">
+                                <label for="matricula">Ponga la matricula</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field  col s7">
+                                <i class="material-icons prefix">subtitles</i>
+                                <input list="PrecioC" placeholder="Free" name="text" id="first_name" type="text" class="validate">
+                                <label for="PrecioC">Ponga un precio</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field  offset-s5 col s2">
+                    <a class="waves-effect waves-light btn">Realizar</a>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

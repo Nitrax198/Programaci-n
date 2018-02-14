@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous"></script>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Logo</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="coche.html">Coche</a></li>
+                    <li><a href="moto.html">Moto</a></li>
+                    <li><a href="Quad.html">Quad</a></li>
+                    <li><a href="Bici.html">Bici</a></li>
+                </ul>
+            </div>
+        </nav>
+        <form action="https://www.w3schools.com/action_page.php" method="post">
+            <input hidden="" name="tipo" type="text" value="Bici">
+            <div class="row">
+                <div class="input-field offset-s3 col s6">
+                    <fieldset>
+                        <legend>Bicis</legend>
+                        <div class="row">
+                            <div class="input-field  col s8">
+                                <i class="material-icons prefix">directions_bike</i>
+                                <input list="marcas" placeholder="Ruedines" name="text" id="first_name" type="text" class="validate">
+                                <label for="Ruedines">Escribe la marca de la bici por favor</label>
+                            </div>
+                            <datalist id="marcas">
+                                <option value="Epona">
+                                <option value="Agro">
+                                <option value="Pegasus">
+                                <option value="Sombra">
+                                <option value="Falkor">
+                                <option value="Rocinante">
+                                <option value="Tornado">
+                                <option value="Spirit">
+                                <option value="Perdigón">
+                                <option value="otro">
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <div class="input-field  col s8">
+                                <i class="material-icons prefix">palette</i>
+                                <input list="names" placeholder="Rosa" name="text" id="first_name" type="text" class="validate">
+                                <label for="Color">Marca el color de la bici por favor</label>
+                            </div>
+                            <datalist id="names">
+                                <option value="Rosa">
+                                <option value="Rojo">
+                                <option value="Naranja">
+                                <option value="Amarillo">
+                                <option value="Verde">
+                                <option value="Azul">
+                                <option value="Añil">
+                                <option value="Violeta">
+                                <option value="Turquesa">
+                                <option value="Magenta">
+                                <option value="otro">
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <div class="input-field  col s5">
+                                <i class="material-icons prefix">filter_tilt_shift</i>
+                                <input list="tRueda" placeholder="50cm" name="text" id="first_name" type="text" class="validate">
+                                <label for="tRueda">Tamaño de rueda</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field  col s5">
+                                <i class="material-icons prefix">gps_not_fixed</i>
+                                <input list="marchas" placeholder="5" name="text" id="first_name" type="text" class="validate">
+                                <label for="marchas">Numero de Marchas</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field  col s5">
+                                <i class="material-icons prefix">group_work</i>
+                                <input list="tCambio" placeholder="Manual" name="text" id="first_name" type="text" class="validate">
+                                <label for="tCambio">Tipo de cambio</label>
+                            </div>
+                            <datalist id="tCambio">
+                                <option value="Manual">
+                                <option value="Automatico">
+                                <option value="otro">
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <div class="input-field  col s7">
+                                <i class="material-icons prefix">subtitles</i>
+                                <input list="PrecioC" placeholder="Free" name="text" id="first_name" type="text" class="validate">
+                                <label for="PrecioC">Ponga un precio</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field  offset-s5 col s2">
+                    <a class="waves-effect waves-light btn">Realizar</a>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
