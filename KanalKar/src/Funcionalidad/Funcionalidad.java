@@ -118,10 +118,53 @@ public class Funcionalidad {
         }
     }
 
+    public int elegirVehiculos(String string, Scanner sc) {
+        int posicion;
+        posicion = -1;
+        for (int i = 0; i < stock.size(); i++) {
+
+            if (((Vehiculo) this.stock.get(i)).getMarca().equals(string)) {
+                System.out.println(stock.get(i).toString() + "¿Este es el que deseas? 1 pasa si 0 para no");
+                int respuesta = sc.nextInt();
+                sc.nextLine();
+                if (respuesta == 1) {
+                    posicion = i;
+                }
+            }
+            if (((VehiculoAMotor) this.stock.get(i)).getMatricula().equals(string)) {
+                System.out.println(stock.get(i).toString() + "¿Este es el que deseas? 1 pasa si 0 para no");
+                int respuesta = sc.nextInt();
+                sc.nextLine();
+                if (respuesta == 1) {
+                    posicion = i;
+                }
+            }
+        }
+        return posicion;
+    }
+
     public void mostrarVehiculos(float precio) {
         for (int i = 0; i < stock.size(); i++) {
-            
+            if (precio <= stock.get(i).getPrecioVenta()) {
+                System.out.println(stock.get(i).toString());
+            }
         }
+    }
+
+    public int elegirVehiculos(float precio, Scanner sc) {
+        int posicion;
+        posicion = -1;
+        for (int i = 0; i < stock.size(); i++) {
+            if (precio <= stock.get(i).getPrecioVenta()) {
+                System.out.println(stock.get(i).toString() + "¿Este es el que deseas? 1 pasa si 0 para no");
+                int respuesta = sc.nextInt();
+                sc.nextLine();
+                if (respuesta == 1) {
+                    posicion = i;
+                }
+            }
+        }
+        return posicion;
     }
 
     public void mostrarVehiculos(int tipo) {
@@ -159,33 +202,127 @@ public class Funcionalidad {
         }
     }
 
+    public int elegirVehiculos(int tipo, Scanner sc) {
+        int posicion;
+        posicion = -1;
+        switch (tipo) {
+            case 1:
+                for (int i = 0; i < stock.size(); i++) {
+                    if (stock.get(i) instanceof Bici) {
+                        System.out.println(stock.get(i).toString() + "¿Este es el que deseas? 1 pasa si 0 para no");
+                        int respuesta = sc.nextInt();
+                        sc.nextLine();
+                        if (respuesta == 1) {
+                            posicion = i;
+                        }
+                    }
+                }
+                break;
+            case 2:
+                for (int i = 0; i < stock.size(); i++) {
+                    if (stock.get(i) instanceof Coche) {
+                        System.out.println(stock.get(i).toString() + "¿Este es el que deseas? 1 pasa si 0 para no");
+                        int respuesta = sc.nextInt();
+                        sc.nextLine();
+                        if (respuesta == 1) {
+                            posicion = i;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                for (int i = 0; i < stock.size(); i++) {
+                    if (stock.get(i) instanceof Moto) {
+                        System.out.println(stock.get(i).toString() + "¿Este es el que deseas? 1 pasa si 0 para no");
+                        int respuesta = sc.nextInt();
+                        sc.nextLine();
+                        if (respuesta == 1) {
+                            posicion = i;
+                        }
+                    }
+                }
+                break;
+            case 4:
+                for (int i = 0; i < stock.size(); i++) {
+                    if (stock.get(i) instanceof Quad) {
+                        System.out.println(stock.get(i).toString() + "¿Este es el que deseas? 1 pasa si 0 para no");
+                        int respuesta = sc.nextInt();
+                        sc.nextLine();
+                        if (respuesta == 1) {
+                            posicion = i;
+                        }
+                    }
+                }
+                break;
+            default:
+                System.out.println("Eres to tonto");
+        }
+        return posicion;
+    }
+
     public void venderVehiculo(Scanner sc) {
-        int select, tipo;
+        int select, tipo, posicion, precioComprador;
+        posicion = -1;
         String cadena;
+        float precio;
         System.out.println("¿Como quieres buscar? 1.Marca 2.Tipo de Vehiculo 3.Matricula 4.Precio");
         select = sc.nextInt();
         sc.nextLine();
         switch (select) {
             case 1:
                 System.out.println("Dime la marca");
-                cadena=sc.nextLine();
+                cadena = sc.nextLine();
                 mostrarVehiculos(cadena);
+                posicion = elegirVehiculos(cadena, sc);
                 break;
             case 2:
                 System.out.println("¿Que tipo de vehiculo quieres? 1.Bici 2.Coche 3.Moto 4.Quad");
                 tipo = sc.nextInt();
                 sc.nextLine();
                 mostrarVehiculos(tipo);
+                posicion = elegirVehiculos(tipo, sc);
                 break;
             case 3:
                 System.out.println("Dime la matricula");
-                cadena=sc.nextLine();
+                cadena = sc.nextLine();
                 mostrarVehiculos(cadena);
+                posicion = elegirVehiculos(cadena, sc);
                 break;
             case 4:
+                System.out.println("Dime el precio");
+                precio = sc.nextFloat();
+                sc.nextLine();
+                mostrarVehiculos(precio);
+                posicion = elegirVehiculos(precio, sc);
                 break;
             default:
                 System.out.println("Eres to tonto");
         }
+        System.out.println("pon tu el precio");
+        precioComprador = sc.nextInt();
+        sc.nextLine();
+        if (posicion == -1) {
+            System.out.println("no has elegido ningun coche");
+        } else {
+            if (precioComprador < stock.get(posicion).getPrecioVenta()) {
+                System.out.println("El coche no se puede vender a ese precio");
+            } else {
+                stock.get(posicion).setPrecioVenta(precioComprador);
+                ventas.add(stock.get(posicion));
+                stock.remove(stock.get(posicion));
+            }
+        }
+    }
+
+    public void mirarLaFacturacionDeLaEmpresa() {
+        float precioTotal;
+        precioTotal = 0;
+        for (int i = 0; i < ventas.size(); i++) {
+            System.out.println(ventas.get(i).toString());
+            System.out.println("Beneficio : " + (ventas.get(i).getPrecioVenta() - ventas.get(i).getPrecioCompra()));
+            precioTotal += (ventas.get(i).getPrecioVenta() - ventas.get(i).getPrecioCompra());
+        }
+        System.out.println(precioTotal);
+        ventas.clear();
     }
 }
