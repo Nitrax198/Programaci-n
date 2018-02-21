@@ -21,5 +21,5 @@ public class KanalKar {
         //probar es una interface
         //se pueden filtrar de 4 formas
     }
-    
+   
 }

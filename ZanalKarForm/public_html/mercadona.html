@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous"></script>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    </head>
+    <body>
+        <form action="https://www.w3schools.com/action_page.php" method="post"> 
+            <div class="row">
+                <div class="input-field offset-s1 col s10">
+                    <fieldset>
+                        <legend>Datos Personales</legend>
+                        <div class="row">
+                            <div class="input-field offset-s1 col s10">
+                                <i class="material-icons prefix">Name</i>
+                                <input list="name" placeholder="Benito" name="text" id="first_name" type="text" class="validate">
+                                <label for="Nombre">Nombre</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field offset-s1 col s10">
+                                <i class="material-icons prefix">account_box</i>
+                                <input list="name" placeholder="Camela" name="text" id="first_name" type="text" class="validate">
+                                <label for="Apellidos">Apellidos</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field offset-s1 col s10">
+                                <i class="material-icons prefix">credit_card</i>
+                                <input list="name" placeholder="12345678?" name="text" id="first_name" type="text" class="validate">
+                                <label for="DNI">DNI</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field offset-s1 col s10">
+                                <i class="material-icons prefix">location_on</i>
+                                <input list="name" placeholder="C/Falsa 123 Puerta A Mordor 9ºB" name="text" id="first_name" type="text" class="validate">
+                                <label for="Direccion">Direccion</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field offset-s1 col s10">
+                                <i class="material-icons prefix">local_phone</i>
+                                <input list="name" placeholder="666999666" name="text" id="first_name" type="text" class="validate">
+                                <label for="Telefono">Telefono</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Datos de Trabajo</legend>
+                        <div class="row">
+                            <div class="input-field offset-s1 col s10">
+                                <i class="material-icons prefix">face</i>
+                                <input list="names" placeholder="Excaso" name="text" id="first_name" type="text" class="validate">
+                                <label for="names">Sexo</label>
+                            </div>
+                            <datalist id="names">
+                                <option value="Hombre">
+                                <option value="Mujer">
+                                <option value="otro">
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <div class="input-field offset-s1 col s10">
+                                <i class="material-icons prefix">find_replacex</i>
+                                <input list="tipos" placeholder="Tarde" name="text" id="first_name" type="text" class="validate">
+                                <label for="turno">Turno</label>
+                            </div>
+                            <datalist id="tipos">
+                                <option value="Mañana">
+                                <option value="Tarde">
+                                <option value="Noche">
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <div class="input-field offset-s1 col s10">
+                                <i class="material-icons prefix">filter_frames</i>
+                                <input list="Job" placeholder="The BOSS" name="text" id="first_name" type="text" class="validate">
+                                <label for="Job">Trabajo</label>
+                            </div>
+                            <datalist id="Job">
+                                <option value="Reponedor">
+                                <option value="Cajero">
+                                <option value="Jefe">
+                                <option value="Pescaderia">
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <div class="input-field offset-s1 col s10">
+                                <i class="material-icons prefix">palette</i>
+                                <input list="color" placeholder="Rosa" name="text" id="first_name" type="text" class="validate">
+                                <label for="Color">Marca el color de la bici por favor</label>
+                            </div>
+                            <datalist id="color">
+                                <option value="Rosa">
+                                <option value="Rojo">
+                                <option value="Naranja">
+                                <option value="Amarillo">
+                                <option value="Verde">
+                                <option value="Azul">
+                                <option value="Añil">
+                                <option value="Violeta">
+                                <option value="Turquesa">
+                                <option value="Magenta">
+                                <option value="otro">
+                            </datalist>
+                        </div>
+                        <div class="row">
+                            <div class="input-field offset-s1 col s10">
+                                <i class="material-icons prefix">all_inclusive</i>
+                                <p class="range-field">
+                                    <input type="range" id="test5" min="10000" max="15000" />
+                                </p>
+                                <label for="Color">Cuanto quieres ganar</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="input-field offset-s1 col s10">
+                            <input type="checkbox" id="test6"  />
+                            <label for="test6">Acepto los terminos y condiciones de uso que no he leido</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field  offset-s5 col s2">
+                            <a class="waves-effect waves-light btn">Realizar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
