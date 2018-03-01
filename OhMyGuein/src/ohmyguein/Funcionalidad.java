@@ -5,10 +5,16 @@
  */
 package ohmyguein;
 
+import Clases.Campeonato;
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 /**
  *
  * @author daw
  */
 public class Funcionalidad {
-    
+    Map< LocalDate, Campeonato> c1 = new LinkedHashMap<>();
 }

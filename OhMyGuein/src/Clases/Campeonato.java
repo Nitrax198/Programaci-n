@@ -6,15 +6,24 @@
 package Clases;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
  * @author daw
  */
-public class Campeonato extends Clasificados{
+public class Campeonato{
     private LocalDate fecha;
     private String juego;
     private String premio;
+    ArrayList<Clasificado> clasificados;
+    
+    public Campeonato(LocalDate fecha, String juego, String premio, int posicion) {
+        this.fecha = fecha;
+        this.juego = juego;
+        this.premio = premio;
+        this.clasificados =  new  ArrayList<>();
+    }
 
     public LocalDate getFecha() {
         return fecha;
@@ -39,11 +48,8 @@ public class Campeonato extends Clasificados{
     public void setPremio(String premio) {
         this.premio = premio;
     }
-
-    public Campeonato(LocalDate fecha, String juego, String premio, int posicion) {
-        super(posicion);
-        this.fecha = fecha;
-        this.juego = juego;
-        this.premio = premio;
+    
+    public void addCarta(Clasificado clasificado){
+        this.clasificados.add(clasificado);
     }
 }

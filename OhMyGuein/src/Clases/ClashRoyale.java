@@ -27,7 +27,7 @@ public class ClashRoyale extends Gamer{
         this.deck = new ArrayList<>();
         //Las cartad se van añadiendo mas tarde
     }
-    public void addCarta(Carta Carta){
-        this.deck.add(Carta);
+    public void addCarta(Carta carta){
+        this.deck.add(carta);
     }
 }
