@@ -41,7 +41,7 @@ public class Funcionalidad {
         G1.addCarta(carta2);
         ClashRoyale G2 = new ClashRoyale(1, "kaiba", 20);
         Carta carta3 = new Carta("Exodia", 6);
-        Carta carta4 = new Carta("Slifer", 5);
+        Carta carta4 = new Carta("MagoOscuro", 5);
         G1.addCarta(carta1);
         G1.addCarta(carta2);
         inscritos.add(new CSGO("equipo", 5, "mapa", 8, "Nico", 9));
@@ -54,6 +54,7 @@ public class Funcionalidad {
 
     public void addCampeonato() {
         int año, mes, dia;
+        String nombre;
         LocalDate fecha;
         boolean fin;
         fin = false;
@@ -78,6 +79,7 @@ public class Funcionalidad {
             }
         } while (!fin);
         System.out.println("Dime el nombre del jugador que uqieras añadir");
+        nombre =  sc.nextLine();
     }
 
     public void ranking() {
