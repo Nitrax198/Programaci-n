@@ -34,5 +34,11 @@ public class LOL extends Gamer{
         this.linea = linea;
         this.escepialidad = escepialidad;
     }
+
+    @Override
+    public String toString() {
+        return "LOL{" + "linea=" + linea + ", escepialidad=" + escepialidad + '}';
+    }
+    
 }
 

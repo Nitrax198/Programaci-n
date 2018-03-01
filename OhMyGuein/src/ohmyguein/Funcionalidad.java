@@ -70,7 +70,10 @@ public class Funcionalidad {
         fecha = LocalDate.of(año, mes, dia);
         do {
             if (campeonatos.containsKey(fecha) == false) {
-                Campeonato c1 = new Campeonato(fecha, "LOL", "Nachos");
+                System.out.println("De que es el campeonato, puede ser  de lol, de Magic, o de CSGO");
+                String tipo;
+                tipo = sc.nextLine();
+                Campeonato c1 = new Campeonato(fecha, tipo, "Nachos");
                 campeonatos.put(fecha, c1);
                 fin = true;
             } 
@@ -78,12 +81,33 @@ public class Funcionalidad {
                 System.out.println("Ya hay un campeonato ese dia, por favor elige otro");
             }
         } while (!fin);
-        System.out.println("Dime el nombre del jugador que uqieras añadir");
+        for (int i = 0; i < inscritos.size(); i++) {
+            System.out.println(inscritos.get(i).toString());
+        }
+        System.out.println("Dime el nombre del jugador que quieras apuntar al torneo");
         nombre =  sc.nextLine();
+        
+        for (int i = 0; i <inscritos.size(); i++) {
+            if (inscritos.get(i) instanceof LOL) {
+                if (inscritos.get(i).getNombre().equals(nombre)) {
+                        campeonatos.get(fecha).addGamer(inscritos.get(i));
+                }
+            }
+            else if(inscritos.get(i) instanceof CSGO){
+                if (inscritos.get(i).getNombre().equals(nombre)) {
+                    campeonatos.get(fecha).addGamer(inscritos.get(i));
+                }
+            }
+            else if(inscritos.get(i) instanceof ClashRoyale){
+                if (inscritos.get(i).getNombre().equals(nombre)) {
+                    campeonatos.get(fecha).addGamer(inscritos.get(i));
+                }
+            }
+        }
     }
 
     public void ranking() {
-
+        
     }
 
     public void listarCampeonatos() {

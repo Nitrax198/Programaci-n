@@ -44,4 +44,10 @@ public class CSGO extends Gamer{
         this.numKills = numKills;
         this.mapa = mapa;
     }
+
+    @Override
+    public String toString() {
+        return "CSGO{" + "equipo=" + equipo + ", numKills=" + numKills + ", mapa=" + mapa + '}';
+    }
+    
 }

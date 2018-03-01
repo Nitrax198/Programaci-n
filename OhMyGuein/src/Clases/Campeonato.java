@@ -14,6 +14,8 @@ import java.util.Objects;
  * @author daw
  */
 public class Campeonato{
+
+    
     private LocalDate fecha;
     private String juego;
     private String premio;

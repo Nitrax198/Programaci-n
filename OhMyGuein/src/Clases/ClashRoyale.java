@@ -30,6 +30,11 @@ public class ClashRoyale extends Gamer{
     public void addCarta(Carta carta){
         this.deck.add(carta);
     }
+
+    @Override
+    public String toString() {
+        return "ClashRoyale{" + "deck=" + deck + '}';
+    }
     
 }
 
