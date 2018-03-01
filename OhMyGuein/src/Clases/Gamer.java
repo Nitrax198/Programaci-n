@@ -6,6 +6,7 @@
 package Clases;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -59,4 +60,42 @@ public class Gamer {
     public void addTrofeo(String trofeo){
         this.trofeos.add(trofeo);
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 43 * hash + this.rankin;
+        hash = 43 * hash + Objects.hashCode(this.nombre);
+        hash = 43 * hash + this.numTorneos;
+        hash = 43 * hash + Objects.hashCode(this.trofeos);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Gamer other = (Gamer) obj;
+        if (this.rankin != other.rankin) {
+            return false;
+        }
+        if (this.numTorneos != other.numTorneos) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.trofeos, other.trofeos)) {
+            return false;
+        }
+        return true;
+    }
+    
 }

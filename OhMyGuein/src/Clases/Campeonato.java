@@ -7,6 +7,7 @@ package Clases;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -18,7 +19,7 @@ public class Campeonato{
     private String premio;
     ArrayList<Clasificado> clasificados;
     
-    public Campeonato(LocalDate fecha, String juego, String premio, int posicion) {
+    public Campeonato(LocalDate fecha, String juego, String premio) {
         this.fecha = fecha;
         this.juego = juego;
         this.premio = premio;
@@ -49,7 +50,33 @@ public class Campeonato{
         this.premio = premio;
     }
     
-    public void addCarta(Clasificado clasificado){
-        this.clasificados.add(clasificado);
+    public void addGamer(Gamer gamer){
+        this.clasificados.add(new Clasificado(-1,gamer));
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.fecha);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Campeonato other = (Campeonato) obj;
+        if (!Objects.equals(this.fecha, other.fecha)) {
+            return false;
+        }
+        return true;
+    }
+    
 }
