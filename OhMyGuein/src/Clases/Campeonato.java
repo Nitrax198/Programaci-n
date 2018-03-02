@@ -8,6 +8,7 @@ package Clases;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 /**
  *
@@ -53,7 +54,21 @@ public class Campeonato{
     }
     
     public void addGamer(Gamer gamer){
+        if(clasificados.contains(gamer) == false){
         this.clasificados.add(new Clasificado(-1,gamer));
+        }
+        else{
+            System.out.println("El jugador ya está");
+        }
+    }
+    public void CambiarRanking(Scanner sc){
+        int ranking;
+        for (int i = 0; i < clasificados.size(); i++) {
+            System.out.println("Dime la posición en la que has quedado");
+            ranking = sc.nextInt();
+            sc.nextLine();
+            clasificados.get(i).setPosicion(ranking);
+        }
     }
 
     @Override

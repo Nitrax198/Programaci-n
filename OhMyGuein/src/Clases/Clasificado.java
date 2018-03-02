@@ -34,4 +34,8 @@ public class Clasificado {
     public void setGamer(Gamer gamer) {
         this.gamer = gamer;
     }
+
+    Object get(Gamer gamer) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -107,7 +107,20 @@ public class Funcionalidad {
     }
 
     public void ranking() {
-        
+        int año, mes, dia;
+        Gamer gamer;
+        LocalDate fecha;
+        System.out.println("Dime el año del campeonato");
+        año = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Dime el mes del campeonato");
+        mes = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Dime el dia del campeonato");
+        dia = sc.nextInt();
+        sc.nextLine();
+        fecha = LocalDate.of(año, mes, dia);
+        campeonatos.get(fecha).CambiarRanking(sc);
     }
 
     public void listarCampeonatos() {
