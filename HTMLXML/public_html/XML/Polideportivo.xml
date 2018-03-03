@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<Polideportivo
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='Polideportivo.xsd'>
+    <Alumno>
+        <Nombre>Julio</Nombre>
+        <Apellido>Hernandez</Apellido>
+        <PagaAlMes>120</PagaAlMes>
+    </Alumno>
+    <Horario>
+        <Dias>Lunes</Dias>
+        <HoraFinal>10</HoraFinal>
+        <HoraInicial>12</HoraInicial>
+    </Horario>
+    <Actividad>
+        <tipo>Boxeo</tipo>
+        <Plazas>13</Plazas>
+        <PlazasLibres>10</PlazasLibres>
+        <Precio>120</Precio>
+        <Horario>
+            <Dias>10</Dias>
+            <HoraFinal>10</HoraFinal>
+            <HoraInicial>12</HoraInicial>
+        </Horario>
+        <ArrayAlumnos>
+            <Nombre>haime</Nombre>
+            <Apellido>Gimenez</Apellido>
+            <PagaAlMes>120</PagaAlMes>
+        </ArrayAlumnos>
+    </Actividad>
+
+</Polideportivo>

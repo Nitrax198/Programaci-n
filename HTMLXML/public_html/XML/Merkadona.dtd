@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/Merkadona.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE Merkadona SYSTEM "Merkadona.dtd">
+
+    <Merkadona>
+    ...
+    </Merkadona>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Merkadona (Empleados|Productos)*>
+<!ATTLIST Merkadona
+    xsi:noNamespaceSchemaLocation CDATA #IMPLIED
+    xmlns:xsi CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Empleados (Empleado)+>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Empleado (ID|Nombre|Reponedora|Cajera)+>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ID (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Nombre (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Reponedora (TotalNumProds)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT TotalNumProds (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Cajera (PrecioTotal)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT PrecioTotal (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Productos (CantidadEnStock|PrecioBase|Nombre|Perecederos)?>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT CantidadEnStock (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT PrecioBase (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Perecederos (FechaCaducidad)?>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT FechaCaducidad (#PCDATA)>

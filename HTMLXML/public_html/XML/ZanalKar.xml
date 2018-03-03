@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<Vehiculos
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='ZanalKar.xsd'>
+    <VehiculosAMotor>
+        <Motos>
+            <Color>Rosa</Color>
+            <Marca>harleyDavidson</Marca>
+            <PreciCompra>25000</PreciCompra>
+            <PreciVenta>30000</PreciVenta>
+            <Matricula>404HTML</Matricula>
+            <KMUso>10</KMUso>
+        </Motos>
+        <Coches>
+            <Color>Marron</Color>
+            <Marca>CielCadilac</Marca>
+            <PreciCompra>500000</PreciCompra>
+            <PreciVenta>600000</PreciVenta>
+            <Matricula>404Error</Matricula>
+            <KMUso>20</KMUso>
+        </Coches>
+        <Quads>
+            <Color>Verde</Color>
+            <Marca>Epona</Marca>
+            <PreciCompra>100</PreciCompra>
+            <PreciVenta>150</PreciVenta>
+            <Matricula>Hyrule</Matricula>
+            <KMUso>30</KMUso>
+        </Quads>
+    </VehiculosAMotor>
+    <Bicis>
+        <Color>Negro</Color>
+        <Marca>Rocinante</Marca>
+        <PreciCompra>3</PreciCompra>
+        <PreciVenta>2</PreciVenta>
+        <NumeroDeMarcas>3</NumeroDeMarcas>
+        <TamañoRuedas>1</TamañoRuedas>
+        <TipoDeCambio>Ninguno</TipoDeCambio>
+    </Bicis>
+
+</Vehiculos>

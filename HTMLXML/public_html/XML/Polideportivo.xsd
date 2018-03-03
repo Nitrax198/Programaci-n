@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="Polideportivo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Alumno"  maxOccurs="unbounded" >
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Nombre" type="xs:String"/>
+                            <xs:element name="Apellido" type="xs:String"/>
+                            <xs:element name="PagaAlMes" type="xs:integer"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Horario"  maxOccurs="unbounded" >
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Dias" type="xs:String"/>
+                            <xs:element name="HoraFinal" type="xs:integer"/>
+                            <xs:element name="HoraInicial" type="xs:integer"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Actividad"  maxOccurs="unbounded" >
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tipo" type="xs:String"/>
+                            <xs:element name="Plazas" type="xs:String"/>
+                            <xs:element name="PlazasLibres" type="xs:String"/>
+                            <xs:element name="Precio" type="xs:String"/>
+                            <xs:element name="Horario">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Dias" type="xs:String"/>
+                                        <xs:element name="HoraFinal" type="xs:integer"/>
+                                        <xs:element name="HoraInicial" type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ArrayAlumnos">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Nombre" type="xs:String"/>
+                                        <xs:element name="Apellido" type="xs:String"/>
+                                        <xs:element name="PagaAlMes" type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

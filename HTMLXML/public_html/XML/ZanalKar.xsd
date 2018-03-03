@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="Vehiculos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="VehiculosAMotor">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Motos">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Color" type="xs:String"/>
+                                        <xs:element name="Marca" type="xs:String"/>
+                                        <xs:element name="PreciCompra" type="xs:integer"/>
+                                        <xs:element name="PreciVenta" type="xs:integer"/>
+                                        <xs:element name="Matricula" type="xs:String"/>
+                                        <xs:element name="KMUso" type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Coches">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Color" type="xs:String"/>
+                                        <xs:element name="Marca" type="xs:String"/>
+                                        <xs:element name="PreciCompra" type="xs:integer"/>
+                                        <xs:element name="PreciVenta" type="xs:integer"/>
+                                        <xs:element name="Matricula" type="xs:String"/>
+                                        <xs:element name="KMUso" type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Quads">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Color" type="xs:String"/>
+                                        <xs:element name="Marca" type="xs:String"/>
+                                        <xs:element name="PreciCompra" type="xs:integer"/>
+                                        <xs:element name="PreciVenta" type="xs:integer"/>
+                                        <xs:element name="Matricula" type="xs:String"/>
+                                        <xs:element name="KMUso" type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Bicis">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Color" type="xs:String"/>
+                            <xs:element name="Marca" type="xs:String"/>
+                            <xs:element name="PreciCompra" type="xs:integer"/>
+                            <xs:element name="PreciVenta" type="xs:integer"/>
+                            <xs:element name="NumeroDeMarcas" type="xs:integer"/>
+                            <xs:element name="TamañoRuedas" type="xs:integer"/>
+                            <xs:element name="TipoDeCambio" type="xs:String"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
