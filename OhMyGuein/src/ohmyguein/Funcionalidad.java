@@ -124,7 +124,9 @@ public class Funcionalidad {
     }
 
     public void listarCampeonatos() {
-
+        for (int i = 0; i < campeonatos.size(); i++) {
+            System.out.println(campeonatos.get(i).toString());
+        }
     }
 
 }

@@ -95,5 +95,10 @@ public class Campeonato{
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Campeonato{" + "fecha=" + fecha + ", juego=" + juego + ", premio=" + premio + ", clasificados=" + clasificados + '}';
+    }
     
 }
