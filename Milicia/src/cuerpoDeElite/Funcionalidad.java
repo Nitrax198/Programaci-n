@@ -6,6 +6,7 @@
 package cuerpoDeElite;
 
 import clases.Mision;
+import clases.MisionCombate;
 import clases.RecursoHumano;
 import clases.RecursoMaterial;
 import clases.RecursoMilitar;
@@ -65,12 +66,14 @@ public class Funcionalidad {
         System.out.println("Que tipo de mision es: 1 Misión de Reconocimiento 0 Misión de Combate");
         opcion = sc.nextInt();
         sc.nextLine();
+        Mision m  = new Mision(id, fecha, lugar, exp);
         switch (opcion) {
             case 1:
-
+                misiones.put(id, m);
+                GenerarMisioReconocimiento(id);
                 break;
             case 2:
-
+                misiones.put(id, m);
                 break;
             default:
                 System.out.println("No hay misiones de escolta");
@@ -86,87 +89,195 @@ public class Funcionalidad {
         boolean estresado = false;
         boolean capacidad = false;
         boolean vehiculoLoPrimero = true;
+        boolean recursoAñadido = false;
 //        boolean asignado = false;
+        System.out.println("dime el uso del recurso");
+        uso = sc.nextLine();
+        meterVehiculo(id, uso);
 
         System.out.println("Que tipo de recurso quieres 1 material 2 vehiculo 3 humano");
         opcion = sc.nextInt();
         sc.nextLine();
-        switch (opcion) {
-            case 1:
-                for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
-                    if (recursos.get(i) instanceof RecursoMaterial) {
-                        System.out.println(recursos.get(i).toString());
-                        System.out.println("¿este? 1 si 0 no");
-                        confirmar = sc.nextInt();
-                        sc.nextLine();
-                        posicionRecurso = i;
+        do {
+            switch (opcion) {
+                case 1:
+                    for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
+                        if (recursos.get(i) instanceof RecursoMaterial) {
+                            System.out.println(recursos.get(i).toString());
+                            System.out.println("¿este? 1 si 0 no");
+                            confirmar = sc.nextInt();
+                            sc.nextLine();
+                            posicionRecurso = i;
+                        }
                     }
-                }
-                break;
-            case 2:
-                for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
-                    if (recursos.get(i) instanceof RecursoVehiculo) {
-                        System.out.println(recursos.get(i).toString());
-                        System.out.println("¿este? 1 si 0 no");
-                        confirmar = sc.nextInt();
-                        sc.nextLine();
-                        posicionRecurso = i;
+                    break;
+                case 2:
+                    for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
+                        if (recursos.get(i) instanceof RecursoVehiculo) {
+                            System.out.println(recursos.get(i).toString());
+                            System.out.println("¿este? 1 si 0 no");
+                            confirmar = sc.nextInt();
+                            sc.nextLine();
+                            posicionRecurso = i;
+                        }
                     }
-                }
-                break;
-            case 3:
-                for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
-                    if (recursos.get(i) instanceof RecursoHumano) {
-                        System.out.println(recursos.get(i).toString());
-                        System.out.println("¿este? 1 si 0 no");
-                        confirmar = sc.nextInt();
-                        sc.nextLine();
-                        posicionRecurso = i;
+                    break;
+                case 3:
+                    for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
+                        if (recursos.get(i) instanceof RecursoHumano) {
+                            System.out.println(recursos.get(i).toString());
+                            System.out.println("¿este? 1 si 0 no");
+                            confirmar = sc.nextInt();
+                            sc.nextLine();
+                            posicionRecurso = i;
+                        }
                     }
-                }
-                break;
-            default:
-                System.out.println("ese recurso no existe");
-                break;
-        }
-        System.out.println("dime su uso");
-        uso = sc.nextLine();
-        
-        if (recursos.get(posicionRecurso) instanceof RecursoHumano) {
-            if (((RecursoHumano) recursos.get(posicionRecurso)).getNivelStress() > 20) {
-                estresado = true;
-                System.out.println("no se puede meter ese recurso por que está estresado");
-            } else {
-                if (misiones.get(id).comprobarVehiculo()) {
-                    // en este caso si que hay un vehiculo
+                    break;
+                default:
+                    System.out.println("ese recurso no existe");
+                    break;
+            }
+
+            if (recursos.get(posicionRecurso) instanceof RecursoHumano) {
+                if (((RecursoHumano) recursos.get(posicionRecurso)).getNivelStress() > 20) {
+                    estresado = true;
+                    System.out.println("no se puede meter ese recurso por que está estresado");
+                } else {
+
                     capacidadCarga = misiones.get(id).mirarCapacidadVehiculo();
+
                     if (!misiones.get(id).comprobarHumanos(capacidadCarga)) {
                         //no se ha pasado de humanos
                         misiones.get(id).addRecurso(recursos.get(posicionRecurso), uso);
+                        recursoAñadido = true;
                     }
                 }
+            } else {
+                misiones.get(id).addRecurso(recursos.get(posicionRecurso), uso);
+                recursoAñadido = true;
+            }
+        } while (!recursoAñadido);
+    }
+    public void GenerarMisioCombate(int id) {
+        int opcion, confirmar, posicionRecurso, capacidadCarga;
+        String uso;
+        posicionRecurso = -1;
+        confirmar = -1;
+        boolean estresado = false;
+        boolean capacidad = false;
+        boolean vehiculoLoPrimero = true;
+        boolean recursoAñadido = false;
+//        boolean asignado = false;
+    
+        System.out.println("dime el uso del recurso");
+        uso = sc.nextLine();
+        meterVehiculo(id, uso);
+
+        System.out.println("Que tipo de recurso quieres 1 material 2 vehiculo 3 humano");
+        opcion = sc.nextInt();
+        sc.nextLine();
+        do {
+            switch (opcion) {
+                case 1:
+                    for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
+                        if (recursos.get(i) instanceof RecursoMaterial) {
+                            System.out.println(recursos.get(i).toString());
+                            System.out.println("¿este? 1 si 0 no");
+                            confirmar = sc.nextInt();
+                            sc.nextLine();
+                            posicionRecurso = i;
+                        }
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
+                        if (recursos.get(i) instanceof RecursoVehiculo) {
+                            System.out.println(recursos.get(i).toString());
+                            System.out.println("¿este? 1 si 0 no");
+                            confirmar = sc.nextInt();
+                            sc.nextLine();
+                            posicionRecurso = i;
+                        }
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
+                        if (recursos.get(i) instanceof RecursoHumano) {
+                            System.out.println(recursos.get(i).toString());
+                            System.out.println("¿este? 1 si 0 no");
+                            confirmar = sc.nextInt();
+                            sc.nextLine();
+                            posicionRecurso = i;
+                        }
+                    }
+                    break;
+                default:
+                    System.out.println("ese recurso no existe");
+                    break;
+            }
+
+            if (recursos.get(posicionRecurso) instanceof RecursoHumano) {
+                if (((RecursoHumano) recursos.get(posicionRecurso)).getNivelStress() > 20) {
+                    estresado = true;
+                    System.out.println("no se puede meter ese recurso por que está estresado");
+                } else {
+
+                    capacidadCarga = misiones.get(id).mirarCapacidadVehiculo();
+
+                    if (!misiones.get(id).comprobarHumanos(capacidadCarga)) {
+                        //no se ha pasado de humanos
+                        misiones.get(id).addRecurso(recursos.get(posicionRecurso), uso);
+                        recursoAñadido = true;
+                    }
+                }
+            } else {
+                misiones.get(id).addRecurso(recursos.get(posicionRecurso), uso);
+                recursoAñadido = true;
+            }
+            if (misiones.get(id) instanceof MisionCombate) {
+                if (((MisionCombate) misiones.get(id)).comprobarNivelMortalidad()> misiones.get(id).comprobarNivelMortalidad()) {
+                    System.out.println("la mision no se puede realizar");
+                    misiones.remove(id);
+                }
+            }
+        } while (!recursoAñadido);
+    }
+
+    private void meterVehiculo(int id, String uso) {
+        int confirmar, posicionRecurso;
+        posicionRecurso = -1;
+        confirmar = -1;
+        for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
+            if (recursos.get(i) instanceof RecursoVehiculo) {
+                System.out.println(recursos.get(i).toString());
+                System.out.println("¿este? 1 si 0 no");
+                confirmar = sc.nextInt();
+                sc.nextLine();
+                posicionRecurso = i;
 
             }
-        }
-    }
-    private void meterVehiculo(){
-        int confirmar, posicionRecurso;
-        for (RecursoMilitar recurso : recursos) {
-            if (recurso instanceof RecursoVehiculo) {
-                        System.out.println(recursos.get(i).toString());
-                        System.out.println("¿este? 1 si 0 no");
-                        confirmar = sc.nextInt();
-                        sc.nextLine();
-                        posicionRecurso = i;
-            
-        }
-              if (recursos.get(posicionRecurso) instanceof RecursoVehiculo) {
+            if (recursos.get(posicionRecurso) instanceof RecursoVehiculo) {
                 misiones.get(id).addRecurso(recursos.get(posicionRecurso), uso);
 
             } else {
                 System.out.println("Añade un vehiculo primero");
-                vehiculoLoPrimero = false;
             }
+        }
     }
+
+    public void reljarSoldados() {
+        int confirmar  = -1;
+        int posicionRecurso  = 0;
+        System.out.println("Dime quien quieres bajarle el Stress");
+        for (int i = 0; i < recursos.size() && confirmar != 1; i++) {
+            if (recursos.get(i) instanceof RecursoHumano) {
+                System.out.println(recursos.get(i).toString());
+                System.out.println("¿este? 1 si 0 no");
+                confirmar = sc.nextInt();
+                sc.nextLine();
+                posicionRecurso = i;
+            }
+        }
+        ((RecursoHumano)recursos.get(posicionRecurso)).setNivelStress(0);
     }
 }

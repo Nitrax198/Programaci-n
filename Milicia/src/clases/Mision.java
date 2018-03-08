@@ -14,13 +14,13 @@ import java.util.Objects;
  * @author Miguel
  */
 public class Mision {
-    
+
     private int idMision;
     private boolean exito;
     private LocalDate fecha;
     private String lugar;
     private int expGanada;
-    ArrayList<RecursoMision> recursos; 
+    ArrayList<RecursoMision> recursos;
 
     public Mision(int idMision, LocalDate fecha, String lugar, int expGanada) {
         this.idMision = idMision;
@@ -70,39 +70,27 @@ public class Mision {
     public void setIdMision(int idMision) {
         this.idMision = idMision;
     }
-    
+
     public void addRecurso(RecursoMilitar recurso, String tipo) {
-        recursos.add(new RecursoMision(tipo,recurso ));
+        recursos.add(new RecursoMision(tipo, recurso));
     }
-    public boolean comprobarVehiculo() {
-        boolean hayVehiculo;
-        hayVehiculo = false;
-        for (int i = 0; i < recursos.size(); i++) {
-            if (recursos.get(i).getRecurso() instanceof RecursoVehiculo) {
-                System.out.println("vale, hay un vehiculo");
-                hayVehiculo =  true;
-            }
-            else {
-                System.out.println("No hay vehiculos, por favor añade uno");
-            }
-        }
-        return hayVehiculo;
-    }
+
     public int mirarCapacidadVehiculo() {
         boolean parase;
-        parase =  false;
+        parase = false;
         int capacidadVehiculo, posicion;
         capacidadVehiculo = -1;
         posicion = 0;
-        for (int i = 0; i < recursos.size()&& !parase; i++) {
+        for (int i = 0; i < recursos.size() && !parase; i++) {
             if (recursos.get(i).getRecurso() instanceof RecursoVehiculo) {
-                 parase  =true;
-                 posicion = i;
+                parase = true;
+                posicion = i;
             }
-            capacidadVehiculo = ((RecursoVehiculo)recursos.get(posicion).getRecurso()).getCapacidadDeCarga();
+            capacidadVehiculo = ((RecursoVehiculo) recursos.get(posicion).getRecurso()).getCapacidadDeCarga();
         }
         return capacidadVehiculo;
     }
+
     public boolean comprobarHumanos(int capacidadCarga) {
         int contador;
         contador = 0;
@@ -110,14 +98,22 @@ public class Mision {
         hayDemasiadosHumanos = false;
         for (int i = 0; i < recursos.size(); i++) {
             if (recursos.get(i).getRecurso() instanceof RecursoHumano) {
-                contador ++;
+                contador++;
             }
-            if (contador> capacidadCarga) {
+            if (contador > capacidadCarga) {
                 System.out.println("hay demasiados humanos, para ese vehiculo");
                 hayDemasiadosHumanos = true;
             }
         }
         return hayDemasiadosHumanos;
+    }
+
+    public int comprobarNivelMortalidad() {
+        int potenciaMuerte = 0;
+        for (int i = 0; i < recursos.size(); i++) {
+            potenciaMuerte += recursos.get(i).getRecurso().getPotenciaDeMuerte();
+        }
+        return  potenciaMuerte;
     }
 
     @Override
@@ -164,5 +160,5 @@ public class Mision {
         }
         return true;
     }
-    
+
 }
