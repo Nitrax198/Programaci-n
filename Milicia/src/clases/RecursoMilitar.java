@@ -38,6 +38,10 @@ public class RecursoMilitar {
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
+    public void addMision(Mision m) {
+        misionesHechas.add(m);
+    }
+    
 
     //hacer funcion para recibir getter an seter del array
 

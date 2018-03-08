@@ -32,7 +32,7 @@ public class CuerpoDeEliteMain {
                 milicia.reljarSoldados();
                 break;
             case 3:
-                
+                milicia.anotarResultados();
                 break;
             default:
                 break;

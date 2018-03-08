@@ -115,7 +115,26 @@ public class Mision {
         }
         return  potenciaMuerte;
     }
-
+    public void experiaenciaHumanos(int expRecibida){
+        for (int i = 0; i < recursos.size(); i++) {
+            if (recursos.get(i).getRecurso() instanceof RecursoHumano) {
+                ((RecursoHumano)recursos.get(i).getRecurso()).setNivelExp(expRecibida);
+            }
+        }
+    }
+    public void stressHumanos(int stressRecibido){
+        for (int i = 0; i < recursos.size(); i++) {
+            if (recursos.get(i).getRecurso() instanceof RecursoHumano) {
+                ((RecursoHumano)recursos.get(i).getRecurso()).setNivelStress(stressRecibido);
+            }
+        }
+    }
+    public void addResultado(Mision m){
+        for (int i = 0; i < recursos.size(); i++) {
+            recursos.get(i).getRecurso().addMision(m);
+        }
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;
