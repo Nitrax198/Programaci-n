@@ -5,6 +5,8 @@
  */
 package clases;
 
+import java.util.Objects;
+
 /**
  *
  * @author Miguel
@@ -32,6 +34,35 @@ public class RecursoMision {
 
     public void setRecurso(RecursoMilitar recurso) {
         this.recurso = recurso;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.tipo);
+        hash = 59 * hash + Objects.hashCode(this.recurso);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final RecursoMision other = (RecursoMision) obj;
+        if (!Objects.equals(this.tipo, other.tipo)) {
+            return false;
+        }
+        if (!Objects.equals(this.recurso, other.recurso)) {
+            return false;
+        }
+        return true;
     }
     
 }

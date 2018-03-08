@@ -7,6 +7,7 @@ package clases;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -27,7 +28,7 @@ public class Mision {
         this.fecha = fecha;
         this.lugar = lugar;
         this.expGanada = expGanada;
-        this.recursos =  new  ArrayList<>();
+        this.recursos = new ArrayList<>();
     }
 
     public boolean isExito() {
@@ -73,4 +74,95 @@ public class Mision {
     public void addRecurso(RecursoMilitar recurso, String tipo) {
         recursos.add(new RecursoMision(tipo,recurso ));
     }
+    public boolean comprobarVehiculo() {
+        boolean hayVehiculo;
+        hayVehiculo = false;
+        for (int i = 0; i < recursos.size(); i++) {
+            if (recursos.get(i).getRecurso() instanceof RecursoVehiculo) {
+                System.out.println("vale, hay un vehiculo");
+                hayVehiculo =  true;
+            }
+            else {
+                System.out.println("No hay vehiculos, por favor añade uno");
+            }
+        }
+        return hayVehiculo;
+    }
+    public int mirarCapacidadVehiculo() {
+        boolean parase;
+        parase =  false;
+        int capacidadVehiculo, posicion;
+        capacidadVehiculo = -1;
+        posicion = 0;
+        for (int i = 0; i < recursos.size()&& !parase; i++) {
+            if (recursos.get(i).getRecurso() instanceof RecursoVehiculo) {
+                 parase  =true;
+                 posicion = i;
+            }
+            capacidadVehiculo = ((RecursoVehiculo)recursos.get(posicion).getRecurso()).getCapacidadDeCarga();
+        }
+        return capacidadVehiculo;
+    }
+    public boolean comprobarHumanos(int capacidadCarga) {
+        int contador;
+        contador = 0;
+        boolean hayDemasiadosHumanos;
+        hayDemasiadosHumanos = false;
+        for (int i = 0; i < recursos.size(); i++) {
+            if (recursos.get(i).getRecurso() instanceof RecursoHumano) {
+                contador ++;
+            }
+            if (contador> capacidadCarga) {
+                System.out.println("hay demasiados humanos, para ese vehiculo");
+                hayDemasiadosHumanos = true;
+            }
+        }
+        return hayDemasiadosHumanos;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + this.idMision;
+        hash = 97 * hash + (this.exito ? 1 : 0);
+        hash = 97 * hash + Objects.hashCode(this.fecha);
+        hash = 97 * hash + Objects.hashCode(this.lugar);
+        hash = 97 * hash + this.expGanada;
+        hash = 97 * hash + Objects.hashCode(this.recursos);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Mision other = (Mision) obj;
+        if (this.idMision != other.idMision) {
+            return false;
+        }
+        if (this.exito != other.exito) {
+            return false;
+        }
+        if (this.expGanada != other.expGanada) {
+            return false;
+        }
+        if (!Objects.equals(this.lugar, other.lugar)) {
+            return false;
+        }
+        if (!Objects.equals(this.fecha, other.fecha)) {
+            return false;
+        }
+        if (!Objects.equals(this.recursos, other.recursos)) {
+            return false;
+        }
+        return true;
+    }
+    
 }

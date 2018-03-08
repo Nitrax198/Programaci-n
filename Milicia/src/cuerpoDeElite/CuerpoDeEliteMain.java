@@ -5,6 +5,8 @@
  */
 package cuerpoDeElite;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Miguel
@@ -16,6 +18,26 @@ public class CuerpoDeEliteMain {
      */
     public static void main(String[] args) {
         // implements (nombre de la interface)
+        Scanner sc = new Scanner(System.in);
+        CuerpoDeEliteMain milicia = new CuerpoDeEliteMain();
+        int opcion = 0;
+        System.out.println("1.- Crear misión 2.- Relajar soldados 3.- Lista de misiones 4.- Lista de recursos");
+            opcion = sc.nextInt();
+            sc.nextLine();
+            switch (opcion) {
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    
+                    break;
+            }
     }
     
 }
