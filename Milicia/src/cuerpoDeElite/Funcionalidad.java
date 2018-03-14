@@ -280,4 +280,22 @@ public class Funcionalidad {
         }
         ((RecursoHumano)recursos.get(posicionRecurso)).setNivelStress(0);
     }
+    public void anotarResultados(){
+        int respuesta, id;
+        respuesta = -1;
+        id = -1;
+        System.out.println("dime el id de la misión");
+        id = sc.nextInt();
+        sc.nextLine();
+        System.out.println("¿La misión ha tenido exito? 1 si 0 no");
+        respuesta =  sc.nextInt();
+        sc.nextLine();
+        if (respuesta == 1) {
+            misiones.get(id).experiaenciaHumanos(misiones.get(id).getExpGanada());
+            misiones.get(id).stressHumanos(misiones.get(id).getExpGanada()/2);
+        }
+        else if (respuesta == 0) {
+            misiones.get(id).addResultado(misiones.get(id));
+        }
+    }
 }
