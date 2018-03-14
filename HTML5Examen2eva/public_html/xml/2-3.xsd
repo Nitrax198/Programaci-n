@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:element name="CuerpoDeElite">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="RecuersosMilitares">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="RecursoHumano" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>  
+                                        <xs:element name="nombre" type="xs:string"/> 
+                                        <xs:element name="PotenciaDeMuerte" type="xs:integer"/>       
+                                        <xs:element name="Stress" type="xs:integer"/>       
+                                        <xs:element name="MuertesACuchillo" type="xs:integer"/>       
+                                        <xs:element name="NivelManejoMaquinas" type="xs:integer"/>       
+                                        <xs:element name="Experiencia" type="xs:integer"/>       
+                                        <xs:element name="Misiones">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Mision" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="MisionReconocimiento" minOccurs="0" maxOccurs="unbounded">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>  
+                                                                            <xs:element name="Fecha" type="xs:date"/> 
+                                                                            <xs:element name="Lugar" type="xs:string"/>       
+                                                                            <xs:element name="NivelDeExperienciaGanada" type="xs:integer"/>       
+                                                                            <xs:element name="Cumplida" type="xs:boolean"/>       
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="MisionCombate" minOccurs="0" maxOccurs="unbounded">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>  
+                                                                            <xs:element name="Fecha" type="xs:date"/> 
+                                                                            <xs:element name="Lugar" type="xs:string"/>       
+                                                                            <xs:element name="NivelDeExperienciaGanada" type="xs:integer"/>
+                                                                            <xs:element name="NivelMinimoPotenciaDeMuerte" type="xs:integer"/>       
+                                                                            <xs:element name="Cumplida" type="xs:boolean"/>       
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="RecursoMaterial" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>  
+                                        <xs:element name="nombre" type="xs:string"/> 
+                                        <xs:element name="PotenciaDeMuerte" type="xs:integer"/>
+                                        <xs:element name="NivelHabilidadMinimo" type="xs:integer"/>       
+                                        <xs:element name="RangoDeAcción" type="xs:integer"/>
+                                        <xs:element name="Misiones">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Mision" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="MisionReconocimiento" minOccurs="0" maxOccurs="unbounded">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>  
+                                                                            <xs:element name="Fecha" type="xs:date"/> 
+                                                                            <xs:element name="Lugar" type="xs:string"/>       
+                                                                            <xs:element name="NivelDeExperienciaGanada" type="xs:integer"/>       
+                                                                            <xs:element name="Cumplida" type="xs:boolean"/>       
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="MisionCombate" minOccurs="0" maxOccurs="unbounded">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>  
+                                                                            <xs:element name="Fecha" type="xs:date"/> 
+                                                                            <xs:element name="Lugar" type="xs:string"/>       
+                                                                            <xs:element name="NivelDeExperienciaGanada" type="xs:integer"/>
+                                                                            <xs:element name="NivelMinimoPotenciaDeMuerte" type="xs:integer"/>       
+                                                                            <xs:element name="Cumplida" type="xs:boolean"/>       
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>              
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="RecursoVehiculo" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>  
+                                        <xs:element name="nombre" type="xs:string"/> 
+                                        <xs:element name="PotenciaDeMuerte" type="xs:integer"/>       
+                                        <xs:element name="NivelHabilidadMinimo" type="xs:integer"/>       
+                                        <xs:element name="RangoDeAcción" type="xs:integer"/>       
+                                        <xs:element name="Capacidad" type="xs:integer"/>
+                                        <xs:element name="Misiones">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="MisionReconocimiento" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>  
+                                                                <xs:element name="Fecha" type="xs:date"/> 
+                                                                <xs:element name="Lugar" type="xs:string"/>       
+                                                                <xs:element name="NivelDeExperienciaGanada" type="xs:integer"/>       
+                                                                <xs:element name="Cumplida" type="xs:boolean"/>       
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="MisionCombate" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>  
+                                                                <xs:element name="Fecha" type="xs:date"/> 
+                                                                <xs:element name="Lugar" type="xs:string"/>       
+                                                                <xs:element name="NivelDeExperienciaGanada" type="xs:integer"/>
+                                                                <xs:element name="NivelMinimoPotenciaDeMuerte" type="xs:integer"/>       
+                                                                <xs:element name="Cumplida" type="xs:boolean"/>       
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>       
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Misiones">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MisionReconocimiento" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>  
+                                        <xs:element name="Fecha" type="xs:date"/> 
+                                        <xs:element name="Lugar" type="xs:string"/>       
+                                        <xs:element name="NivelDeExperienciaGanada" type="xs:integer"/>       
+                                        <xs:element name="Cumplida" type="xs:boolean"/>       
+                                        <xs:element name="Recursos">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Recurso" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Uso" type="xs:string"/>
+                                                                <xs:element name="Recursos">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="Recurso" minOccurs="0" maxOccurs="unbounded">
+                                                                                <xs:complexType> 
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="nombre" type="xs:string"/> 
+                                                                                        <xs:element name="PotenciaDeMuerte" type="xs:integer"/>       
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="MisionCombate" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>  
+                                        <xs:element name="Fecha" type="xs:date"/> 
+                                        <xs:element name="Lugar" type="xs:string"/>       
+                                        <xs:element name="NivelDeExperienciaGanada" type="xs:integer"/>       
+                                        <xs:element name="NivelMinimoPotenciaDeMuerte" type="xs:integer"/>       
+                                        <xs:element name="Cumplida" type="xs:boolean"/>       
+                                        <xs:element name="Recursos">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Recurso" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Uso" type="xs:string"/>
+                                                                <xs:element name="Recursos">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="Recurso" minOccurs="0" maxOccurs="unbounded">
+                                                                                <xs:complexType> 
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="nombre" type="xs:string"/> 
+                                                                                        <xs:element name="PotenciaDeMuerte" type="xs:integer"/>       
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

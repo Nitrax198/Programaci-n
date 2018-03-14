@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<CuerpoDeElite
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='file:/home/daw/NetBeansProjects/Programaci-n/Formularios/public_html/Xml/2-3.xsd'>
+    <RecuersosMilitares>
+        <RecursoHumano>
+            <nombre>dddd</nombre>
+            <PotenciaDeMuerte>1111</PotenciaDeMuerte>
+            <Stress>1111</Stress>
+            <MuertesACuchillo>1111</MuertesACuchillo>
+            <NivelManejoMaquinas>2222</NivelManejoMaquinas>
+            <Experiencia>333</Experiencia>
+            <Misiones>
+                <Mision>
+                    <MisionReconocimiento>
+                        <Fecha>12/3/2018</Fecha>
+                        <Lugar>españa</Lugar>
+                        <NivelDeExperienciaGanada>222</NivelDeExperienciaGanada>
+                        <Cumplida>true</Cumplida>
+                    </MisionReconocimiento>
+                    <MisionCombate>
+                        <Fecha>12/3/1028</Fecha>
+                        <Lugar>fff</Lugar>
+                        <NivelDeExperienciaGanada>3</NivelDeExperienciaGanada>
+                        <NivelMinimoPotenciaDeMuerte>4</NivelMinimoPotenciaDeMuerte>
+                        <Cumplida>5</Cumplida>
+                    </MisionCombate>
+                </Mision>
+            </Misiones>
+        </RecursoHumano>
+        <RecursoMaterial>
+            <nombre>ffff</nombre>
+            <PotenciaDeMuerte>2222</PotenciaDeMuerte>
+            <NivelHabilidadMinimo>44444</NivelHabilidadMinimo>
+            <RangoDeAcción>5555</RangoDeAcción>
+            <Misiones>
+            </Misiones>
+        </RecursoMaterial>
+        <RecursoVehiculo>
+            <nombre>7777</nombre>
+            <PotenciaDeMuerte>3333</PotenciaDeMuerte>
+            <NivelHabilidadMinimo>1222</NivelHabilidadMinimo>
+            <RangoDeAcción>333</RangoDeAcción>
+            <Capacidad>4444</Capacidad>
+            <Misiones>
+            </Misiones>
+        </RecursoVehiculo>
+    </RecuersosMilitares>
+    <Misiones>
+    </Misiones>
+
+</CuerpoDeElite>

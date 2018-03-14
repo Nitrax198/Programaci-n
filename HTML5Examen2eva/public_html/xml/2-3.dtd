@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/2-3.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE CuerpoDeElite SYSTEM "2-3.dtd">
+
+    <CuerpoDeElite>
+    ...
+    </CuerpoDeElite>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT CuerpoDeElite (RecuersosMilitares,Misiones)*>
+<!ATTLIST CuerpoDeElite
+    xsi:noNamespaceSchemaLocation CDATA #IMPLIED
+    xmlns:xsi CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT RecuersosMilitares (RecursoHumano,RecursoMaterial,RecursoVehiculo)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT RecursoHumano (nombre,PotenciaDeMuerte,Stress,MuertesACuchillo,NivelManejoMaquinas,Experiencia,Misiones)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT nombre (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT PotenciaDeMuerte (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Stress (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT MuertesACuchillo (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT NivelManejoMaquinas (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Experiencia (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Misiones (Mision)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Mision (MisionReconocimiento|MisionCombate)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT MisionReconocimiento (Fecha,Lugar,NivelDeExperienciaGanada,Cumplida)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Fecha (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Lugar (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT NivelDeExperienciaGanada (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Cumplida (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT MisionCombate (Fecha,Lugar,NivelDeExperienciaGanada,NivelMinimoPotenciaDeMuerte,Cumplida)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT NivelMinimoPotenciaDeMuerte (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT RecursoMaterial (nombre,PotenciaDeMuerte,NivelHabilidadMinimo,RangoDeAcción,Misiones)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT NivelHabilidadMinimo (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT RangoDeAcción (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT RecursoVehiculo (nombre,PotenciaDeMuerte,NivelHabilidadMinimo,RangoDeAcción,Capacidad,Misiones)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Capacidad (#PCDATA)>
