@@ -48,27 +48,26 @@ public class FXMLPractica1Controller implements Initializable {
 
     @FXML
     private void handleNuevo(ActionEvent event) throws IOException {
-        Alert a = new Alert(Alert.AlertType.INFORMATION, mensaje, ButtonType.CLOSE);
-
-        a.showAndWait();
+        String nombre;
+        int edad;
+        nombre = fxTextNombre.getText();
+        edad = Integer.parseInt(fxEdad.getText());
+        
+        clientes.add(new Cliente(nombre, edad));
     }
-
+    @FXML
     private void handleFlechaIz(ActionEvent event) throws IOException {
         indice --;
-        fxBotonIz.setText(clientes.get(indice).getNombre());
-        fxBotonIz.setText("" + clientes.get(indice).getEdad());
-        Alert a = new Alert(Alert.AlertType.INFORMATION, mensaje, ButtonType.CLOSE);
-
-        a.showAndWait();
+        fxTextNombre.setText(clientes.get(indice).getNombre());
+        fxEdad.setText("" + clientes.get(indice).getEdad());
+        
     }
-
+    @FXML
     private void handleFlechaDer(ActionEvent event) throws IOException {
         indice++;
-        fxBotonDer.setText(clientes.get(indice).getNombre());
-        fxBotonDer.setText("" + clientes.get(indice).getEdad());
-        Alert a = new Alert(Alert.AlertType.INFORMATION, mensaje, ButtonType.CLOSE);
-
-        a.showAndWait();
+        fxTextNombre.setText(clientes.get(indice).getNombre());
+        fxEdad.setText("" + clientes.get(indice).getEdad());
+        
     }
 
     /**
@@ -84,6 +83,7 @@ public class FXMLPractica1Controller implements Initializable {
         clientes.add(new Cliente("Koji", 17));
         indice = 0;
         fxTextNombre.setText(clientes.get(indice).getNombre());
+        fxEdad.setText(clientes.get(indice).getEdad()+"");
     }
 
 }
