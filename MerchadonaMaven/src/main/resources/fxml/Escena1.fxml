@@ -12,10 +12,8 @@
         <menus>
           <Menu mnemonicParsing="false" text="Admin">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-              <MenuItem mnemonicParsing="false" text="Close" />
-                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                  <MenuItem mnemonicParsing="false" text="Dar de alta producto" />
+                  <MenuItem mnemonicParsing="false" text="Dar de alta Emp" />
                   <MenuItem mnemonicParsing="false" text="Mostrar listados" />
             </items>
           </Menu>
@@ -29,6 +27,7 @@
                   <MenuItem mnemonicParsing="false" text="reponer" />
                </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="loge out" />
         </menus>
       </MenuBar>
    </top>

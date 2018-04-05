@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import merchadona.modelo.Empleado;
 import merchadona.servicios.Merchadona;
 
@@ -28,7 +30,11 @@ import merchadona.servicios.Merchadona;
 public class Escena1Controller implements Initializable {
 
     private AnchorPane scene;
-    private AnchorPane scene2;
+    private AnchorPane sceneReponedor;
+    private AnchorPane sceneCajera;
+    private AnchorPane sceneAdmin;
+    private AnchorPane sceneProd;
+    private AnchorPane sceneEmp;
 //    private AnchorPane tabla;
 //    private MostarListadosController controllerT;
 
@@ -50,7 +56,11 @@ public class Escena1Controller implements Initializable {
     @FXML
     public void handleScene2(ActionEvent event) throws IOException {
 
-        fxRoot.setCenter(scene2);
+        fxRoot.setCenter(sceneReponedor);
+    }
+    public void handleScene3(ActionEvent event) throws IOException {
+
+        fxRoot.setCenter(sceneCajera);
     }
 
 //    @FXML
@@ -69,16 +79,40 @@ public class Escena1Controller implements Initializable {
            
             merchadona = new Merchadona();
             FXMLLoader loader = new FXMLLoader(
-              getClass().getResource("/fxml/Registrarse"));
+              getClass().getResource("/fxml/Registrarse.fxml"));
             scene = loader.load();
             RegistrarseController controller = loader.getController();
             controller.setController(this);
 
             loader = new FXMLLoader(
-              getClass().getResource("/fxml/Registrarse"));
-            scene2 = loader.load();
-            RegistrarseController controllerNew = loader.getController();
-            controllerNew.setController(this);
+              getClass().getResource("/fxml/EscenReponedor.fxml"));
+            sceneReponedor = loader.load();
+            EscenaReponedorController controllerReponedor = loader.getController();
+            controllerReponedor.setController(this);
+            
+            loader = new FXMLLoader(
+              getClass().getResource("/fxml/EscenaCajera.fxml"));
+            sceneCajera = loader.load();
+            EscenaCajeraController controllerCajera = loader.getController();
+            controllerCajera.setController(this);
+            
+            loader = new FXMLLoader(
+              getClass().getResource("/fxml/EscenaAdmin.fxml"));
+            sceneAdmin = loader.load();
+            EscenaAdminController controllerAdmin = loader.getController();
+            controllerAdmin.setController(this);
+            
+            loader = new FXMLLoader(
+              getClass().getResource("/fxml/DarDeAltaProd.fxml"));
+            sceneProd = loader.load();
+            DarDeAltaProdController controllerProd = loader.getController();
+            controllerProd.setController(this);
+            
+            loader = new FXMLLoader(
+              getClass().getResource("/fxml/DarDeAltaProd.fxml"));
+            sceneEmp = loader.load();
+            DarDeAltaEmpController controllerEmp = loader.getController();
+            controllerEmp.setController(this);
 
 //            loader = new FXMLLoader(
 //              getClass().getResource(Constantes.PANTALLA_TABLAS));
@@ -93,5 +127,32 @@ public class Escena1Controller implements Initializable {
          fxMenu.setVisible(false);
         fxRoot.setCenter(scene);
     }
+    public MenuBar getFxMenu() {
+        return fxMenu;
+    }
+    public Merchadona getMerchadona() {
+        return merchadona;
+    }
 
+    public Empleado getEmpleadoActual() {
+        return empleadoActual;
+    }
+
+    public void setEmpleadoActual(Empleado empleadoActual) {
+        this.empleadoActual = empleadoActual;
+    }
+
+    public int getEmpleadoID() {
+        return empleadoID;
+    }
+
+    public void setEmpleadoID(int empleadoID) {
+        this.empleadoID = empleadoID;
+    }
+
+    
+    public void habilitaMenuAdmin()
+    {
+        
+    }
 }

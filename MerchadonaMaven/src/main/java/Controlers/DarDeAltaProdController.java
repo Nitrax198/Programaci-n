@@ -15,7 +15,7 @@ import javafx.fxml.Initializable;
  * @author daw
  */
 public class DarDeAltaProdController implements Initializable {
-
+    private Escena1Controller controller;
     /**
      * Initializes the controller class.
      */
@@ -23,5 +23,7 @@ public class DarDeAltaProdController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    public void setController(Escena1Controller controller) {
+        this.controller = controller;
+    }
 }
