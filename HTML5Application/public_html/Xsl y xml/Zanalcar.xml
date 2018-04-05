@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE ZanalCar SYSTEM "ZanalCar.dtd">
+
+<ZanalCar
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='Schema ZanalCar.xsd'>
+    <Vehiculos>
+        <coche>
+            <color>rojo</color>
+            <marca>BMW</marca>
+            <precioCompra>10000</precioCompra>
+            <precioVenta>12500</precioVenta>
+            <matricula>0000M</matricula>
+            <kilometraje>153100</kilometraje>
+        </coche>
+        <coche>
+            <color>rojo</color>
+            <marca>BMW</marca>
+            <precioCompra>10000</precioCompra>
+            <precioVenta>12500</precioVenta>
+            <matricula>0000M</matricula>
+            <kilometraje>153100</kilometraje>
+        </coche>
+        <quad>
+            <color>blanco</color>
+            <marca>Alpino</marca>
+            <precioCompra>2500</precioCompra>
+            <precioVenta>3125</precioVenta>
+            <matricula>0001M</matricula>
+            <kilometraje>359</kilometraje>
+        </quad>
+        <moto>
+            <color>negra</color>
+            <marca>Yamaha</marca>
+            <precioCompra>4695</precioCompra>
+            <precioVenta>5868.75</precioVenta>
+            <matricula>1111M</matricula>
+            <kilometraje>44365</kilometraje>
+        </moto>
+        <bici>
+            <color>multicolor</color>
+            <marca>BH</marca>
+            <precioCompra>250</precioCompra>
+            <precioVenta>312.5</precioVenta>
+            <tamañoRueda>28</tamañoRueda>
+            <numeroMarchas>18</numeroMarchas>
+            <tipoCambios>palanca</tipoCambios>
+        </bici>
+    </Vehiculos>
+
+</ZanalCar>
