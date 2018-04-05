@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+<Merchadona>
+    
+    <Empleados>
+       
+        <Cajero>
+            <nombre>Gustavo</nombre>
+            <id>2</id>
+            <precioTotal>187.56</precioTotal>
+        </Cajero>
+        <Reponedor>
+            <nombre>María</nombre>
+            <id>3</id>
+            <totalRepuestos>123</totalRepuestos>
+        </Reponedor>
+        <Reponedor>
+            <nombre>Pepe</nombre>
+            <id>4</id>
+            <totalRepuestos>200</totalRepuestos>
+        </Reponedor>
+       
+    </Empleados>
+    
+    <Productos>
+      
+        <Imperecedero>
+            <nombre>Cepillo</nombre>
+            <precioBase>3.99</precioBase>
+            <stock>16</stock>
+        </Imperecedero>
+        <Imperecedero>
+            <nombre>Colonia</nombre>
+            <precioBase>10.99</precioBase>
+            <stock>8</stock>
+        </Imperecedero>
+        <Perecedero>
+            <nombre>Lechuga</nombre>
+            <precioBase>0.18</precioBase>
+            <stock>32</stock>
+            <fechaReposicion>2018-02-24</fechaReposicion>
+        </Perecedero>
+        <Perecedero>
+            <nombre>Lechuga</nombre>
+            <precioBase>0.18</precioBase>
+            <stock>32</stock>
+            <fechaReposicion>2018-02-24</fechaReposicion>
+        </Perecedero>        
+        <Perecedero>
+            <nombre>Lechuga</nombre>
+            <precioBase>0.18</precioBase>
+            <stock>32</stock>
+            <fechaReposicion>2018-02-24</fechaReposicion>
+        </Perecedero>        
+        <Perecedero>
+            <nombre>Lechuga</nombre>
+            <precioBase>0.18</precioBase>
+            <stock>32</stock>
+            <fechaReposicion>2018-02-24</fechaReposicion>
+        </Perecedero>        
+        <Perecedero>
+            <nombre>Lechuga</nombre>
+            <precioBase>0.18</precioBase>
+            <stock>32</stock>
+            <fechaReposicion>2018-02-24</fechaReposicion>
+        </Perecedero>        
+        <Perecedero>
+            <nombre>Lechuga</nombre>
+            <precioBase>0.18</precioBase>
+            <stock>32</stock>
+            <fechaReposicion>2018-02-24</fechaReposicion>
+        </Perecedero>
+    </Productos>
+
+</Merchadona>

@@ -4,7 +4,7 @@
 <Merchadona
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:noNamespaceSchemaLocation='Schema Merchadona.xsd'>
-    
+    <!--ESTE NO SIRVE PARA NADA PERO NO ME DEJA BORRARLO-->
     <Empleados>
        
         <Cajero>
