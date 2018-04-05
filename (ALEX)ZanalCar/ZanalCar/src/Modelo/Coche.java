@@ -10,6 +10,8 @@ package Modelo;
  * @author Daw
  */
 public class Coche extends VehiculoMotor implements IProbable {
+    
+    
 
     public Coche(String color, String marca, double precioCompra, String matricula, int kilometrosUso) {
         super(color, marca, precioCompra, matricula, kilometrosUso);

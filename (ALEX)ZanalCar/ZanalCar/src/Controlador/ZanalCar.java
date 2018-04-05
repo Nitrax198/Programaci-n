@@ -8,15 +8,23 @@ package Controlador;
 import Modelo.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Daw
  */
+@XmlRootElement( name = "ZanalCar" )
 public class ZanalCar {
 
     private Scanner sc;
+    @XmlElementWrapper(name = "stock")
+    @XmlElement( name = "vehiculosstock" )
     private ArrayList<Vehiculo> stock;
+    @XmlElementWrapper(name = "vendidos")
+    @XmlElement( name = "vehiculosvendidos" )
     private ArrayList<Vehiculo> vendidos;
 
     public ZanalCar() {

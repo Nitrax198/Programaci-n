@@ -6,7 +6,14 @@
 package Vista;
 
 import Controlador.ZanalCar;
+import java.io.File;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 
 /**
  *
@@ -19,7 +26,7 @@ public class Main {
      */
     public static void main(String[] args) {
         int opcion;
-        ZanalCar zc = new ZanalCar();
+        ZanalCar zc = cargar();
         Scanner sc = new Scanner(System.in);
 
         do {
@@ -62,6 +69,39 @@ public class Main {
             }
         } while (opcion != 0);
 
+    }
+
+    public static void guardar(ZanalCar z) {
+
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(ZanalCar.class);
+            
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            
+            z = new ZanalCar();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            
+            jaxbMarshaller.marshal(z, new File("zanalcar.xml"));
+        } catch (JAXBException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public static ZanalCar cargar() {
+        ZanalCar z;
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(ZanalCar.class);
+
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+            Unmarshaller um = jaxbContext.createUnmarshaller();
+            z = (ZanalCar) um.unmarshal(new File("zanalcar.xml"));
+        } catch (JAXBException ex) {
+            z = new ZanalCar();
+//            Java.util.logging.logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return z;
     }
 
 }

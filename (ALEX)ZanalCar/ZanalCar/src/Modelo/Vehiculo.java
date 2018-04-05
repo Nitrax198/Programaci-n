@@ -16,6 +16,9 @@ public abstract class Vehiculo {
     protected double precioCompra;
     protected double precioVenta;
 
+    public Vehiculo() {
+    }
+
     public Vehiculo(String color, String marca, double precioCompra) {
         this.color = color;
         this.marca = marca;
