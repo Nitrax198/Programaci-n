@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Main;
+package main;
 
-import Controlers.Escena1Controller;
+import controlers.Escena1Controller;
 import java.io.IOException;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -22,11 +21,11 @@ import javafx.stage.Stage;
  *
  * @author daw
  */
-public class Main extends Application {
+public class MainMerchadona extends Application {
     
     @Override
-    public void start(Stage stage) throws IOException {
-        //BorderPane root = FXMLLoader.load(getClass().getResource("/fxml/FXMLMenu.fxml"));
+    public void start(Stage primaryStage) throws IOException {
+         //BorderPane root = FXMLLoader.load(getClass().getResource("/fxml/FXMLMenu.fxml"));
         FXMLLoader loaderMenu = new FXMLLoader(
           getClass().getResource("/fxml/Escena1.fxml"));
         BorderPane root = loaderMenu.load();
@@ -35,10 +34,9 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/css/fxmlscene.css");
         
-        stage.setTitle("JavaFX and Maven");
-        stage.setScene(scene);
-        stage.getProperties().put("hostServices", this.getHostServices());
-        stage.show();
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     /**

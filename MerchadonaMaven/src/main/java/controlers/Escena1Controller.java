@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlers;
+package controlers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -15,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -44,6 +45,15 @@ public class Escena1Controller implements Initializable {
     
     @FXML
     private MenuBar fxMenu;
+    
+    @FXML
+    private Menu fxMenuAdmin;
+    
+    @FXML
+    private Menu fxMenuReponedor;
+    
+    @FXML
+    private Menu fxMenuCajera;
     
     @FXML
     private BorderPane fxRoot;
@@ -85,7 +95,7 @@ public class Escena1Controller implements Initializable {
             controller.setController(this);
 
             loader = new FXMLLoader(
-              getClass().getResource("/fxml/EscenReponedor.fxml"));
+              getClass().getResource("/fxml/EscenaReponedor.fxml"));
             sceneReponedor = loader.load();
             EscenaReponedorController controllerReponedor = loader.getController();
             controllerReponedor.setController(this);
@@ -109,7 +119,7 @@ public class Escena1Controller implements Initializable {
             controllerProd.setController(this);
             
             loader = new FXMLLoader(
-              getClass().getResource("/fxml/DarDeAltaProd.fxml"));
+              getClass().getResource("/fxml/DarDeAltaEmp.fxml"));
             sceneEmp = loader.load();
             DarDeAltaEmpController controllerEmp = loader.getController();
             controllerEmp.setController(this);
@@ -124,7 +134,7 @@ public class Escena1Controller implements Initializable {
             Logger.getLogger(Escena1Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-         fxMenu.setVisible(false);
+        fxMenu.setVisible(false);
         fxRoot.setCenter(scene);
     }
     public MenuBar getFxMenu() {
@@ -153,6 +163,8 @@ public class Escena1Controller implements Initializable {
     
     public void habilitaMenuAdmin()
     {
-        
+      fxMenu.setVisible(true);
+      fxMenuCajera.setVisible(false);
+      fxMenuReponedor.setVisible(false);
     }
 }
