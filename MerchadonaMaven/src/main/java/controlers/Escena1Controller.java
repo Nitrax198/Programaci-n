@@ -42,19 +42,19 @@ public class Escena1Controller implements Initializable {
     private Merchadona merchadona;
     private Empleado empleadoActual;
     private int empleadoID;
-    
+
     @FXML
     private MenuBar fxMenu;
-    
+
     @FXML
     private Menu fxMenuAdmin;
-    
+
     @FXML
     private Menu fxMenuReponedor;
-    
+
     @FXML
     private Menu fxMenuCajera;
-    
+
     @FXML
     private BorderPane fxRoot;
 
@@ -63,11 +63,13 @@ public class Escena1Controller implements Initializable {
 
         fxRoot.setCenter(scene);
     }
+
     @FXML
     public void handleScene2(ActionEvent event) throws IOException {
 
         fxRoot.setCenter(sceneReponedor);
     }
+
     public void handleScene3(ActionEvent event) throws IOException {
 
         fxRoot.setCenter(sceneCajera);
@@ -86,40 +88,40 @@ public class Escena1Controller implements Initializable {
         // TODO
         try {
             // TODO
-           
+
             merchadona = new Merchadona();
             FXMLLoader loader = new FXMLLoader(
-              getClass().getResource("/fxml/Registrarse.fxml"));
+                    getClass().getResource("/fxml/Registrarse.fxml"));
             scene = loader.load();
             RegistrarseController controller = loader.getController();
             controller.setController(this);
 
             loader = new FXMLLoader(
-              getClass().getResource("/fxml/EscenaReponedor.fxml"));
+                    getClass().getResource("/fxml/EscenaReponedor.fxml"));
             sceneReponedor = loader.load();
             EscenaReponedorController controllerReponedor = loader.getController();
             controllerReponedor.setController(this);
-            
+
             loader = new FXMLLoader(
-              getClass().getResource("/fxml/EscenaCajera.fxml"));
+                    getClass().getResource("/fxml/EscenaCajera.fxml"));
             sceneCajera = loader.load();
             EscenaCajeraController controllerCajera = loader.getController();
             controllerCajera.setController(this);
-            
+
             loader = new FXMLLoader(
-              getClass().getResource("/fxml/EscenaAdmin.fxml"));
+                    getClass().getResource("/fxml/EscenaAdmin.fxml"));
             sceneAdmin = loader.load();
             EscenaAdminController controllerAdmin = loader.getController();
             controllerAdmin.setController(this);
-            
+
             loader = new FXMLLoader(
-              getClass().getResource("/fxml/DarDeAltaProd.fxml"));
+                    getClass().getResource("/fxml/DarDeAltaProd.fxml"));
             sceneProd = loader.load();
             DarDeAltaProdController controllerProd = loader.getController();
             controllerProd.setController(this);
-            
+
             loader = new FXMLLoader(
-              getClass().getResource("/fxml/DarDeAltaEmp.fxml"));
+                    getClass().getResource("/fxml/DarDeAltaEmp.fxml"));
             sceneEmp = loader.load();
             DarDeAltaEmpController controllerEmp = loader.getController();
             controllerEmp.setController(this);
@@ -129,17 +131,18 @@ public class Escena1Controller implements Initializable {
 //            tabla = loader.load();
 //            controllerT = loader.getController();
 //            controllerT.setController(this);
-
         } catch (IOException ex) {
             Logger.getLogger(Escena1Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         fxMenu.setVisible(false);
         fxRoot.setCenter(scene);
     }
+
     public MenuBar getFxMenu() {
         return fxMenu;
     }
+
     public Merchadona getMerchadona() {
         return merchadona;
     }
@@ -160,11 +163,21 @@ public class Escena1Controller implements Initializable {
         this.empleadoID = empleadoID;
     }
 
-    
-    public void habilitaMenuAdmin()
-    {
-      fxMenu.setVisible(true);
-      fxMenuCajera.setVisible(false);
-      fxMenuReponedor.setVisible(false);
+    public void habilitaMenuAdmin() {
+        fxMenu.setVisible(true);
+        fxMenuCajera.setVisible(false);
+        fxMenuReponedor.setVisible(false);
+    }
+
+    public void habilitaMenuReponedor() {
+        fxMenu.setVisible(true);
+        fxMenuCajera.setVisible(false);
+        fxMenuAdmin.setVisible(false);
+    }
+
+    public void habilitaMenuCajera() {
+        fxMenu.setVisible(true);
+        fxMenuReponedor.setVisible(false);
+        fxMenuAdmin.setVisible(false);
     }
 }

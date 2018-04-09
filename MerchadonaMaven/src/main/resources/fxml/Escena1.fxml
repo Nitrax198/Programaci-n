@@ -9,7 +9,7 @@
    <top>
       <MenuBar fx:id="fxMenu" BorderPane.alignment="CENTER">
         <menus>
-          <Menu fx:id="fxMenuAdmin"  mnemonicParsing="false" text="Admin">
+          <Menu fx:id="fxMenuAdmin" mnemonicParsing="false" text="Admin">
             <items>
                   <MenuItem mnemonicParsing="false" text="Dar de alta producto" />
                   <MenuItem mnemonicParsing="false" text="Dar de alta Emp" />
@@ -26,7 +26,10 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleScene2" text="reponer" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="loge out" />
+            <Menu mnemonicParsing="false" text="loge out">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleScene2" text="caca" />
+               </items></Menu>
         </menus>
       </MenuBar>
    </top>

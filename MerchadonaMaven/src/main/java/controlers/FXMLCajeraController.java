@@ -7,20 +7,15 @@ package controlers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.MenuBar;
 
 /**
  * FXML Controller class
  *
  * @author daw
  */
-public class EscenaReponedorController implements Initializable {
-    private Escena1Controller controller;
-    
-    @FXML
-    private MenuBar fxlistaProd;
+public class FXMLCajeraController implements Initializable {
+
     /**
      * Initializes the controller class.
      */
@@ -28,7 +23,5 @@ public class EscenaReponedorController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    public void setController(Escena1Controller controller) {
-        this.controller = controller;
-    }
+    
 }
