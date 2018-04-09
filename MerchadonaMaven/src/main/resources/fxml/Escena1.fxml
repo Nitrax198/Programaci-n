@@ -5,30 +5,30 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:id="fxRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Escena1Controller">
+<BorderPane fx:id="fxRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Escena1Controller">
    <top>
       <MenuBar fx:id="fxMenu" BorderPane.alignment="CENTER">
         <menus>
           <Menu fx:id="fxMenuAdmin" mnemonicParsing="false" text="Admin">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Dar de alta producto" />
-                  <MenuItem mnemonicParsing="false" text="Dar de alta Emp" />
-                  <MenuItem mnemonicParsing="false" text="Mostrar listados" />
+                  <MenuItem mnemonicParsing="false" onAction="#DarDeAltaProd" text="Dar de alta producto" />
+                  <MenuItem mnemonicParsing="false" onAction="#DarDeAltaEmp" text="Dar de alta Emp" />
+                  <MenuItem mnemonicParsing="false" onAction="#MostarListados" text="Mostrar listados" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Cajera">
                <items>
-                  <MenuItem mnemonicParsing="false" text="vender" />
+                  <MenuItem mnemonicParsing="false" onAction="#EscenaCajera" text="vender" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Reponedor">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#handleScene2" text="reponer" />
+                  <MenuItem mnemonicParsing="false" onAction="#EscenaReponedor" text="reponer" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="loge out">
+            <Menu mnemonicParsing="false" onAction="#LogeOut" text="loge out">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#handleScene2" text="caca" />
+                  <MenuItem mnemonicParsing="false" onAction="#LogeOut" text="caca" />
                </items></Menu>
         </menus>
       </MenuBar>

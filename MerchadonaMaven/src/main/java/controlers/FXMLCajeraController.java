@@ -16,12 +16,17 @@ import javafx.fxml.Initializable;
  */
 public class FXMLCajeraController implements Initializable {
 
+    private Escena1Controller controller;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
+    public void setController(Escena1Controller controller) {
+        this.controller = controller;
+    }
 }

@@ -6,13 +6,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="controlers.RegistrarseController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.RegistrarseController">
     <stylesheets>
         <URL value="@/css/registrarse.css" />
     </stylesheets>
    <children>
-      <TextField layoutX="197.0" layoutY="126.0" />
-      <Button layoutX="254.0" layoutY="187.0" mnemonicParsing="false" text="Button" />
+      <TextField fx:id="fxUser" layoutX="197.0" layoutY="126.0" />
+      <Button layoutX="254.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleLoginAction" text="Button" />
       <Label layoutX="167.0" layoutY="56.0" prefHeight="36.0" prefWidth="236.0" text="Por favor escribe tu id de empleado" textAlignment="CENTER" />
    </children>
 </AnchorPane>

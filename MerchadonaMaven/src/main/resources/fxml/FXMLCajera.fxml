@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.FXMLCajeraController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="controlers.FXMLCajeraController">
+   <children>
+      <ListView layoutX="341.0" layoutY="31.0" prefHeight="328.0" prefWidth="206.0" />
+      <Label layoutX="80.0" layoutY="58.0" prefHeight="17.0" prefWidth="181.0" text="cuantos productos vas a vender" />
+      <TextField layoutX="87.0" layoutY="110.0" />
+      <Button layoutX="96.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Vender" />
+   </children>
 </AnchorPane>

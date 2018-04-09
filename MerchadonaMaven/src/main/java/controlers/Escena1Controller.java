@@ -29,6 +29,7 @@ import merchadona.servicios.Merchadona;
  * @author daw
  */
 public class Escena1Controller implements Initializable {
+//    no se como mostrar los listados, ni como hacer la parte de dar de alta prodoductos y empleados, ni como venderlos o reponerlos y no se pòr que falla la parte del logeo
 
     private AnchorPane scene;
     private AnchorPane sceneReponedor;
@@ -36,6 +37,7 @@ public class Escena1Controller implements Initializable {
     private AnchorPane sceneAdmin;
     private AnchorPane sceneProd;
     private AnchorPane sceneEmp;
+    private AnchorPane sceneTab;
 //    private AnchorPane tabla;
 //    private MostarListadosController controllerT;
 
@@ -59,20 +61,37 @@ public class Escena1Controller implements Initializable {
     private BorderPane fxRoot;
 
     @FXML
-    public void handleScene1(ActionEvent event) throws IOException {
+    public void EscenaRegistrarse(ActionEvent event) throws IOException {
 
         fxRoot.setCenter(scene);
     }
 
     @FXML
-    public void handleScene2(ActionEvent event) throws IOException {
+    public void EscenaReponedor(ActionEvent event) throws IOException {
 
         fxRoot.setCenter(sceneReponedor);
     }
 
-    public void handleScene3(ActionEvent event) throws IOException {
+    public void EscenaCajera(ActionEvent event) throws IOException {
 
         fxRoot.setCenter(sceneCajera);
+    }
+    
+    public void DarDeAltaEmp(ActionEvent event) throws IOException {
+
+        fxRoot.setCenter(sceneEmp);
+    }
+    public void DarDeAltaProd(ActionEvent event) throws IOException {
+
+        fxRoot.setCenter(sceneProd);
+    }
+    public void MostarListados(ActionEvent event) throws IOException {
+
+        fxRoot.setCenter(sceneTab);
+    }
+    public void LogeOut(ActionEvent event) throws IOException {
+
+        fxRoot.setCenter(scene);
     }
 
 //    @FXML
@@ -105,7 +124,7 @@ public class Escena1Controller implements Initializable {
             loader = new FXMLLoader(
                     getClass().getResource("/fxml/EscenaCajera.fxml"));
             sceneCajera = loader.load();
-            EscenaCajeraController controllerCajera = loader.getController();
+            FXMLCajeraController controllerCajera = loader.getController();
             controllerCajera.setController(this);
 
             loader = new FXMLLoader(
@@ -125,6 +144,12 @@ public class Escena1Controller implements Initializable {
             sceneEmp = loader.load();
             DarDeAltaEmpController controllerEmp = loader.getController();
             controllerEmp.setController(this);
+
+            loader = new FXMLLoader(
+                    getClass().getResource("/fxml/DarDeAltaEmp.fxml"));
+            sceneTab = loader.load();
+            MostarListadosController controllerTab = loader.getController();
+            controllerTab.setController(this);
 
 //            loader = new FXMLLoader(
 //              getClass().getResource(Constantes.PANTALLA_TABLAS));
@@ -167,17 +192,20 @@ public class Escena1Controller implements Initializable {
         fxMenu.setVisible(true);
         fxMenuCajera.setVisible(false);
         fxMenuReponedor.setVisible(false);
+        fxRoot.setCenter(sceneAdmin);
     }
 
     public void habilitaMenuReponedor() {
         fxMenu.setVisible(true);
         fxMenuCajera.setVisible(false);
         fxMenuAdmin.setVisible(false);
+        fxRoot.setCenter(sceneReponedor);
     }
 
     public void habilitaMenuCajera() {
         fxMenu.setVisible(true);
         fxMenuReponedor.setVisible(false);
         fxMenuAdmin.setVisible(false);
+        fxRoot.setCenter(sceneCajera);
     }
 }
