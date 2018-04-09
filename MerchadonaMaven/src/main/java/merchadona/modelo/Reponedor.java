@@ -33,7 +33,10 @@ public class Reponedor extends Empleado{
         return "Reponedor{" + super.toString() + "num_reposiciones=" + num_reposiciones + '}';
     }
 
-    
+//    public void reponer(Empleado empleado, Producto producto, int cantidad) {
+//        ((Reponedor) empleado).aumentarTotalRepuestos(cantidad);
+//        producto.reponerStock(cantidad);
+//    }
     
     
 }
