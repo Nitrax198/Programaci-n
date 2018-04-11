@@ -122,7 +122,7 @@ public class Escena1Controller implements Initializable {
             controllerReponedor.setController(this);
 
             loader = new FXMLLoader(
-                    getClass().getResource("/fxml/EscenaCajera.fxml"));
+                    getClass().getResource("/fxml/FXMLCajera.fxml"));
             sceneCajera = loader.load();
             FXMLCajeraController controllerCajera = loader.getController();
             controllerCajera.setController(this);
@@ -146,7 +146,7 @@ public class Escena1Controller implements Initializable {
             controllerEmp.setController(this);
 
             loader = new FXMLLoader(
-                    getClass().getResource("/fxml/DarDeAltaEmp.fxml"));
+                    getClass().getResource("/fxml/MostarListados.fxml"));
             sceneTab = loader.load();
             MostarListadosController controllerTab = loader.getController();
             controllerTab.setController(this);

@@ -19,8 +19,8 @@ import javafx.scene.control.MenuBar;
 public class EscenaReponedorController implements Initializable {
     private Escena1Controller controller;
     
-    @FXML
-    private MenuBar fxlistaProd;
+//    @FXML
+//    private MenuBar fxlistaProd;
     /**
      * Initializes the controller class.
      */

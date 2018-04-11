@@ -31,9 +31,9 @@ public class Merchadona {
 
     public Merchadona() {
 
-        Empleado victor = new Reponedor("Victor", 1234);
-        Empleado alvaro = new Cajera("Alvaro", 1235);
-        Empleado andrea = new Reponedor("Andrea", 1236);
+        Empleado victor = new Reponedor("Victor", 2);
+        Empleado alvaro = new Cajera("Alvaro", 4);
+        Empleado andrea = new Reponedor("Andrea", 3);
         Producto chocolate = new Producto("Chocolate", 2.34);
         Producto leche = new Perecedero(LocalDateTime.now(), "Leche", 5.2);
         Producto latas = new Producto("Latas", 3.4);

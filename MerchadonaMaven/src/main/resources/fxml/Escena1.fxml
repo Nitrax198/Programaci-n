@@ -16,12 +16,12 @@
                   <MenuItem mnemonicParsing="false" onAction="#MostarListados" text="Mostrar listados" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Cajera">
+            <Menu fx:id="fxMenuReponedor" mnemonicParsing="false" text="Cajera">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#EscenaCajera" text="vender" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Reponedor">
+            <Menu fx:id="fxMenuCajera" mnemonicParsing="false" text="Reponedor">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#EscenaReponedor" text="reponer" />
                </items>
