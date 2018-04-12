@@ -2,6 +2,9 @@ package fuerzasEspeciales.modelo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlElements;
 
 public class Mision {
 
@@ -9,7 +12,14 @@ public class Mision {
     protected String lugar, nombre;
     protected int nivelExperienciaGanar;
     protected boolean exito;
-    protected ArrayList<RecursoMilitar> recursos = new ArrayList<>();
+     @XmlElementWrapper(name = "Recursos")
+    @XmlElements({
+            @XmlElement(name = "Humano", type = Humano.class),
+            @XmlElement(name = "Equipo", type = Equipo.class),
+            @XmlElement(name = "Arma", type = Arma.class),
+            @XmlElement(name = "Vehiculo", type = Vehiculo.class)
+    })
+    protected ArrayList<RecursoUso> recursos = new ArrayList<>();
 
     public Mision() {
     }
@@ -20,6 +30,7 @@ public class Mision {
         this.nombre = nombre;
         this.nivelExperienciaGanar = nivelExperienciaGanar;
         this.exito = false;
+        this.recursos 
     }
 
     public LocalDate getFechaMision() {

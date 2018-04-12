@@ -17,6 +17,5 @@ public class RecursoUso {
         this.recurso = recurso;
         this.uso = uso;
     }
-
     
 }
