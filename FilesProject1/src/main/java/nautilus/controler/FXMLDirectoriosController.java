@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -31,6 +32,17 @@ public class FXMLDirectoriosController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    @FXML
+    public void handleMouseClick(MouseEvent event) {
+        if (event.getClickCount() > 1) {
+            File seleccionado
+                    = fxlistado.getSelectionModel().getSelectedItem();
+
+            fxRutaActual.setText(seleccionado.getAbsolutePath());
+            cargarFiles();
+        }
+    }
+    
     @FXML
     public void BotonPalante(ActionEvent event){
         fileActual=fxlistado.getSelectionModel().getSelectedItem();
