@@ -21,6 +21,7 @@ import javafx.scene.input.MouseEvent;
  * @author daw
  */
 public class FXMLDirectoriosController implements Initializable {
+    private PgPrincipalController controller;
     @FXML
     private ListView<File> fxlistado;
     @FXML
@@ -83,5 +84,9 @@ public class FXMLDirectoriosController implements Initializable {
        fileActual = new File(fxRutaActual.getText());
         fxlistado.getItems().clear();
         fxlistado.getItems().addAll(fileActual.listFiles()); 
+    }
+    
+    public void setController(PgPrincipalController controller) {
+        this.controller = controller;
     }
 }

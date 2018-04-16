@@ -28,7 +28,7 @@ public class NautilusFX extends Application {
 
             //BorderPane root = FXMLLoader.load(getClass().getResource("/fxml/FXMLMenu.fxml"));
             FXMLLoader loaderMenu = new FXMLLoader(
-              getClass().getResource("/fxml/FXMLDirectorios.fxml"));
+              getClass().getResource("/fxml/PgPrincipal.fxml"));
             AnchorPane root = loaderMenu.load();
            
             
