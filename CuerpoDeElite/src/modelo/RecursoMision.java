@@ -7,15 +7,20 @@ package modelo;
 
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlIDREF;
 
 /**
  *
  * @author daw
  */
 public class RecursoMision {
+//    @XmlIDREF
     private Recurso recurso;
     @XmlElement( name = "Uso" )
     private String uso;
+
+    public RecursoMision() {
+    }
 
     public RecursoMision(Recurso recurso, String uso) {
         this.recurso = recurso;

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ZanalCar>
-    <sc/>
+<CuerpoDeElite>
     <Recursos>
         <Vehiculo>
             <nombre>Furgón</nombre>
@@ -94,4 +93,27 @@
             <stress>15</stress>
         </Humano>
     </Recursos>
-</ZanalCar>
+    <misiones>
+        <entry>
+            <key>1</key>
+            <Mision Combate>
+                <lugar>Madrid</lugar>
+                <expGanada>3</expGanada>
+                <exito>false</exito>
+                <fecha>2018-04-19</fecha>
+                <nombre>alpha</nombre>
+            </Mision Combate>
+        </entry>
+        <entry>
+            <key>2</key>
+            <Mision Reconocimiento>
+                <lugar>Venecia</lugar>
+                <expGanada>0</expGanada>
+                <exito>false</exito>
+                <fecha>-999999999-01-01</fecha>
+                <nombre>Ganma</nombre>
+                <potenciaMinima>0</potenciaMinima>
+            </Mision Reconocimiento>
+        </entry>
+    </misiones>
+</CuerpoDeElite>

@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.Map;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlIDREF;
 import modelo.Mision;
 /**
  *
@@ -18,9 +20,24 @@ import modelo.Mision;
 public abstract class Recurso {
 
     protected int potenciaDeMuerte;
+    
     @XmlElement( name = "nombre" )
     protected String nombre;
+//    @XmlIDREF
     private ArrayList<Mision> misiones = new ArrayList<>();
+//    private String id;
+    
+//    @XmlID
+//    public String getId() {
+//        return Integer.toString(System.identityHashCode(this));
+//    }
+//    
+//    public void setId(String id) {
+//        this.id = id;
+//    }
+    
+    public Recurso() {
+    }
 
     public Recurso(int potenciaDeMuerte, String nombre) {
         this.potenciaDeMuerte = potenciaDeMuerte;

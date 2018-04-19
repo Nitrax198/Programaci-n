@@ -17,6 +17,9 @@ public class RecursoMaterial extends Recurso {
     @XmlElement( name = "RangoAcción" )
     protected int rangoAccion;
 
+    public RecursoMaterial() {
+    }
+
     public RecursoMaterial(int habilidadMinima, int rangoAccion, int potenciaDeMuerte, String nombre) {
         super(potenciaDeMuerte, nombre);
         this.habilidadMinima = habilidadMinima;

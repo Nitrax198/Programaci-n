@@ -17,6 +17,9 @@ public class MisionDeCombate extends Mision {
 
     private int potenciaMinima;
 
+    public MisionDeCombate() {
+    }
+    
     public MisionDeCombate(int potenciaMinima, LocalDate fecha, String lugar, int expGanada, String nombre) {
         super(fecha, lugar, expGanada, nombre);
         this.potenciaMinima = potenciaMinima;

@@ -15,8 +15,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import modelo.Mision;
 import modelo.MisionDeCombate;
+import modelo.MyMapAdapter;
 import modelo.Recurso;
 import modelo.RecursoHumano;
 import modelo.RecursoMaterial;
@@ -26,10 +28,10 @@ import modelo.RecursoMaterialVehiculo;
  *
  * @author daw
  */
-@XmlRootElement( name = "ZanalCar" )
+@XmlRootElement( name = "CuerpoDeElite" )
 public class CuerpoDeElite {
 
-    public Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
     @XmlElementWrapper(name = "Recursos")
     @XmlElements({
             @XmlElement(name = "Humano", type = RecursoHumano.class),
@@ -37,7 +39,9 @@ public class CuerpoDeElite {
             @XmlElement(name = "Vehiculo", type = RecursoMaterialVehiculo.class)
     })
     private ArrayList<Recurso> recursos = new ArrayList<>();
-    private Map<String, Mision> misiones = new LinkedHashMap<>();
+    
+    @XmlJavaTypeAdapter(MyMapAdapter.class)
+    private HashMap<String, Mision> misiones = new LinkedHashMap<>();
 
     public CuerpoDeElite() {
         recursos.add(new RecursoMaterialVehiculo(8, 35, 300, 20, "Furgón"));
@@ -53,6 +57,10 @@ public class CuerpoDeElite {
         recursos.add(new RecursoHumano(0, 0, 97, 0, 53, "RoboPrimo"));
         recursos.add(new RecursoHumano(0, 25, 50, 7, 47, "Kiko"));
         recursos.add(new RecursoHumano(15, 0, 65, 700, 93, "Sgt. Ripley"));
+        Mision m1 = new Mision(LocalDate.now(), "Madrid", 3, "alpha");
+        misiones.put("1", m1);
+        MisionDeCombate m2= new MisionDeCombate(0, LocalDate.MIN, "Venecia", 0, "Ganma");
+        misiones.put("2", m2);
     }
 
     public void crearMision() {

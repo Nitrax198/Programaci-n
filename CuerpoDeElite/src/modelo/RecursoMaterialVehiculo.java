@@ -12,6 +12,9 @@ package modelo;
 public class RecursoMaterialVehiculo extends RecursoMaterial{
    private int capacidad; 
 
+    public RecursoMaterialVehiculo() {
+    }
+
     public RecursoMaterialVehiculo(int capacidad, int habilidadMinima, int rangoAccion, int potenciaDeMuerte, String nombre) {
         super(habilidadMinima, rangoAccion, potenciaDeMuerte, nombre);
         this.capacidad = capacidad;

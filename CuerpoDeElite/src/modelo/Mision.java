@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
@@ -19,7 +20,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class Mision {
 
     private String nombre;
-    @XmlJavaTypeAdapter(LocalDateAdapter.class)
+   
     private LocalDate fecha;
     @XmlElement( name = "lugar" )
     private String lugar;
@@ -27,14 +28,26 @@ public class Mision {
     private int expGanada;
     protected boolean exito;
     private ArrayList<RecursoMision> recursosMision = new ArrayList<>();
+//    private String id;
 
+    public Mision() {
+    }
+    
     public Mision(LocalDate fecha, String lugar, int expGanada, String nombre) {
         this.fecha = fecha;
         this.lugar = lugar;
         this.expGanada = expGanada;
         this.nombre = nombre;
     }
-
+    
+//    @XmlID
+//    public String getId() {
+//        return Integer.toString(System.identityHashCode(this));
+//    }
+//    
+//    public void setId(String id) {
+//        this.id = id;
+//    }
     public void addRecurso(Recurso recurso, String uso) {
         recursosMision.add(new RecursoMision(recurso, uso));
     }
@@ -84,7 +97,7 @@ public class Mision {
     public void setRecursosMision(ArrayList<RecursoMision> recursosMision) {
         this.recursosMision = recursosMision;
     }
-    
+//     @XmlJavaTypeAdapter(LocalDateAdapter.class)
     public LocalDate getFecha() {
         return fecha;
     }
