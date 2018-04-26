@@ -85,6 +85,65 @@ public class ConexionSimpleBD {
 
     }
     
+    public List<Asignatura> getAllAsignaturasFiltroJDBC() {
+        List<Asignatura> lista = new ArrayList<>();
+        Asignatura nuevo = null;
+
+        Connection con = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            Class.forName(Configuration.getInstance().getDriverDB());
+            
+
+            con = DriverManager.getConnection(
+                    Configuration.getInstance().getUrlDB(),
+                    Configuration.getInstance().getUserDB(),
+                    Configuration.getInstance().getPassDB());
+
+            stmt = con.createStatement();
+            String sql;
+            
+            sql = "SELECT * FROM asignaturas where";
+            rs = stmt.executeQuery(sql);
+
+            //STEP 5: Extract data from result set
+            while (rs.next()) {
+                //Retrieve by column name
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String curso = rs.getString("curso");
+                String ciclo = rs.getString("ciclo");
+                nuevo = new Asignatura();
+                nuevo.setCurso(curso);
+                nuevo.setId(id);
+                nuevo.setCiclo(ciclo);
+                nuevo.setNombre(nombre);
+                lista.add(nuevo);
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+        return lista;
+
+    }
+    
     public List<Asignatura> getAllAsignaturasJDBC() {
         List<Asignatura> lista = new ArrayList<>();
         Asignatura nuevo = null;
