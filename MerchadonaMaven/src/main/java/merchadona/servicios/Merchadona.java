@@ -99,7 +99,17 @@ public class Merchadona {
         }
         return altaOK;
     }
-
+    
+    public boolean EliminarEmpleado(int id) {
+        boolean altaOK = true;
+        if (empleados.get(id) == null) {
+            altaOK = false;
+        } else {
+            empleados.remove(id);
+        }
+        return altaOK;
+    }
+    
     public void darAltaProducto(String nombre, double precio) {
         int opcion;
         boolean comprobar = false;
