@@ -117,6 +117,40 @@ public class Merchadona {
         productos.add(new Producto(nombre, precio));
 
     }
+    public boolean darAltaProdPer(String nombre, double precio) {
+        boolean altaOK = true;
+        for (int i = 0; i < productos.size(); i++) {
+            if (productos.get(i).getNombre().equalsIgnoreCase(nombre)) {
+                altaOK = false;
+            }
+        }
+        if (altaOK) {
+            productos.add(new Perecedero(LocalDateTime.now(), nombre, precio));
+        }
+        return altaOK;
+    }
+    public boolean darAltaProd(String nombre, double precio) {
+        boolean altaOK = true;
+        for (int i = 0; i < productos.size(); i++) {
+            if (productos.get(i).getNombre().equalsIgnoreCase(nombre)) {
+                altaOK = false;
+            }
+        }
+        if (altaOK) {
+            productos.add(new Producto(nombre, precio));
+        }
+        return altaOK;
+    }
+   public boolean EliminarProducto(String nombre) {
+        boolean altaOK = false;
+        for (int i = 0; i < productos.size(); i++) {
+            if (productos.get(i).getNombre().equalsIgnoreCase(nombre)) {
+                productos.remove(i);
+                altaOK = true;
+            }
+        }
+        return altaOK;
+    }
 
     public void darBajaEmpleado() {
         int id;
@@ -145,6 +179,15 @@ public class Merchadona {
             }
         }
         return cajeras;
+    }
+    public List<Reponedor> listaReponedor() {
+        ArrayList<Reponedor> reponedors = new ArrayList<>();
+        for (Empleado empleado1 : empleados.values()) {
+            if (empleado1 instanceof Reponedor) {
+                reponedors.add((Reponedor) empleado1);
+            }
+        }
+        return reponedors;
     }
 
     public void reponerProducto(int id) {
