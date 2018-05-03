@@ -5,9 +5,13 @@
  */
 package nautilus.controler;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -16,6 +20,8 @@ import javafx.fxml.Initializable;
  */
 public class ImagenesController implements Initializable {
     private PgPrincipalController controller;
+    @FXML
+    private ImageView fxImagen;
     /**
      * Initializes the controller class.
      */
@@ -25,5 +31,10 @@ public class ImagenesController implements Initializable {
     }    
     public void setController(PgPrincipalController controller) {
         this.controller = controller;
+    }
+    
+    public void verImagen(File imagen) {
+        Image image = new Image(imagen.toURI().toString());
+        fxImagen.setImage(image);
     }
 }

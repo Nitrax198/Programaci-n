@@ -11,5 +11,6 @@
       <Button layoutX="46.0" layoutY="126.0" mnemonicParsing="false" onAction="#BotonPatras" prefHeight="92.0" prefWidth="190.0" text="Pa'tras" />
       <Button layoutX="46.0" layoutY="250.0" mnemonicParsing="false" onAction="#BotonPalante" prefHeight="109.0" prefWidth="190.0" text="Pa'lante" />
       <Label fx:id="fxRutaActual" layoutX="42.0" layoutY="59.0" prefHeight="16.0" prefWidth="190.0" text="Label" />
+      <Button layoutX="106.0" layoutY="90.0" mnemonicParsing="false" onAction="#BotonEditar" text="Editar" />
    </children>
 </AnchorPane>

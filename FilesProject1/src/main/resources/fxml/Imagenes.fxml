@@ -3,9 +3,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="nautilus.controler.ImagenesController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nautilus.controler.ImagenesController">
    <children>
-      <ImageView fitHeight="264.0" fitWidth="554.0" layoutX="28.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="368.0" fitWidth="565.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
