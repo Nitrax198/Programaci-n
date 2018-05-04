@@ -6,7 +6,13 @@
 package main;
 
 import dao.ConexionSimpleBD;
+import java.io.IOException;
 import java.util.List;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import model.Alumno;
 import model.Asignatura;
 
@@ -14,18 +20,27 @@ import model.Asignatura;
  *
  * @author user
  */
-public class Main {
+public class Main extends Application{
+    
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+
+            //BorderPane root = FXMLLoader.load(getClass().getResource("/fxml/FXMLMenu.fxml"));
+            FXMLLoader loaderMenu = new FXMLLoader(
+              getClass().getResource("/fxml/PgPrincipal.fxml"));
+            AnchorPane root = loaderMenu.load();
+           
+            
+            Scene scene = new Scene(root);
+            
+            primaryStage.setTitle("Hello World!");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+    }
     
     public static void main(String[] args) {
-     ConexionSimpleBD c = new    ConexionSimpleBD();
-     
-     
-     List<Asignatura> asignaturas = c.getAllAsignaturasJDBC();
-     for (Asignatura a : asignaturas)
-       {
-           System.out.println(a.getNombre());
-           System.out.println(a.getId());
-       }
+        launch(args);
     }
     
 }
