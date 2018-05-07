@@ -7,11 +7,15 @@ package controladores;
 
 import java.io.File;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import model.Alumno;
 
 /**
@@ -26,12 +30,20 @@ public class AlumnosController implements Initializable {
      * Initializes the controller class.
      */
     @FXML
-    private ListView<Alumno> fxlistado;
+    private TextField nombrefx;
+    @FXML
+    private DatePicker fechaNacfx;
     
 //    CheckBox DatePicker TextField
     
     @FXML
     public void BotonCreate(ActionEvent event) {
+        long id = controller.DarId(); // por que me da error?
+        String nombre = nombrefx.getText();
+        LocalDate fechaNac = fechaNacfx.getValue(); //como saco lo que hay en una cDatePicker??
+        boolean MayorEd = true;
+        Alumno a = new Alumno(controller.getId(),nombre,fechaNac,MayorEd);
+        
     }
     
     @FXML
