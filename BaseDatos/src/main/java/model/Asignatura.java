@@ -18,6 +18,15 @@ public class Asignatura {
     private String curso;
     private String ciclo;
 
+    public Asignatura() {
+    }
+
+    public Asignatura(String nombre, String curso, String ciclo) {
+        this.nombre = nombre;
+        this.curso = curso;
+        this.ciclo = ciclo;
+    }
+
     public long getId() {
         return id;
     }
