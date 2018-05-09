@@ -65,7 +65,7 @@ public class ConexionSimpleBD {
             }
 
         } catch (Exception ex) {
-            Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 if (rs != null) {
@@ -78,7 +78,7 @@ public class ConexionSimpleBD {
                     con.close();
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -124,7 +124,7 @@ public class ConexionSimpleBD {
             }
 
         } catch (Exception ex) {
-            Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 if (rs != null) {
@@ -137,7 +137,7 @@ public class ConexionSimpleBD {
                     con.close();
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -176,7 +176,7 @@ public class ConexionSimpleBD {
                 a.setId(rs.getInt(1));
             }
         } catch (Exception ex) {
-            Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
 
@@ -187,7 +187,7 @@ public class ConexionSimpleBD {
                     con.close();
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -222,7 +222,7 @@ public class ConexionSimpleBD {
             filas = stmt.executeUpdate();
 
         } catch (Exception ex) {
-            Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
 
@@ -233,7 +233,7 @@ public class ConexionSimpleBD {
                     con.close();
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -271,7 +271,7 @@ public class ConexionSimpleBD {
                 s.setId(rs.getInt(1));
             }
         } catch (Exception ex) {
-            Logger.getLogger(AsignaturasDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
 
@@ -282,7 +282,7 @@ public class ConexionSimpleBD {
                     con.close();
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(AsignaturasDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -316,7 +316,7 @@ public class ConexionSimpleBD {
             filas = stmt.executeUpdate();
 
         } catch (Exception ex) {
-            Logger.getLogger(AsignaturasDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
 
@@ -327,11 +327,91 @@ public class ConexionSimpleBD {
                     con.close();
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(AsignaturasDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
         return filas;
+
+    }
+        public boolean deleteAlumno(long idWhere) {
+
+        Connection con = null;
+        PreparedStatement stmt = null;
+        int Filas = -1;
+        boolean borrado = false;
+        try {
+            Class.forName(Configuration.getInstance().getDriverDB()); 
+
+            con = DriverManager.getConnection(
+                    Configuration.getInstance().getUrlDB(),
+                    Configuration.getInstance().getUserDB(),
+                    Configuration.getInstance().getPassDB());
+
+            stmt = con.prepareStatement("DELETE FROM alumnos where id=? ");
+
+            stmt.setLong(1, idWhere);
+
+             Filas = stmt.executeUpdate();
+
+
+        } catch (Exception ex) {
+            Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        return borrado;
+
+    }
+        public boolean deleteAsignaturas(long idWhere) {
+
+        Connection con = null;
+        PreparedStatement stmt = null;
+        int Filas = -1;
+        boolean borrado = false;
+        try {
+            Class.forName(Configuration.getInstance().getDriverDB()); 
+
+            con = DriverManager.getConnection(
+                    Configuration.getInstance().getUrlDB(),
+                    Configuration.getInstance().getUserDB(),
+                    Configuration.getInstance().getPassDB());
+
+            stmt = con.prepareStatement("DELETE FROM asignaturas where id=? ");
+
+            stmt.setLong(1, idWhere);
+
+             Filas = stmt.executeUpdate();
+
+
+        } catch (Exception ex) {
+            Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(ConexionSimpleBD.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        return borrado;
 
     }
        

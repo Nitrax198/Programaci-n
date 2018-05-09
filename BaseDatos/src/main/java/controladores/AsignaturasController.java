@@ -74,6 +74,9 @@ public class AsignaturasController implements Initializable {
 
     @FXML
     public void BotonDelete(ActionEvent event) {
+        long id = controller.getFxListAsig().getSelectionModel().getSelectedItem().getId();
+        cx.deleteAsignaturas(id);
+        controller.cargarDatosLista();
     }
 
     @Override

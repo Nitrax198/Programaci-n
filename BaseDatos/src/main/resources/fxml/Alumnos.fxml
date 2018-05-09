@@ -10,13 +10,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.AlumnosController">
    <children>
-      <ListView layoutX="16.0" layoutY="14.0" prefHeight="247.0" prefWidth="570.0" />
-      <Button layoutX="70.0" layoutY="336.0" mnemonicParsing="false" text="Create" />
-      <Button layoutX="279.0" layoutY="336.0" mnemonicParsing="false" text="Update" />
-      <Button layoutX="461.0" layoutY="336.0" mnemonicParsing="false" text="Delete" />
-      <CheckBox layoutX="497.0" layoutY="292.0" mnemonicParsing="false" text="SI" />
-      <DatePicker layoutX="222.0" layoutY="288.0" />
-      <TextField layoutX="25.0" layoutY="288.0" />
+      <ListView fx:id="fxListAlum" layoutX="16.0" layoutY="14.0" prefHeight="247.0" prefWidth="570.0" />
+      <Button layoutX="70.0" layoutY="336.0" mnemonicParsing="false" onAction="#BotonCreate" text="Create" />
+      <Button layoutX="279.0" layoutY="336.0" mnemonicParsing="false" onAction="#BotonUpdate" text="Update" />
+      <Button layoutX="461.0" layoutY="336.0" mnemonicParsing="false" onAction="#BotonDelete" text="Delete" />
+      <CheckBox fx:id="fxMayoriaEdad" layoutX="497.0" layoutY="292.0" mnemonicParsing="false" text="SI" />
+      <DatePicker fx:id="fechaNacfx" layoutX="222.0" layoutY="288.0" />
+      <TextField fx:id="nombrefx" layoutX="25.0" layoutY="288.0" />
       <Label layoutX="77.0" layoutY="261.0" text="Nombre" />
       <Label layoutX="253.0" layoutY="261.0" text="Fecha de Nacimiento" />
       <Label layoutX="467.0" layoutY="261.0" text="Mayoria de edad" />

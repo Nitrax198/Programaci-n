@@ -8,13 +8,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.AsignaturasController">
    <children>
-      <ListView layoutX="12.0" layoutY="8.0" prefHeight="242.0" prefWidth="578.0" />
-      <Button layoutX="64.0" layoutY="324.0" mnemonicParsing="false" text="Create" />
-      <Button layoutX="269.0" layoutY="324.0" mnemonicParsing="false" text="Update" />
-      <Button layoutX="466.0" layoutY="324.0" mnemonicParsing="false" text="Delete" />
-      <TextField layoutX="15.0" layoutY="283.0" />
-      <TextField layoutX="227.0" layoutY="283.0" />
-      <TextField layoutX="413.0" layoutY="283.0" />
+      <ListView fx:id="fxListAsig" layoutX="12.0" layoutY="8.0" prefHeight="242.0" prefWidth="578.0" />
+      <Button layoutX="64.0" layoutY="324.0" mnemonicParsing="false" onAction="#BotonCreate" text="Create" />
+      <Button layoutX="269.0" layoutY="324.0" mnemonicParsing="false" onAction="#BotonUpdate" text="Update" />
+      <Button layoutX="466.0" layoutY="324.0" mnemonicParsing="false" onAction="#BotonDelete" text="Delete" />
+      <TextField fx:id="nombrefx" layoutX="15.0" layoutY="283.0" />
+      <TextField fx:id="ciclofx" layoutX="227.0" layoutY="283.0" />
+      <TextField fx:id="cursofx" layoutX="413.0" layoutY="283.0" />
       <Label layoutX="76.0" layoutY="250.0" text="Nombre" />
       <Label layoutX="286.0" layoutY="250.0" text="Curso" />
       <Label layoutX="479.0" layoutY="250.0" text="Ciclo" />
