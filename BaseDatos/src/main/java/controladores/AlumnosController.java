@@ -8,6 +8,7 @@ package controladores;
 import java.io.File;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,11 +39,10 @@ public class AlumnosController implements Initializable {
     
     @FXML
     public void BotonCreate(ActionEvent event) {
-        long id = controller.DarId(); // por que me da error?
         String nombre = nombrefx.getText();
-        LocalDate fechaNac = fechaNacfx.getValue(); //como saco lo que hay en una cDatePicker??
+        LocalDate fechaNac = fechaNacfx.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //como saco lo que hay en una cDatePicker??
         boolean MayorEd = true;
-        Alumno a = new Alumno(controller.getId(),nombre,fechaNac,MayorEd);
+        Alumno a = new Alumno(nombre,fechaNac.,MayorEd);
         
     }
     

@@ -22,8 +22,7 @@ public class Alumno {
     private Date fecha_nacimiento;
     private Boolean mayor_edad;
 
-    public Alumno(long id, String nombre, Date fecha_nacimiento, Boolean mayor_edad) {
-        this.id = id;
+    public Alumno( String nombre, Date fecha_nacimiento, Boolean mayor_edad) {
         this.nombre = nombre;
         this.fecha_nacimiento = fecha_nacimiento;
         this.mayor_edad = mayor_edad;
