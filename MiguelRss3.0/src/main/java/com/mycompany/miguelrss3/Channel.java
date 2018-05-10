@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rss;
+package com.mycompany.miguelrss3;
 
 import java.util.List;
 

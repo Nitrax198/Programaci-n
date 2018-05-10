@@ -29,7 +29,7 @@ import javax.xml.bind.Unmarshaller;
  */
 public class RssAnimeController implements Initializable {
 
-   public HostServices hostServices;
+    public HostServices hostServices;
 
     @FXML
     private FlowPane fxFlowPane;
@@ -38,9 +38,10 @@ public class RssAnimeController implements Initializable {
     private TextField fxDescripcion;
     @FXML
     private TextArea fxTitulo;
-    
+
     private int indice;
     private int variable;
+    Rss p = null;
 
     /**
      * Initializes the controller class.
@@ -48,6 +49,7 @@ public class RssAnimeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         c = new Configuration();
+        cargarRss();
         // TODO
 //        Button but = new Button("testing");
 //        but.setOnAction(click -> {
@@ -58,9 +60,18 @@ public class RssAnimeController implements Initializable {
 
     @FXML
     private void handleAnterior(ActionEvent event) throws IOException {
+        indice += variable -1;
+        indice %= variable;
+        fxDescripcion.setText(p.channel.getItem().get(indice).getTitle());
+        fxTitulo.setText(p.channel.getItem().get(indice).getDescription());
     }
+
     @FXML
     private void handleSiguiente(ActionEvent event) throws IOException {
+        indice++;
+        indice %= variable;
+        fxDescripcion.setText(p.channel.getItem().get(indice).getTitle());
+        fxTitulo.setText(p.channel.getItem().get(indice).getDescription());
     }
 
     private void cargarRss() {
@@ -70,17 +81,17 @@ public class RssAnimeController implements Initializable {
 
             Unmarshaller um = jaxbContext.createUnmarshaller();
 
-            com.mycompany.rss.Configuration c = new com.mycompany.rss.Configuration();
+            Configuration c = new Configuration();
 
             Rss p = (Rss) um.unmarshal(new URL(c.getUrls().get(0)));
             variable = p.channel.getItem().size();
             fxDescripcion.setText(p.channel.getItem().get(indice).getTitle());
-            fxTitulo.setText(p.channel.getItem().get(indice).getDescripcion());
+            fxTitulo.setText(p.channel.getItem().get(indice).getDescription());
         } catch (JAXBException ex) {
-            Logger.getLogger(TestRss.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Rss.class.getName()).log(Level.SEVERE, null, ex);
         } catch (MalformedURLException ex) {
-            Logger.getLogger(TestRss.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Rss.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }
