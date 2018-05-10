@@ -5,9 +5,6 @@
  */
 package com.mycompany.miguelrss3;
 
-import java.awt.TextArea;
-import java.awt.TextField;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,6 +14,8 @@ import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -29,7 +28,6 @@ import javax.xml.bind.Unmarshaller;
  */
 public class RssAnimeController implements Initializable {
 
-    public HostServices hostServices;
 
     @FXML
     private FlowPane fxFlowPane;
@@ -59,7 +57,7 @@ public class RssAnimeController implements Initializable {
     }
 
     @FXML
-    private void handleAnterior(ActionEvent event) throws IOException {
+    private void handleAnterior(ActionEvent event)  {
         indice += variable -1;
         indice %= variable;
         fxDescripcion.setText(p.channel.getItem().get(indice).getTitle());
@@ -67,7 +65,7 @@ public class RssAnimeController implements Initializable {
     }
 
     @FXML
-    private void handleSiguiente(ActionEvent event) throws IOException {
+    private void handleSiguiente(ActionEvent event)  {
         indice++;
         indice %= variable;
         fxDescripcion.setText(p.channel.getItem().get(indice).getTitle());

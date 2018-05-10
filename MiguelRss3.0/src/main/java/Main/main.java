@@ -6,7 +6,6 @@ package Main;
  * and open the template in the editor.
  */
 
-import com.mycompany.miguelrss3.RssAnimeController;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -28,9 +27,9 @@ public class main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
        FXMLLoader loaderMenu = new FXMLLoader(
-          getClass().getResource("/com.mycompany.miguelrss3/RssAnime.fxml"));
+          getClass().getResource("/rss/FXMLRss.fxml"));
         AnchorPane root = loaderMenu.load();
-        RssAnimeController menuController = loaderMenu.getController();   
+        FXMLRssController menuController = loaderMenu.getController();   
 
         menuController.hostServices =  this.getHostServices();
      
