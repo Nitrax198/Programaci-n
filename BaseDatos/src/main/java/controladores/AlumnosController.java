@@ -44,12 +44,7 @@ public class AlumnosController implements Initializable {
 //    CheckBox DatePicker TextField
     @FXML
     public void BotonCreate(ActionEvent event) {
-        if (nombrefx.getText() == null) {
-            System.out.println("Por favor escribe el nombre");
-        }
-        if (fechaNacfx.getValue() == null) {
-            System.out.println("Por favor escribe una fecha ");
-        }
+     
         if (nombrefx.getText() != null && fechaNacfx.getValue() != null) {
             String nombre = nombrefx.getText();
             Date fechaNac = java.sql.Date.valueOf(fechaNacfx.getValue());
