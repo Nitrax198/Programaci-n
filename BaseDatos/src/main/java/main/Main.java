@@ -12,6 +12,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.Alumno;
 import model.Asignatura;
@@ -28,7 +29,7 @@ public class Main extends Application{
             //BorderPane root = FXMLLoader.load(getClass().getResource("/fxml/FXMLMenu.fxml"));
             FXMLLoader loaderMenu = new FXMLLoader(
               getClass().getResource("/fxml/PgPrincipal.fxml"));
-            AnchorPane root = loaderMenu.load();
+            BorderPane root = loaderMenu.load();
            
             
             Scene scene = new Scene(root);

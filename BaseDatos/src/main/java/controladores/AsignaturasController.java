@@ -12,8 +12,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import model.Alumno;
 import model.Asignatura;
@@ -38,6 +41,8 @@ public class AsignaturasController implements Initializable {
 
     @FXML
     private TextField cursofx;
+    @FXML
+    private ListView<Asignatura> fxListAsig;
 
 //    CheckBox DatePicker TextField
     @FXML
@@ -57,34 +62,58 @@ public class AsignaturasController implements Initializable {
             String ciclo = nombrefx.getText();
             Asignatura s = new Asignatura(nombre, curso, ciclo);
             cx.insertAsignaturasJDBC(s);
+            Alert b = new Alert(Alert.AlertType.ERROR, "La Asignatura ha sido creada con exito", ButtonType.CLOSE);
+            b.showAndWait();
         }
-        controller.getFxListAsig().refresh();
-        controller.cargarDatosLista();
+        fxListAsig.refresh();
+        cargarDatosLista();
     }
 
     @FXML
     public void BotonUpdate(ActionEvent event) {
+        Asignatura asig = fxListAsig.getSelectionModel().getSelectedItem();
         String nombre = nombrefx.getText();
-        String curso = nombrefx.getText();
-        String ciclo = nombrefx.getText();
-        Asignatura s = new Asignatura(nombre, curso, ciclo);
-        s.setId(controller.getFxListAsig().getSelectionModel().getSelectedItem().getId());
-        cx.updateAsignaturasJDBC(s);
+        String curso = cursofx.getText();
+        String ciclo = ciclofx.getText();
+        asig.setNombre(nombre);
+        asig.setCiclo(ciclo);
+        asig.setCurso(curso);
+        cx.updateAsignaturasJDBC(asig);
+        fxListAsig.refresh();
+        Alert b = new Alert(Alert.AlertType.ERROR, "Asignatura Actualizada", ButtonType.CLOSE);
+        b.showAndWait();
     }
 
     @FXML
     public void BotonDelete(ActionEvent event) {
-        long id = controller.getFxListAsig().getSelectionModel().getSelectedItem().getId();
+        long id = fxListAsig.getSelectionModel().getSelectedItem().getId();
         cx.deleteAsignaturas(id);
-        controller.cargarDatosLista();
+        cargarDatosLista();
+        Alert b = new Alert(Alert.AlertType.ERROR, "¿Está seguro de que lo quiere borrar? Pues ya es tarde ", ButtonType.CLOSE);
+        b.showAndWait();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        controller.cargarDatosLista();
+        ConexionSimpleBD c = new ConexionSimpleBD();
+        cx = new ConexionSimpleBD();
+        cargarDatosLista();
     }
 
     public void setController(PgPrincipalController controller) {
         this.controller = controller;
+    }
+
+    public void cargarDatosLista() {
+
+        fxListAsig.getItems().clear();
+        fxListAsig.getItems().addAll(
+                cx.getAllAsignaturasJDBC());
+
+    }
+    public void cargarAsignaturaCajas() {
+        nombrefx.setText(fxListAsig.getSelectionModel().getSelectedItem().getNombre());
+        cursofx.setText(fxListAsig.getSelectionModel().getSelectedItem().getCurso());
+        ciclofx.setText(fxListAsig.getSelectionModel().getSelectedItem().getCiclo());
     }
 }

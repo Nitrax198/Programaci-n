@@ -53,12 +53,6 @@ public class PgPrincipalController implements Initializable {
 
     @FXML
     private AnchorPane sceneAsig;
-    
-    @FXML
-    private ListView<Alumno> fxListAlum;
-    
-    @FXML
-    private ListView<Asignatura> fxListAsig;
 
     long id;
 
@@ -97,7 +91,6 @@ public class PgPrincipalController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(PgPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        cargarDatosLista();
         fxRoot.setCenter(sceneAlm);
     }
 
@@ -133,30 +126,4 @@ public class PgPrincipalController implements Initializable {
         this.asignatura = asignatura;
     }
 
-    public ListView<Alumno> getFxListAlum() {
-        return fxListAlum;
-    }
-
-    public void setFxListAlum(ListView<Alumno> fxListAlum) {
-        this.fxListAlum = fxListAlum;
-    }
-
-    public ListView<Asignatura> getFxListAsig() {
-        return fxListAsig;
-    }
-
-    public void setFxListAsig(ListView<Asignatura> fxListAsig) {
-        this.fxListAsig = fxListAsig;
-    }
-
-    public void cargarDatosLista() {
-
-        fxListAlum.getItems().clear();
-        fxListAlum.getItems().addAll(
-                cx.getAllAlumnosJDBC());
-        fxListAsig.getItems().clear();
-        fxListAsig.getItems().addAll(
-                cx.getAllAsignaturasJDBC());
-
-    }
 }

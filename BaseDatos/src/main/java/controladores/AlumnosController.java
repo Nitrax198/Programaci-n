@@ -15,6 +15,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
@@ -40,20 +42,25 @@ public class AlumnosController implements Initializable {
     private DatePicker fechaNacfx;
     @FXML
     private CheckBox fxMayoriaEdad;
+    @FXML
+    private ListView<Alumno> fxListAlum;
 
 //    CheckBox DatePicker TextField
     @FXML
     public void BotonCreate(ActionEvent event) {
-     
+
         if (nombrefx.getText() != null && fechaNacfx.getValue() != null) {
             String nombre = nombrefx.getText();
             Date fechaNac = java.sql.Date.valueOf(fechaNacfx.getValue());
             boolean MayorEd = fxMayoriaEdad.isSelected();
             Alumno a = new Alumno(nombre, fechaNac, MayorEd);
             cx.insertAlumnoJDBC(a);
+            Alert b = new Alert(Alert.AlertType.ERROR, "El alumno se ha creado con exito", ButtonType.CLOSE);
+            b.showAndWait();
         }
-        controller.getFxListAlum().refresh();
-        controller.cargarDatosLista();
+        fxListAlum.refresh();
+        cargarDatosLista();
+
     }
 
     @FXML
@@ -62,23 +69,39 @@ public class AlumnosController implements Initializable {
         Date fechaNac = java.sql.Date.valueOf(fechaNacfx.getValue());
         boolean MayorEd = fxMayoriaEdad.isSelected();
         Alumno a = new Alumno(nombre, fechaNac, MayorEd);
-        a.setId(controller.getFxListAlum().getSelectionModel().getSelectedItem().getId());
+        a.setId(fxListAlum.getSelectionModel().getSelectedItem().getId());
         cx.updateAlumnoJDBC(a);
+        Alert b = new Alert(Alert.AlertType.ERROR, "Alumno actualizado", ButtonType.CLOSE);
+        b.showAndWait();
     }
 
     @FXML
     public void BotonDelete(ActionEvent event) {
-        long id = controller.getFxListAlum().getSelectionModel().getSelectedItem().getId();
+        long id = fxListAlum.getSelectionModel().getSelectedItem().getId();
         cx.deleteAlumno(id);
-        controller.cargarDatosLista();
+        cargarDatosLista();
+        Alert b = new Alert(Alert.AlertType.ERROR, "¿Está seguro de que lo quiere borrar? Pues ya es tarde ", ButtonType.CLOSE);
+        b.showAndWait();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        controller.cargarDatosLista();
+        ConexionSimpleBD c = new ConexionSimpleBD();
+        cx = new ConexionSimpleBD();
+        cargarDatosLista();
     }
 
     public void setController(PgPrincipalController controller) {
         this.controller = controller;
+    }
+
+    public void cargarDatosLista() {
+
+        fxListAlum.getItems().clear();
+        fxListAlum.getItems().addAll(
+                cx.getAllAlumnosJDBC());
+    }
+    public void cargarAlumnosCajas() {
+        nombrefx.setText(fxListAlum.getSelectionModel().getSelectedItem().getNombre());
     }
 }
