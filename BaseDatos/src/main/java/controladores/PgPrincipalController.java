@@ -53,7 +53,7 @@ public class PgPrincipalController implements Initializable {
 
     @FXML
     private AnchorPane sceneAsig;
-
+    
     @FXML
     private ListView<Alumno> fxListAlum;
     
