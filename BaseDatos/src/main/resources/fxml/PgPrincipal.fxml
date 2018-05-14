@@ -19,6 +19,12 @@
               <MenuItem mnemonicParsing="false" onAction="#BotonIrAsignaturas" text="Ir" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Notas">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cargarSceneAlm_Asig" text="Vincular" />
+                  <MenuItem mnemonicParsing="false" onAction="#cargarSceneNotas" text="Añadir Nota" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

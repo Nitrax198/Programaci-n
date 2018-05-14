@@ -7,7 +7,9 @@ package controladores;
 
 import config.Configuration;
 import dao.AlumnosDAO;
+import dao.AsignaturasDAO;
 import dao.ConexionSimpleBD;
+import dao.NotasDAO;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -38,7 +40,9 @@ import model.Asignatura;
  */
 public class PgPrincipalController implements Initializable {
 
-    private ConexionSimpleBD cx;
+    private AlumnosDAO cx;
+    private AsignaturasDAO cz;
+    private NotasDAO cy;
     /**
      * Initializes the controller class.
      */
@@ -54,6 +58,12 @@ public class PgPrincipalController implements Initializable {
     @FXML
     private AnchorPane sceneAsig;
 
+    @FXML
+    private AnchorPane sceneAlm_Asig;
+
+    @FXML
+    private AnchorPane sceneNotas;
+
     long id;
 
     @FXML
@@ -68,13 +78,27 @@ public class PgPrincipalController implements Initializable {
         fxRoot.setCenter(sceneAsig);
     }
 
+    @FXML
+    public void BotonIrAlm_Asig(ActionEvent event) {
+
+        fxRoot.setCenter(sceneAlm_Asig);
+    }
+
+    @FXML
+    public void BotonIrNotas(ActionEvent event) {
+
+        fxRoot.setCenter(sceneNotas);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         try {
             // TODO
-            ConexionSimpleBD c = new ConexionSimpleBD();
-            cx = new ConexionSimpleBD();
+            AlumnosDAO a = new AlumnosDAO();
+            cx = new AlumnosDAO();
+            AsignaturasDAO b = new AsignaturasDAO();
+            cz = new AsignaturasDAO();
 
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("/fxml/Alumnos.fxml"));
@@ -88,6 +112,18 @@ public class PgPrincipalController implements Initializable {
             AsignaturasController controllerAsig = loader.getController();
             controllerAsig.setController(this);
 
+            loader = new FXMLLoader(
+                    getClass().getResource("/fxml/VincularAlumnos.fxml"));
+            sceneAlm_Asig = loader.load();
+            VincularAlumnosController controllerAlm_Asig = loader.getController();
+            controllerAlm_Asig.setController(this);
+
+            loader = new FXMLLoader(
+                    getClass().getResource("/fxml/AñadirNotas.fxml"));
+            sceneNotas = loader.load();
+            AñadirNotasController controllerNotas = loader.getController();
+            controllerNotas.setController(this);
+
         } catch (IOException ex) {
             Logger.getLogger(PgPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -100,6 +136,14 @@ public class PgPrincipalController implements Initializable {
 
     public void cargarSceneAsig() {
         fxRoot.setCenter(sceneAsig);
+    }
+    
+    public void cargarSceneNotas() {
+        fxRoot.setCenter(sceneNotas);
+    }
+    
+    public void cargarSceneAlm_Asig() {
+        fxRoot.setCenter(sceneAlm_Asig);
     }
 
     public long getId() {

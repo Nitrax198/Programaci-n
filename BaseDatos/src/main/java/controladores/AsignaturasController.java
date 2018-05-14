@@ -5,6 +5,7 @@
  */
 package controladores;
 
+import dao.AsignaturasDAO;
 import dao.ConexionSimpleBD;
 import java.net.URL;
 import java.util.Date;
@@ -28,7 +29,7 @@ import model.Asignatura;
  */
 public class AsignaturasController implements Initializable {
 
-    private ConexionSimpleBD cx;
+    private AsignaturasDAO cx;
     private PgPrincipalController controller;
     /**
      * Initializes the controller class.
@@ -95,9 +96,10 @@ public class AsignaturasController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ConexionSimpleBD c = new ConexionSimpleBD();
-        cx = new ConexionSimpleBD();
+        AsignaturasDAO cx = new AsignaturasDAO();
+        cx = new AsignaturasDAO();
         cargarDatosLista();
+        
     }
 
     public void setController(PgPrincipalController controller) {

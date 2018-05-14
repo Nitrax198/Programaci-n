@@ -14,26 +14,28 @@ import model.Alumno;
  * @author oscar
  */
 public class AlumnosServicios {
-    
-    
-    public List<Alumno> getAllAlumnos()
-    {
+
+    public List<Alumno> getAllAlumnos() {
         AlumnosDAO dao = new AlumnosDAO();
-        
-        return dao.getAllAlumnosJDBCTemplate();
+
+        return dao.getAllAlumnosJDBC();
     }
-    
-    public Alumno getAlumnoById(int id){
+
+    public int InsertAlumno(Alumno a) {
         AlumnosDAO dao = new AlumnosDAO();
-        
-        return dao.getUserById(id);
-        
+
+        return dao.insertAlumnoJDBC(a);
+
     }
-    public Alumno addAlumno(Alumno alumnoNuevo)
-    {
+
+    public int UpdateAlumno(Alumno a) {
         AlumnosDAO dao = new AlumnosDAO();
-        
-        return dao.addUserSimpleJDBCTemplate(alumnoNuevo);
+
+        return dao.insertAlumnoJDBC(a);
     }
-    
+    public boolean DeleteAlumno(long id) {
+        AlumnosDAO dao = new AlumnosDAO();
+
+        return dao.deleteAlumno(id);
+    }
 }
