@@ -23,19 +23,19 @@ public class AsignaturasServicios {
         return dao.getAllAsignaturasJDBC();
     }
 
-    public int InsertAsignaturas(Asignatura a) {
+    public int insertAsignaturas(Asignatura a) {
         AsignaturasDAO dao = new AsignaturasDAO();
 
         return dao.insertAsignaturasJDBC(a);
 
     }
 
-    public int UpdateAsignaturas(Asignatura a) {
+    public int updateAsignaturas(Asignatura a) {
         AsignaturasDAO dao = new AsignaturasDAO();
 
         return dao.insertAsignaturasJDBC(a);
     }
-    public boolean DeleteAsignaturas(long id) {
+    public boolean deleteAsignaturas(long id) {
         AsignaturasDAO dao = new AsignaturasDAO();
 
         return dao.deleteAsignaturas(id);

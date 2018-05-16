@@ -21,19 +21,19 @@ public class AlumnosServicios {
         return dao.getAllAlumnosJDBC();
     }
 
-    public int InsertAlumno(Alumno a) {
+    public int insertAlumno(Alumno a) {
         AlumnosDAO dao = new AlumnosDAO();
 
         return dao.insertAlumnoJDBC(a);
 
     }
 
-    public int UpdateAlumno(Alumno a) {
+    public int updateAlumno(Alumno a) {
         AlumnosDAO dao = new AlumnosDAO();
 
         return dao.insertAlumnoJDBC(a);
     }
-    public boolean DeleteAlumno(long id) {
+    public boolean deleteAlumno(long id) {
         AlumnosDAO dao = new AlumnosDAO();
 
         return dao.deleteAlumno(id);

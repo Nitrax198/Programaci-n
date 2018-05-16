@@ -15,6 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import model.Alumno;
 import model.Asignatura;
+import servicios.AlumnosServicios;
+import servicios.AsignaturasServicios;
+import servicios.NotasServivios;
 
 /**
  * FXML Controller class
@@ -23,9 +26,9 @@ import model.Asignatura;
  */
 public class VincularAlumnosController implements Initializable {
 
-    private AlumnosDAO cx;
-    private AsignaturasDAO cz;
-    private NotasDAO cy;
+   private AlumnosServicios cx;
+    private AsignaturasServicios cz;
+    private NotasServivios cy;
     private PgPrincipalController controller;
 
     @FXML
@@ -40,11 +43,8 @@ public class VincularAlumnosController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        AlumnosDAO cx = new AlumnosDAO();
-        cx = new AlumnosDAO();
-        cargarDatosLista();
-        AsignaturasDAO cz = new AsignaturasDAO();
-        cz = new AsignaturasDAO();
+        cx = new AlumnosServicios();
+        cz = new AsignaturasServicios();
         cargarDatosLista();
     }
 
@@ -56,10 +56,10 @@ public class VincularAlumnosController implements Initializable {
 
         fxListAsig.getItems().clear();
         fxListAsig.getItems().addAll(
-                cz.getAllAsignaturasJDBC());
+                cz.getAllAsignaturas());
 
         fxListAlum.getItems().clear();
         fxListAlum.getItems().addAll(
-                cx.getAllAlumnosJDBC());
+                cx.getAllAlumnos());
     }
 }

@@ -21,6 +21,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import model.Alumno;
 import model.Asignatura;
+import servicios.AsignaturasServicios;
 
 /**
  * FXML Controller class
@@ -29,7 +30,7 @@ import model.Asignatura;
  */
 public class AsignaturasController implements Initializable {
 
-    private AsignaturasDAO cx;
+    private AsignaturasServicios cx;
     private PgPrincipalController controller;
     /**
      * Initializes the controller class.
@@ -62,7 +63,7 @@ public class AsignaturasController implements Initializable {
             String curso = nombrefx.getText();
             String ciclo = nombrefx.getText();
             Asignatura s = new Asignatura(nombre, curso, ciclo);
-            cx.insertAsignaturasJDBC(s);
+            cx.insertAsignaturas(s);
             Alert b = new Alert(Alert.AlertType.ERROR, "La Asignatura ha sido creada con exito", ButtonType.CLOSE);
             b.showAndWait();
         }
@@ -79,7 +80,7 @@ public class AsignaturasController implements Initializable {
         asig.setNombre(nombre);
         asig.setCiclo(ciclo);
         asig.setCurso(curso);
-        cx.updateAsignaturasJDBC(asig);
+        cx.updateAsignaturas(asig);
         fxListAsig.refresh();
         Alert b = new Alert(Alert.AlertType.ERROR, "Asignatura Actualizada", ButtonType.CLOSE);
         b.showAndWait();
@@ -96,8 +97,7 @@ public class AsignaturasController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        AsignaturasDAO cx = new AsignaturasDAO();
-        cx = new AsignaturasDAO();
+        cx = new AsignaturasServicios();
         cargarDatosLista();
         
     }
@@ -110,7 +110,7 @@ public class AsignaturasController implements Initializable {
 
         fxListAsig.getItems().clear();
         fxListAsig.getItems().addAll(
-                cx.getAllAsignaturasJDBC());
+                cx.getAllAsignaturas());
 
     }
     public void cargarAsignaturaCajas() {

@@ -24,6 +24,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import model.Alumno;
+import servicios.AlumnosServicios;
 
 /**
  * FXML Controller class
@@ -33,7 +34,7 @@ import model.Alumno;
 public class AlumnosController implements Initializable {
 
 //    private ConexionSimpleBD cx;
-    private AlumnosDAO cx;
+    private AlumnosServicios cx;
     private PgPrincipalController controller;
     /**
      * Initializes the controller class.
@@ -56,7 +57,7 @@ public class AlumnosController implements Initializable {
             Date fechaNac = java.sql.Date.valueOf(fechaNacfx.getValue());
             boolean MayorEd = fxMayoriaEdad.isSelected();
             Alumno a = new Alumno(nombre, fechaNac, MayorEd);
-            cx.insertAlumnoJDBC(a);
+            cx.insertAlumno(a);
             Alert b = new Alert(Alert.AlertType.ERROR, "El alumno se ha creado con exito", ButtonType.CLOSE);
             b.showAndWait();
         }
@@ -72,7 +73,7 @@ public class AlumnosController implements Initializable {
         boolean MayorEd = fxMayoriaEdad.isSelected();
         Alumno a = new Alumno(nombre, fechaNac, MayorEd);
         a.setId(fxListAlum.getSelectionModel().getSelectedItem().getId());
-        cx.updateAlumnoJDBC(a);
+        cx.updateAlumno(a);
         Alert b = new Alert(Alert.AlertType.ERROR, "Alumno actualizado", ButtonType.CLOSE);
         b.showAndWait();
     }
@@ -88,8 +89,7 @@ public class AlumnosController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        AlumnosDAO cx = new AlumnosDAO();
-        cx = new AlumnosDAO();
+        cx = new AlumnosServicios();
         cargarDatosLista();
     }
 
@@ -101,7 +101,7 @@ public class AlumnosController implements Initializable {
 
         fxListAlum.getItems().clear();
         fxListAlum.getItems().addAll(
-                cx.getAllAlumnosJDBC());
+                cx.getAllAlumnos());
     }
     public void cargarAlumnosCajas() {
         nombrefx.setText(fxListAlum.getSelectionModel().getSelectedItem().getNombre());

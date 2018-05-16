@@ -11,6 +11,9 @@ import dao.NotasDAO;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import servicios.AlumnosServicios;
+import servicios.AsignaturasServicios;
+import servicios.NotasServivios;
 
 /**
  * FXML Controller class
@@ -19,9 +22,9 @@ import javafx.fxml.Initializable;
  */
 public class AñadirNotasController implements Initializable {
 
-    private AlumnosDAO cx;
-    private AsignaturasDAO cz;
-    private NotasDAO cy;
+    private AlumnosServicios cx;
+    private AsignaturasServicios cz;
+    private NotasServivios cy;
     private PgPrincipalController controller;
 
     /**

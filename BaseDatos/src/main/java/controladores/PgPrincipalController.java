@@ -32,6 +32,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import model.Alumno;
 import model.Asignatura;
+import servicios.AlumnosServicios;
+import servicios.AsignaturasServicios;
+import servicios.NotasServivios;
 
 /**
  * FXML Controller class
@@ -40,9 +43,9 @@ import model.Asignatura;
  */
 public class PgPrincipalController implements Initializable {
 
-    private AlumnosDAO cx;
-    private AsignaturasDAO cz;
-    private NotasDAO cy;
+    private AlumnosServicios cx;
+    private AsignaturasServicios cz;
+    private NotasServivios cy;
     /**
      * Initializes the controller class.
      */
@@ -95,10 +98,8 @@ public class PgPrincipalController implements Initializable {
         // TODO
         try {
             // TODO
-            AlumnosDAO a = new AlumnosDAO();
-            cx = new AlumnosDAO();
-            AsignaturasDAO b = new AsignaturasDAO();
-            cz = new AsignaturasDAO();
+            cx = new AlumnosServicios();
+            cz = new AsignaturasServicios();
 
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("/fxml/Alumnos.fxml"));

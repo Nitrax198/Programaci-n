@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="controladores.AñadirNotasController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.AñadirNotasController">
    <children>
       <ListView layoutX="9.0" layoutY="6.0" prefHeight="390.0" prefWidth="282.0" />
-      <TextField layoutX="360.0" layoutY="297.0" />
-      <Label layoutX="393.0" layoutY="262.0" prefHeight="16.0" prefWidth="105.0" text="Escribe la nota" />
-      <Button layoutX="391.0" layoutY="344.0" mnemonicParsing="false" text="Cambiar Nota" />
-      <ListView layoutX="305.0" layoutY="7.0" prefHeight="234.0" prefWidth="282.0" />
+      <TextField layoutX="356.0" layoutY="213.0" />
+      <Label layoutX="389.0" layoutY="149.0" prefHeight="16.0" prefWidth="105.0" text="Escribe la nota" />
+      <Button layoutX="388.0" layoutY="286.0" mnemonicParsing="false" text="Cambiar Nota" />
+      <ComboBox layoutX="317.0" layoutY="86.0" prefHeight="26.0" prefWidth="255.0" />
    </children>
 </AnchorPane>
