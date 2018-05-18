@@ -25,6 +25,7 @@ import model.Asignatura;
 public class AsignaturasDAO {
 
     public List<Asignatura> getAllAsignaturasJDBC() {
+        DBConnection db = new DBConnection();
         List<Asignatura> lista = new ArrayList<>();
         Asignatura nuevo = null;
 
@@ -32,12 +33,7 @@ public class AsignaturasDAO {
         Statement stmt = null;
         ResultSet rs = null;
         try {
-            Class.forName(Configuration.getInstance().getDriverDB());
-
-            con = DriverManager.getConnection(
-                    Configuration.getInstance().getUrlDB(),
-                    Configuration.getInstance().getUserDB(),
-                    Configuration.getInstance().getPassDB());
+            con = db.getConnection();
 
             stmt = con.createStatement();
             String sql;
@@ -70,9 +66,58 @@ public class AsignaturasDAO {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (con != null) {
-                    con.close();
+                db.cerrarConexion(con);
+            } catch (SQLException ex) {
+                Logger.getLogger(AsignaturasDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+        return lista;
+
+    }
+    public List<Asignatura> getAsignaturasAlumno() {
+        DBConnection db = new DBConnection();
+        List<Asignatura> lista = new ArrayList<>();
+        Asignatura nuevo = null;
+
+        Connection con = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            con = db.getConnection();
+
+            stmt = con.createStatement();
+            String sql;
+
+            sql = "SELECT * FROM asignaturas where id in(select  distinct(ID_ASIGNATURAS) form notas";
+            rs = stmt.executeQuery(sql);
+
+            //STEP 5: Extract data from result set
+            while (rs.next()) {
+                //Retrieve by column name
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String curso = rs.getString("curso");
+                String ciclo = rs.getString("ciclo");
+                nuevo = new Asignatura();
+                nuevo.setCurso(curso);
+                nuevo.setId(id);
+                nuevo.setCiclo(ciclo);
+                nuevo.setNombre(nombre);
+                lista.add(nuevo);
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(AsignaturasDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
                 }
+                if (stmt != null) {
+                    stmt.close();
+                }
+                db.cerrarConexion(con);
             } catch (SQLException ex) {
                 Logger.getLogger(AsignaturasDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -83,16 +128,14 @@ public class AsignaturasDAO {
     }
 
     public int insertAsignaturasJDBC(Asignatura s) {
+        DBConnection db = new DBConnection();
         Connection con = null;
         PreparedStatement stmt = null;
         int filas = -1;
         try {
             Class.forName(Configuration.getInstance().getDriverDB());
 
-            con = DriverManager.getConnection(
-                    Configuration.getInstance().getUrlDB(),
-                    Configuration.getInstance().getUserDB(),
-                    Configuration.getInstance().getPassDB());
+            con = db.getConnection();
 
             stmt = con.prepareStatement("INSERT INTO asignaturas "
                     + "(NOMBRE,CURSO,CICLO)  "
@@ -118,9 +161,7 @@ public class AsignaturasDAO {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (con != null) {
-                    con.close();
-                }
+                db.cerrarConexion(con);
             } catch (SQLException ex) {
                 Logger.getLogger(AsignaturasDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -131,16 +172,12 @@ public class AsignaturasDAO {
     }
 
     public int updateAsignaturasJDBC(Asignatura s) {
+        DBConnection db = new DBConnection();
         Connection con = null;
         PreparedStatement stmt = null;
         int filas = -1;
         try {
-            Class.forName(Configuration.getInstance().getDriverDB());
-
-            con = DriverManager.getConnection(
-                    Configuration.getInstance().getUrlDB(),
-                    Configuration.getInstance().getUserDB(),
-                    Configuration.getInstance().getPassDB());
+            con = db.getConnection();
 
             stmt = con.prepareStatement("UPDATE asignaturas "
                     + "SET NOMBRE=?,CURSO=?,CICLO=? "
@@ -164,9 +201,7 @@ public class AsignaturasDAO {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (con != null) {
-                    con.close();
-                }
+                db.cerrarConexion(con);
             } catch (SQLException ex) {
                 Logger.getLogger(AsignaturasDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -177,19 +212,14 @@ public class AsignaturasDAO {
     }
 
     public boolean deleteAsignaturas(long idWhere) {
-
+        DBConnection db = new DBConnection();
         Connection con = null;
         PreparedStatement stmt = null;
         int Filas = -1;
         boolean borrado = false;
         try {
-            Class.forName(Configuration.getInstance().getDriverDB());
-
-            con = DriverManager.getConnection(
-                    Configuration.getInstance().getUrlDB(),
-                    Configuration.getInstance().getUserDB(),
-                    Configuration.getInstance().getPassDB());
-
+            con = db.getConnection();
+            
             stmt = con.prepareStatement("DELETE FROM asignaturas where id=? ");
 
             stmt.setLong(1, idWhere);
@@ -204,9 +234,7 @@ public class AsignaturasDAO {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (con != null) {
-                    con.close();
-                }
+                db.cerrarConexion(con);
             } catch (SQLException ex) {
                 Logger.getLogger(AsignaturasDAO.class.getName()).log(Level.SEVERE, null, ex);
             }

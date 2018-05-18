@@ -9,10 +9,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.AñadirNotasController">
    <children>
-      <ListView layoutX="9.0" layoutY="6.0" prefHeight="390.0" prefWidth="282.0" />
+      <ListView fx:id="fxListAlum" layoutX="9.0" layoutY="21.0" prefHeight="375.0" prefWidth="282.0" />
       <TextField layoutX="356.0" layoutY="213.0" />
       <Label layoutX="389.0" layoutY="149.0" prefHeight="16.0" prefWidth="105.0" text="Escribe la nota" />
-      <Button layoutX="388.0" layoutY="286.0" mnemonicParsing="false" text="Cambiar Nota" />
-      <ComboBox layoutX="317.0" layoutY="86.0" prefHeight="26.0" prefWidth="255.0" />
+      <Button layoutX="388.0" layoutY="286.0" mnemonicParsing="false" onAction="#BotonAñadirNota" text="Cambiar Nota" />
+      <ComboBox fx:id="fxListAsig" layoutX="317.0" layoutY="86.0" prefHeight="26.0" prefWidth="255.0" />
    </children>
 </AnchorPane>

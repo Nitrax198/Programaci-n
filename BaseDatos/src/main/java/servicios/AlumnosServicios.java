@@ -33,9 +33,14 @@ public class AlumnosServicios {
 
         return dao.insertAlumnoJDBC(a);
     }
-    public boolean deleteAlumno(long id) {
+    public int deleteAlumno(long id) {
         AlumnosDAO dao = new AlumnosDAO();
 
         return dao.deleteAlumno(id);
+    }
+    public int delForce(Alumno a) {
+        AlumnosDAO dao = new AlumnosDAO();
+
+        return dao.delForce(a);
     }
 }

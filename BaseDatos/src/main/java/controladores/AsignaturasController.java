@@ -64,7 +64,7 @@ public class AsignaturasController implements Initializable {
             String ciclo = nombrefx.getText();
             Asignatura s = new Asignatura(nombre, curso, ciclo);
             cx.insertAsignaturas(s);
-            Alert b = new Alert(Alert.AlertType.ERROR, "La Asignatura ha sido creada con exito", ButtonType.CLOSE);
+            Alert b = new Alert(Alert.AlertType.INFORMATION, "La Asignatura ha sido creada con exito", ButtonType.CLOSE);
             b.showAndWait();
         }
         fxListAsig.refresh();
@@ -82,7 +82,7 @@ public class AsignaturasController implements Initializable {
         asig.setCurso(curso);
         cx.updateAsignaturas(asig);
         fxListAsig.refresh();
-        Alert b = new Alert(Alert.AlertType.ERROR, "Asignatura Actualizada", ButtonType.CLOSE);
+        Alert b = new Alert(Alert.AlertType.INFORMATION, "Asignatura Actualizada", ButtonType.CLOSE);
         b.showAndWait();
     }
 
@@ -91,7 +91,7 @@ public class AsignaturasController implements Initializable {
         long id = fxListAsig.getSelectionModel().getSelectedItem().getId();
         cx.deleteAsignaturas(id);
         cargarDatosLista();
-        Alert b = new Alert(Alert.AlertType.ERROR, "¿Está seguro de que lo quiere borrar? Pues ya es tarde ", ButtonType.CLOSE);
+        Alert b = new Alert(Alert.AlertType.INFORMATION, "¿Está seguro de que lo quiere borrar? Pues ya es tarde ", ButtonType.CLOSE);
         b.showAndWait();
     }
 

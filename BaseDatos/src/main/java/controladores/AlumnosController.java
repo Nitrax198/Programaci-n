@@ -58,7 +58,7 @@ public class AlumnosController implements Initializable {
             boolean MayorEd = fxMayoriaEdad.isSelected();
             Alumno a = new Alumno(nombre, fechaNac, MayorEd);
             cx.insertAlumno(a);
-            Alert b = new Alert(Alert.AlertType.ERROR, "El alumno se ha creado con exito", ButtonType.CLOSE);
+            Alert b = new Alert(Alert.AlertType.INFORMATION, "El alumno se ha creado con exito", ButtonType.CLOSE);
             b.showAndWait();
         }
         fxListAlum.refresh();
@@ -74,7 +74,7 @@ public class AlumnosController implements Initializable {
         Alumno a = new Alumno(nombre, fechaNac, MayorEd);
         a.setId(fxListAlum.getSelectionModel().getSelectedItem().getId());
         cx.updateAlumno(a);
-        Alert b = new Alert(Alert.AlertType.ERROR, "Alumno actualizado", ButtonType.CLOSE);
+        Alert b = new Alert(Alert.AlertType.INFORMATION, "Alumno actualizado", ButtonType.CLOSE);
         b.showAndWait();
     }
 
@@ -83,7 +83,7 @@ public class AlumnosController implements Initializable {
         long id = fxListAlum.getSelectionModel().getSelectedItem().getId();
         cx.deleteAlumno(id);
         cargarDatosLista();
-        Alert b = new Alert(Alert.AlertType.ERROR, "¿Está seguro de que lo quiere borrar? Pues ya es tarde ", ButtonType.CLOSE);
+        Alert b = new Alert(Alert.AlertType.INFORMATION, "¿Está seguro de que lo quiere borrar? Pues ya es tarde ", ButtonType.CLOSE);
         b.showAndWait();
     }
 

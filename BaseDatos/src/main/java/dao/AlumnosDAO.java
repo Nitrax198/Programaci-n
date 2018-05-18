@@ -13,6 +13,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
@@ -217,9 +218,9 @@ public class AlumnosDAO {
 //        return alumno;
 //
 //    }
-
     // aqui empieza mi codigo
     public List<Alumno> getAllAlumnosJDBC() {
+        DBConnection db = new DBConnection();
         List<Alumno> lista = new ArrayList<>();
         Alumno nuevo = null;
 
@@ -227,12 +228,7 @@ public class AlumnosDAO {
         Statement stmt = null;
         ResultSet rs = null;
         try {
-            Class.forName(Configuration.getInstance().getDriverDB());
-
-            con = DriverManager.getConnection(
-                    Configuration.getInstance().getUrlDB(),
-                    Configuration.getInstance().getUserDB(),
-                    Configuration.getInstance().getPassDB());
+            con = db.getConnection();
 
             stmt = con.createStatement();
             String sql;
@@ -265,9 +261,7 @@ public class AlumnosDAO {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (con != null) {
-                    con.close();
-                }
+                db.cerrarConexion(con);
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -278,16 +272,12 @@ public class AlumnosDAO {
     }
 
     public int insertAlumnoJDBC(Alumno a) {
+        DBConnection db = new DBConnection();
         Connection con = null;
         PreparedStatement stmt = null;
         int filas = -1;
         try {
-            Class.forName(Configuration.getInstance().getDriverDB());
-
-            con = DriverManager.getConnection(
-                    Configuration.getInstance().getUrlDB(),
-                    Configuration.getInstance().getUserDB(),
-                    Configuration.getInstance().getPassDB());
+            con = db.getConnection();
 
             stmt = con.prepareStatement("INSERT INTO alumnos "
                     + "(NOMBRE,FECHA_NACIMIENTO,MAYOR_EDAD)  "
@@ -314,9 +304,7 @@ public class AlumnosDAO {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (con != null) {
-                    con.close();
-                }
+                db.cerrarConexion(con);
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -327,16 +315,12 @@ public class AlumnosDAO {
     }
 
     public int updateAlumnoJDBC(Alumno a) {
+        DBConnection db = new DBConnection();
         Connection con = null;
         PreparedStatement stmt = null;
         int filas = -1;
         try {
-            Class.forName(Configuration.getInstance().getDriverDB());
-
-            con = DriverManager.getConnection(
-                    Configuration.getInstance().getUrlDB(),
-                    Configuration.getInstance().getUserDB(),
-                    Configuration.getInstance().getPassDB());
+            con = db.getConnection();
 
             stmt = con.prepareStatement("UPDATE alumnos "
                     + "SET NOMBRE=?,FECHA_NACIMIENTO=?,MAYOR_EDAD=? "
@@ -361,9 +345,7 @@ public class AlumnosDAO {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (con != null) {
-                    con.close();
-                }
+                db.cerrarConexion(con);
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -373,26 +355,22 @@ public class AlumnosDAO {
 
     }
 
-    public boolean deleteAlumno(long idWhere) {
-
+    public int deleteAlumno(long idWhere) {
+        DBConnection db = new DBConnection();
         Connection con = null;
         PreparedStatement stmt = null;
-        int Filas = -1;
-        boolean borrado = false;
+        int filas = -1;
         try {
-            Class.forName(Configuration.getInstance().getDriverDB());
-
-            con = DriverManager.getConnection(
-                    Configuration.getInstance().getUrlDB(),
-                    Configuration.getInstance().getUserDB(),
-                    Configuration.getInstance().getPassDB());
+            con = db.getConnection();
 
             stmt = con.prepareStatement("DELETE FROM alumnos where id=? ");
 
             stmt.setLong(1, idWhere);
 
-            Filas = stmt.executeUpdate();
+            filas = stmt.executeUpdate();
 
+        } catch (SQLIntegrityConstraintViolationException ex) {
+            filas = -2;
         } catch (Exception ex) {
             Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -401,16 +379,49 @@ public class AlumnosDAO {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (con != null) {
-                    con.close();
-                }
+                db.cerrarConexion(con);
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
-        return borrado;
+        return filas;
 
+    }
+    public int delForce(Alumno a) {
+        DBConnection db = new DBConnection();
+        Connection con = null;
+        int filas = 0;
+        try {
+
+            con = db.getConnection();
+            con.setAutoCommit(false);
+            String sql = "DELETE FROM NOTAS WHERE ID_ALUMNO = ?";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setLong(1, a.getId());
+
+            filas += stmt.executeUpdate();
+
+            sql = "DELETE FROM ALUMNOS WHERE ID = ?";
+            stmt = con.prepareStatement(sql);
+            stmt.setLong(1, a.getId());
+
+            filas += stmt.executeUpdate();
+            con.commit();
+
+        } catch (Exception ex) {
+            Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                if (con != null) {
+                    con.rollback();
+                }
+            } catch (SQLException ex1) {
+                Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        } finally {
+            db.cerrarConexion(con);
+        }
+        return filas;
     }
 
 }

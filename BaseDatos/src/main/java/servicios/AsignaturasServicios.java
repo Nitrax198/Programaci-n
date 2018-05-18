@@ -22,7 +22,11 @@ public class AsignaturasServicios {
 
         return dao.getAllAsignaturasJDBC();
     }
+    public List<Asignatura> getAsignaturasAlumnos() {
+        AsignaturasDAO dao = new AsignaturasDAO();
 
+        return dao.getAsignaturasAlumno();
+    }
     public int insertAsignaturas(Asignatura a) {
         AsignaturasDAO dao = new AsignaturasDAO();
 

@@ -22,17 +22,15 @@ import model.Asignatura;
  * @author daw
  */
 public class NotasDAO {
+
     public int vincularAlumnosYAsignatura(Alumno a, Asignatura b) {
+        DBConnection db = new DBConnection();
         Connection con = null;
         PreparedStatement stmt = null;
         int filas = -1;
         try {
-            Class.forName(Configuration.getInstance().getDriverDB());
 
-            con = DriverManager.getConnection(
-                    Configuration.getInstance().getUrlDB(),
-                    Configuration.getInstance().getUserDB(),
-                    Configuration.getInstance().getPassDB());
+            con = db.getConnection();
 
             stmt = con.prepareStatement("INSERT INTO notas "
                     + "(ID_ALUMNO,ID_ASIGNATURA)  "
@@ -56,9 +54,7 @@ public class NotasDAO {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (con != null) {
-                    con.close();
-                }
+                db.cerrarConexion(con);
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -67,18 +63,16 @@ public class NotasDAO {
         return filas;
 
     }
+
     public int updateNotas(Alumno a, Asignatura b, int nota) {
+        DBConnection db = new DBConnection();
         Connection con = null;
         PreparedStatement stmt = null;
         int filas = -1;
         try {
-            Class.forName(Configuration.getInstance().getDriverDB());
 
-            con = DriverManager.getConnection(
-                    Configuration.getInstance().getUrlDB(),
-                    Configuration.getInstance().getUserDB(),
-                    Configuration.getInstance().getPassDB());
-            
+            con = db.getConnection();
+
             stmt = con.prepareStatement("UPDATE notas "
                     + "SET NOTA=?"
                     + "WHERE ID_ALUMNO=? AND ID_ASIGNATURA=?", Statement.RETURN_GENERATED_KEYS);
@@ -86,7 +80,7 @@ public class NotasDAO {
             stmt.setInt(1, nota);
 
             stmt.setLong(2, a.getId());
-            
+
             stmt.setLong(3, b.getId());
 
             filas = stmt.executeUpdate();
@@ -103,9 +97,7 @@ public class NotasDAO {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (con != null) {
-                    con.close();
-                }
+                db.cerrarConexion(con);
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnosDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -114,6 +106,7 @@ public class NotasDAO {
         return filas;
 
     }
+    
 //    public int Borrar(Alumno a, Asignatura b) {
 //        Connection con = null;
 //        PreparedStatement stmt = null;
