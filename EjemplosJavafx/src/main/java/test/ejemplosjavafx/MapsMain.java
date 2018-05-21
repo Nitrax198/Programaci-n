@@ -27,7 +27,7 @@ public class MapsMain extends Application {
     public void start(Stage primaryStage) throws IOException {
         //BorderPane root = FXMLLoader.load(getClass().getResource("/fxml/FXMLMenu.fxml"));
             FXMLLoader loaderMenu = new FXMLLoader(
-              getClass().getResource("/fxml/FXMLMaps.fxml"));
+              getClass().getResource("/fxml/FXMLBus.fxml"));
             Parent root = loaderMenu.load();
            
             
