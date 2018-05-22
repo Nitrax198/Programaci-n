@@ -37,6 +37,8 @@ import javafx.scene.control.ComboBox;
 import javafx.util.Duration;
 import model.Arrive;
 import model.Arrives;
+import model.Line;
+import model.LineInfo;
 import model.Stop;
 import model.StopsLine;
 import netscape.javascript.JSObject;
@@ -54,10 +56,12 @@ public class FXMLBusController implements Initializable, MapComponentInitialized
     @FXML
     private GoogleMapView mapView;
 
-
     private GoogleMap map;
 
-    
+    private BusDao bus;
+
+    @FXML
+    private ComboBox<LineInfo> ListaLineas;
 
     private void loadBud() throws IOException {
         map.clearMarkers();
@@ -72,9 +76,9 @@ public class FXMLBusController implements Initializable, MapComponentInitialized
         MVCArray array = new MVCArray(latlongs);
 
         PolylineOptions polyOpts = new PolylineOptions()
-          .path(array)
-          .strokeColor("#00FF00")
-          .strokeWeight(2);
+                .path(array)
+                .strokeColor("#00FF00")
+                .strokeWeight(2);
         Polyline pp = new Polyline(polyOpts);
 
         map.addMapShape(pp);
@@ -82,49 +86,53 @@ public class FXMLBusController implements Initializable, MapComponentInitialized
         map.setZoom(16);
 
         BusDao bus = new BusDao();
-        String json = bus.GetStopsLine("76", "PLAZA BEATA");
+//        String json = bus.GetStopsLine("76", "PLAZA BEATA");
 
         BusDao b = new BusDao();
 
-        ObjectMapper m = new ObjectMapper();
-        m.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        Arrives arrives = m.readValue(b.GetArrivesStop("2794"), new TypeReference<Arrives>() {
-        });
-        for (Arrive stop : arrives.getArrives()) {
-            System.out.println(stop.getStopId());
-            System.out.println(stop.getBusTimeLeft());
-            System.out.println(stop.getLatitude());
-            System.out.println(stop.getLongitude());
-            System.out.println(stop.getBusPositionType());
-            LatLong punto = new LatLong(stop.getLatitude(),
-              stop.getLongitude());
-            map.setCenter(punto);
-            MarkerOptions markerOptions5 = new MarkerOptions();
-            markerOptions5.position(punto);
-            markerOptions5.title(stop.getBusId());
-
-            Marker joeSmithMarker = new Marker(markerOptions5);
-            map.addMarker(joeSmithMarker);
-
-        }
+//        ObjectMapper m = new ObjectMapper();
+//        m.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+//        Arrives arrives = m.readValue(b.GetArrivesStop("2794"), new TypeReference<Arrives>() {
+//        });
+//        for (Arrive stop : arrives.getArrives()) {
+//            System.out.println(stop.getStopId());
+//            System.out.println(stop.getBusTimeLeft());
+//            System.out.println(stop.getLatitude());
+//            System.out.println(stop.getLongitude());
+//            System.out.println(stop.getBusPositionType());
+//            LatLong punto = new LatLong(stop.getLatitude(),
+//              stop.getLongitude());
+//            map.setCenter(punto);
+//            MarkerOptions markerOptions5 = new MarkerOptions();
+//            markerOptions5.position(punto);
+//            markerOptions5.title(stop.getBusId());
+//
+//            Marker joeSmithMarker = new Marker(markerOptions5);
+//            map.addMarker(joeSmithMarker);
+//
+//        }
     }
 
+
     @FXML
-    public void handleButton(ActionEvent event) throws IOException {
-       StopsLine lineaDeParadas = new StopsLine();
+    public void PincharCosas(ActionEvent event) throws IOException {
+        Funcion(ListaLineas.getSelectionModel().getSelectedItem());
+    }
+
+    public void Funcion(LineInfo line) throws IOException {
+        BusDao bus = new BusDao();
+        StopsLine lineaDeParadas = bus.GetStopsLine(line.getLine(), line.getHeaderB());
         for (int i = 0; i < lineaDeParadas.getStop().size(); i++) {
             Stop linea = lineaDeParadas.getStop().get(i);
             LatLong punto = new LatLong(linea.getLatitude(),
-              linea.getLongitude());
+                    linea.getLongitude());
             map.setCenter(punto);
             MarkerOptions markerOptions1 = new MarkerOptions();
             markerOptions1.position(punto);
 
             Marker paradaX = new Marker(markerOptions1);
             map.addMarker(paradaX);
-            
         }
-       
     }
 
     /**
@@ -133,9 +141,15 @@ public class FXMLBusController implements Initializable, MapComponentInitialized
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        BusDao bus = new BusDao();
         mapView.addMapInializedListener(this);
 
-        
+        try {
+            ListaLineas.getItems().addAll(
+                    bus.SacarListado());
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLBusController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -150,14 +164,14 @@ public class FXMLBusController implements Initializable, MapComponentInitialized
         MapOptions mapOptions = new MapOptions();
 
         mapOptions.center(new LatLong(47.6097, -122.3331))
-          .mapType(MapTypeIdEnum.ROADMAP)
-          .overviewMapControl(false)
-          .panControl(false)
-          .rotateControl(false)
-          .scaleControl(false)
-          .streetViewControl(false)
-          .zoomControl(false)
-          .zoom(12);
+                .mapType(MapTypeIdEnum.ROADMAP)
+                .overviewMapControl(false)
+                .panControl(false)
+                .rotateControl(false)
+                .scaleControl(false)
+                .streetViewControl(false)
+                .zoomControl(false)
+                .zoom(12);
 
         map = mapView.createMap(mapOptions);
 
@@ -194,24 +208,23 @@ public class FXMLBusController implements Initializable, MapComponentInitialized
 
         InfoWindowOptions infoWindowOptions = new InfoWindowOptions();
         infoWindowOptions.content("<h2>Fred Wilkie</h2>"
-          + "Current Location: Safeway<br>"
-          + "ETA: 45 minutes");
+                + "Current Location: Safeway<br>"
+                + "ETA: 45 minutes");
 
         InfoWindow fredWilkeInfoWindow = new InfoWindow(infoWindowOptions);
         fredWilkeInfoWindow.open(map, fredWilkieMarker);
         mapView.getMap().addUIEventHandler(joeSmithMarker, UIEventType.click, (JSObject obj) -> {
             LatLong ll = new LatLong((JSObject) obj.getMember("latLng"));
 
-            
             InfoWindowOptions infoWindowOptions1 = new InfoWindowOptions();
             infoWindowOptions1.content("<h2>Fred Wilkie</h2>"
-              + "Current Location: Safeway<br>"
-              + "ETA: 45 minutes");
+                    + "Current Location: Safeway<br>"
+                    + "ETA: 45 minutes");
 
             InfoWindow fredWilkeInfoWindow1 = new InfoWindow(infoWindowOptions1);
             fredWilkeInfoWindow1.open(map, joeSmithMarker);
 
         });
     }
-    
+
 }

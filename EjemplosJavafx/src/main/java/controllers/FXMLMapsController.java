@@ -92,31 +92,31 @@ public class FXMLMapsController implements Initializable, MapComponentInitialize
         map.setZoom(16);
 
         BusDao bus = new BusDao();
-        String json = bus.GetStopsLine("76", "PLAZA BEATA");
+//        String json = bus.GetStopsLine("76", "PLAZA BEATA");
 
         BusDao b = new BusDao();
 
         ObjectMapper m = new ObjectMapper();
         m.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        Arrives arrives = m.readValue(b.GetArrivesStop("2794"), new TypeReference<Arrives>() {
-        });
-        for (Arrive stop : arrives.getArrives()) {
-            System.out.println(stop.getStopId());
-            System.out.println(stop.getBusTimeLeft());
-            System.out.println(stop.getLatitude());
-            System.out.println(stop.getLongitude());
-            System.out.println(stop.getBusPositionType());
-            LatLong punto = new LatLong(stop.getLatitude(),
-              stop.getLongitude());
-            map.setCenter(punto);
-            MarkerOptions markerOptions5 = new MarkerOptions();
-            markerOptions5.position(punto);
-            markerOptions5.title(stop.getBusId());
-
-            Marker joeSmithMarker = new Marker(markerOptions5);
-            map.addMarker(joeSmithMarker);
-
-        }
+//        Arrives arrives = m.readValue(b.GetArrivesStop("2794"), new TypeReference<Arrives>() {
+//        });
+//        for (Arrive stop : arrives.getArrives()) {
+//            System.out.println(stop.getStopId());
+//            System.out.println(stop.getBusTimeLeft());
+//            System.out.println(stop.getLatitude());
+//            System.out.println(stop.getLongitude());
+//            System.out.println(stop.getBusPositionType());
+//            LatLong punto = new LatLong(stop.getLatitude(),
+//              stop.getLongitude());
+//            map.setCenter(punto);
+//            MarkerOptions markerOptions5 = new MarkerOptions();
+//            markerOptions5.position(punto);
+//            markerOptions5.title(stop.getBusId());
+//
+//            Marker joeSmithMarker = new Marker(markerOptions5);
+//            map.addMarker(joeSmithMarker);
+//
+//        }
     }
 
     @FXML

@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author daw
@@ -25,6 +27,7 @@ public class LineInfo {
     private String maximumFrequency;
     private String frequencyA;
     private String frequencyB;
+    private List<Line> Final;
 
     public String getLineId() {
         return lineId;
@@ -136,6 +139,14 @@ public class LineInfo {
 
     public void setFrequencyB(String frequencyB) {
         this.frequencyB = frequencyB;
+    }
+
+    public List<Line> getResultValues() {
+        return Final;
+    }
+
+    public void setResultValues(List<Line> resultValues) {
+        this.Final = resultValues;
     }
     
     
