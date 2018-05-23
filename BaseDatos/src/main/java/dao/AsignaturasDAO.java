@@ -89,7 +89,7 @@ public class AsignaturasDAO {
             stmt = con.createStatement();
             String sql;
 
-            sql = "SELECT * FROM asignaturas where id in(select  distinct(ID_ASIGNATURAS) form notas";
+            sql = "SELECT * FROM asignaturas where id in(select  distinct(ID_ASIGNATURA) from notas)";
             rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set

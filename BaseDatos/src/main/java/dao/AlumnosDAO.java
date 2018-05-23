@@ -396,7 +396,7 @@ public class AlumnosDAO {
 
             con = db.getConnection();
             con.setAutoCommit(false);
-            String sql = "DELETE FROM NOTAS WHERE ID_ALUMNO = ?";
+            String sql = "DELETE FROM notas WHERE ID_ALUMNO = ?";
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setLong(1, a.getId());
 

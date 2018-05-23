@@ -5,6 +5,7 @@
  */
 package main;
 
+import creaTablas.CreateTable;
 import dao.ConexionSimpleBD;
 import java.io.IOException;
 import java.util.List;
@@ -25,7 +26,8 @@ public class Main extends Application{
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-
+            CreateTable c = new CreateTable();
+            c.crearModeloJDBC();
             //BorderPane root = FXMLLoader.load(getClass().getResource("/fxml/FXMLMenu.fxml"));
             FXMLLoader loaderMenu = new FXMLLoader(
               getClass().getResource("/fxml/PgPrincipal.fxml"));
