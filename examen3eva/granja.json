@@ -1,0 +1,40 @@
+{
+    "name": "granja san ildefonso",
+    "animales": [{
+            "nombre": "poti",
+            "raza": "leon",
+            "peso": 100,
+            "muertes": [{
+                    "nombre": "lala",
+                    "hijos": [
+                        {
+                            "nombre": "pepe"
+                        }]
+                }, {
+                    "nombre": "eloy",
+                    "hijos": [
+                        {
+                            "nombre": "pepon"
+                        }]
+                }]
+        },
+        {
+            "nombre": "apu",
+            "raza": "tigre",
+            "peso": 700,
+            "muertes": [{
+                    "nombre": "lola",
+                    "hijos": [
+                        {
+                            "nombre": "pepa"
+                        }]
+                }, {
+                    "nombre": "juan",
+                    "hijos": [
+                        {
+                            "nombre": "pepito"
+                        }]
+                }]
+        }
+    ]
+}

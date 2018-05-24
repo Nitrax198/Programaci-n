@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<zoo>
+    <animales>
+        <leones>
+            <leon>
+                <nombre>juan</nombre>
+                <peso>89</peso>
+                <enfermo>1</enfermo>
+            </leon>
+            <leon>
+                <nombre>jan</nombre>
+                <peso>890</peso>
+                <enfermo>0</enfermo>
+            </leon>
+            <leon>
+                <nombre>jandro</nombre>
+                <peso>50</peso>
+                <enfermo>0</enfermo>
+            </leon>
+            <leon>
+                <nombre>ian</nombre>
+                <peso>8</peso>
+                <enfermo>1</enfermo>
+            </leon>
+        </leones>
+        <monos>
+            <mono>
+                <nombre>ian</nombre>
+                <peso>8</peso>
+                <enfermo>1</enfermo>
+            </mono>
+        </monos>
+        <tigres>
+            <tigre>
+                <nombre>ian1</nombre>
+                <peso>8</peso>
+                <numero_rayas>10</numero_rayas>
+                <enfermo>1</enfermo>
+            </tigre>
+            <tigre>
+                <nombre>ian2</nombre>
+                <peso>8</peso>
+                <numero_rayas>1</numero_rayas>
+                <enfermo>1</enfermo>
+            </tigre>
+            <tigre>
+                <nombre>ian3</nombre>
+                <peso>8</peso>
+                <numero_rayas>20</numero_rayas>
+                <enfermo>0</enfermo>
+            </tigre>
+        </tigres>
+        
+    </animales>
+    
+</zoo>
