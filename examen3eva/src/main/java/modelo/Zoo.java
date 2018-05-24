@@ -30,21 +30,15 @@ public class Zoo {
     @XmlElementWrapper(name = "Personas")
     @XmlElements({
         @XmlElement(name = "Zoologo", type = Zoologo.class)})
-    private List<Personal> personal;
+    private List<Zoologo> personal;
 
     public Zoo() {
         
     }
 
-    public Zoo(List<Animal> animales, List<Personal> personal) {
+    public Zoo(List<Animal> animales, List<Zoologo> personal) {
         this.animales = animales;
         this.personal = personal;
-        animales.add(new Leon(1, "ddd"));
-        animales.add(new Leon(2, "fff"));
-        animales.add(new Tigre(3, "ggg"));
-        animales.add(new Tigre(4, "hhh"));
-        personal.add(new Zoologo("jjj",animales, 3, "kkk"));
-        
     }
     
 }
