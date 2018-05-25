@@ -65,6 +65,7 @@ public class AñadirNotasController implements Initializable {
         // TODO
         cx = new AlumnosServicios();
         cz = new AsignaturasServicios();
+        cy = new NotasServivios();
         cargarDatosLista();
     }
 

@@ -71,7 +71,7 @@ public class VincularAlumnosController implements Initializable {
         Asignatura b = fxListAsig.getSelectionModel().getSelectedItem();
         cy.vincularAlumnosYAsignaturas(a, b);
         cargarDatosLista();
-        Alert c = new Alert(Alert.AlertType.INFORMATION, "¿Está seguro de que lo quiere borrar? Pues ya es tarde ", ButtonType.CLOSE);
+        Alert c = new Alert(Alert.AlertType.INFORMATION, "Vinculo hec ho HAHA ha dicho culo ", ButtonType.CLOSE);
         c.showAndWait();
     }
     
@@ -81,6 +81,7 @@ public class VincularAlumnosController implements Initializable {
         // TODO
         cx = new AlumnosServicios();
         cz = new AsignaturasServicios();
+        cy = new NotasServivios();
         cargarDatosLista();
     }
 
