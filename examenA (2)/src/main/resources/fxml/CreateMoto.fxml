@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CreateMotoController">
+   <children>
+      <ListView fx:id="fxListEscuderias" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="183.0" />
+      <ListView fx:id="fxListPilotos" layoutX="403.0" layoutY="14.0" prefHeight="200.0" prefWidth="183.0" />
+      <Label layoutX="139.0" layoutY="222.0" text="Escuderias" />
+      <Label layoutX="443.0" layoutY="230.0" text="Pilotos" />
+      <TextField fx:id="fxNumero" layoutX="227.0" layoutY="288.0" />
+      <Label layoutX="246.0" layoutY="260.0" text="Numero De La Moto" />
+      <Button layoutX="265.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleCrear" text="Crear Moto" />
+      <ListView fx:id="fxListMotos" layoutX="215.0" layoutY="14.0" prefHeight="200.0" prefWidth="171.0" />
+   </children>
+</AnchorPane>
