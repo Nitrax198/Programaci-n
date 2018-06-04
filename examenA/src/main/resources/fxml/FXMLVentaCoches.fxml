@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerVentaCoches">
+   <children>
+      <ListView fx:id="fxListConcesionarios" layoutX="18.0" layoutY="36.0" onMouseClicked="#handleConcesionariosClicked" prefHeight="177.0" prefWidth="179.0" />
+      <ListView fx:id="fxListCoches" layoutX="207.0" layoutY="37.0" prefHeight="177.0" prefWidth="179.0" />
+      <ListView fx:id="fxListClientes" layoutX="395.0" layoutY="38.0" prefHeight="177.0" prefWidth="179.0" />
+      <Button layoutX="178.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleCerrarTransaccion" text="Cerrar Transaccion">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

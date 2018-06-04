@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerCoches">
+   <children>
+      <ListView fx:id="fxListCoches" layoutX="294.0" layoutY="14.0" prefHeight="228.0" prefWidth="284.0" />
+      <Button layoutX="258.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleCrear" prefHeight="32.0" prefWidth="81.0" text="CREAR">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="fxModelo" layoutX="116.0" layoutY="289.0" prefHeight="23.0" prefWidth="115.0" promptText="Modelo" />
+      <TextField fx:id="fxPrecio" layoutX="248.0" layoutY="291.0" prefHeight="26.0" prefWidth="98.0" promptText="Precio" />
+      <ListView fx:id="fxListConcesionarios" layoutX="10.0" layoutY="15.0" onMouseClicked="#handleMouseClicked" prefHeight="228.0" prefWidth="254.0" />
+      <Label layoutX="28.0" layoutY="287.0" prefHeight="26.0" prefWidth="70.0" text="Coche:">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="361.0" layoutY="291.0" prefHeight="26.0" prefWidth="125.0" text="ID Concesionario:" />
+      <Label fx:id="fxLabelConcesionario" layoutX="476.0" layoutY="296.0" prefHeight="16.0" prefWidth="20.0" />
+   </children>
+</AnchorPane>

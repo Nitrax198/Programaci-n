@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="fxRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerMenu">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="fxBotonConcesionarios" mnemonicParsing="false" text="CRUD Concesionarios">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleCrudConcesionarios" text="eso mismo " />
+            </items>
+          </Menu>
+          <Menu fx:id="fxBotonCoches" mnemonicParsing="false" text="Crear coches">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleCrearCoches" text="Crear coches x2" />
+            </items>
+          </Menu>
+          <Menu fx:id="fxBotonVentaCoches" mnemonicParsing="false" text="VentaCoches">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleVentaCoches" text="Se venden coches" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
